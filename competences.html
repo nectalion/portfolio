@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- ===================================================
+       Métadonnées de la page Compétences
+       =================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Compétences — MAURY Martin</title>
+  <meta name="description"
+        content="Compétences techniques (HTML/CSS, JavaScript, Python) et soft skills (communication, travail en équipe) de Martin MAURY." />
+  <meta name="author" content="MAURY Martin" />
+
+  <!-- Feuille de styles partagée -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="corps-page">
+
+  <!-- ===================================================
+       NAVIGATION PRINCIPALE
+       "Compétences" porte la classe "actif" sur cette page.
+       =================================================== -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" />
+    <div class="nav-conteneur">
+
+      <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil">Portfolio de Martin</a>
+
+      <label for="nav-toggle" class="nav-hamburger" aria-label="Ouvrir ou fermer le menu">
+        <span class="nav-hamburger__trait"></span>
+        <span class="nav-hamburger__trait"></span>
+        <span class="nav-hamburger__trait"></span>
+      </label>
+
+      <ul class="nav-menu" role="menubar">
+
+        <li role="none">
+          <a href="index.html" class="nav-lien" role="menuitem">Accueil</a>
+        </li>
+
+        <li role="none">
+          <a href="projects.html" class="nav-lien" role="menuitem">Projets</a>
+        </li>
+
+        <!-- Compétences — actif sur cette page -->
+        <li role="none">
+          <a href="competences.html" class="nav-lien actif" role="menuitem" aria-current="page">Compétences</a>
+        </li>
+
+        <!-- Contact avec panneau déroulant (CSS pur) -->
+        <li class="nav-contact" role="none">
+          <span class="nav-contact-btn" tabindex="0" role="button" aria-haspopup="true">Contact</span>
+          <div class="panneau-contact" role="tooltip">
+            <p class="panneau-contact__titre">Me contacter</p>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone">✉</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">Email</span>
+                <a href="mailto:martinmaury202@gmail.com" class="contact-ligne__valeur">martinmaury202@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone">☎</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">Téléphone</span>
+                <a href="tel:+33780066496" class="contact-ligne__valeur">07 80 06 64 96</a>
+              </div>
+            </div>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone">in</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">linkedin.com/in/martin-maury-9a10003b6</a>
+              </div>
+            </div>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone">⌨</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">GitHub</span>
+                <a href="https://github.com/nectalion" class="contact-ligne__valeur" target="_blank" rel="noopener">github.com/nectalion</a>
+              </div>
+            </div>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone" aria-hidden="true">↓</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">CV</span>
+                <a href="cv-martin-maury.pdf" class="contact-ligne__valeur" download>Télécharger mon CV (PDF)</a>
+              </div>
+            </div>
+
+          </div><!-- /panneau-contact -->
+        </li><!-- /Contact -->
+
+      </ul><!-- /nav-menu -->
+    </div><!-- /nav-conteneur -->
+  </nav><!-- /navbar -->
+
+
+  <!-- ===================================================
+       CONTENU PRINCIPAL DE LA PAGE COMPÉTENCES
+       =================================================== -->
+  <main id="contenu-principal">
+
+    <!-- =================================================
+         EN-TÊTE DE PAGE
+         ================================================= -->
+    <header class="en-tete-page">
+      <div class="conteneur">
+        <h1 class="titre-section" id="titre-competences">Mes Compétences</h1>
+        <p class="en-tete-page__sous-titre">
+          Un aperçu de mes compétences techniques et générales,
+          développées au cours de ma formation et de mes projets personnels.
+
+        </p>
+      </div>
+    </header>
+
+
+    <!-- =================================================
+         GRILLE DE COMPÉTENCES
+         Structure : 2 colonnes (tablette) / 1 colonne (mobile)
+           • Gauche : Compétences techniques (barres dégradé corail → sombre)
+           • Droite  : Soft skills           (barres dégradé sombre → corail)
+         Les barres sont animées au chargement via @keyframes "remplir".
+         Voir style.css sections 12 et 13.
+         ================================================= -->
+    <section class="section" aria-labelledby="titre-competences">
+      <div class="conteneur">
+        <div class="competences__grille">
+
+
+          <!-- =============================================
+               BLOC : COMPÉTENCES TECHNIQUES
+               ============================================= -->
+          <div class="comp-bloc" id="comp-techniques">
+
+            <h2 class="comp-bloc__titre">Compétences Techniques</h2>
+
+            <!-- -------- Électronique -------- -->
+            <div class="comp-item" id="comp-electronique">
+              <div class="comp-item__entete">
+                <span class="comp-item__nom">Électronique</span>
+                <span class="comp-item__pct">40%</span>
+              </div>
+              <div class="comp-barre__fond">
+                <div class="comp-barre__remplissage" style="width: 40%;"></div>
+              </div>
+              <p class="comp-item__desc">
+                Lecture de schémas, composants passifs et actifs, lois fondamentales
+              </p>
+            </div><!-- /Électronique -->
+
+            <!-- -------- Électrotechnique -------- -->
+            <div class="comp-item" id="comp-electrotechnique">
+              <div class="comp-item__entete">
+                <span class="comp-item__nom">Électrotechnique</span>
+                <span class="comp-item__pct">40%</span>
+              </div>
+              <div class="comp-barre__fond">
+                <div class="comp-barre__remplissage" style="width: 40%;"></div>
+              </div>
+              <p class="comp-item__desc">
+                Circuits électriques, courant alternatif, machines électriques
+              </p>
+            </div><!-- /Électrotechnique -->
+
+            <!-- -------- Automatismes -------- -->
+            <div class="comp-item" id="comp-automatismes">
+              <div class="comp-item__entete">
+                <span class="comp-item__nom">Automatismes</span>
+                <span class="comp-item__pct">40%</span>
+              </div>
+              <div class="comp-barre__fond">
+                <div class="comp-barre__remplissage" style="width: 40%;"></div>
+              </div>
+              <p class="comp-item__desc">
+                Logique combinatoire et séquentielle, grafcet, logigrammes
+              </p>
+            </div><!-- /Automatismes -->
+
+            <!-- -------- Programmation C -------- -->
+            <div class="comp-item" id="comp-c">
+              <div class="comp-item__entete">
+                <span class="comp-item__nom">Programmation C</span>
+                <span class="comp-item__pct">20%</span>
+              </div>
+              <div class="comp-barre__fond">
+                <div class="comp-barre__remplissage" style="width: 20%;"></div>
+              </div>
+              <p class="comp-item__desc">
+                Bases du langage, variables, boucles, fonctions
+              </p>
+            </div><!-- /Programmation C -->
+
+          </div><!-- /comp-techniques -->
+
+
+          <!-- =============================================
+               BLOC : SOFT SKILLS
+               Les barres utilisent la variante "--soft"
+               (dégradé sombre → corail, voir style.css section 12)
+               ============================================= -->
+          <div class="comp-bloc" id="comp-softskills">
+
+            <h2 class="comp-bloc__titre">Compétences Générales</h2>
+
+            <!-- -------- Communication -------- -->
+            <div class="comp-item" id="comp-communication">
+              <div class="comp-item__entete">
+                <span class="comp-item__nom">Communication</span>
+                <span class="comp-item__pct">60%</span>
+              </div>
+              <div class="comp-barre__fond">
+                <!-- Classe --soft : dégradé inversé pour distinguer visuellement -->
+                <div class="comp-barre__remplissage comp-barre__remplissage--soft"
+                     style="width: 60%;"></div>
+              </div>
+              <p class="comp-item__desc">
+                Présentation de projets, rédaction technique claire, écoute active
+              </p>
+            </div><!-- /Communication -->
+
+            <!-- -------- Travail en équipe -------- -->
+            <div class="comp-item" id="comp-equipe">
+              <div class="comp-item__entete">
+                <span class="comp-item__nom">Travail en équipe</span>
+                <span class="comp-item__pct">60%</span>
+              </div>
+              <div class="comp-barre__fond">
+                <div class="comp-barre__remplissage comp-barre__remplissage--soft"
+                     style="width: 60%;"></div>
+              </div>
+              <p class="comp-item__desc">
+                Collaboration sur projets de groupe, entraide
+              </p>
+            </div><!-- /Travail en équipe -->
+
+            <!-- -------- Résolution de problèmes -------- -->
+            <div class="comp-item" id="comp-resolution">
+              <div class="comp-item__entete">
+                <span class="comp-item__nom">Résolution de problèmes</span>
+                <span class="comp-item__pct">65%</span>
+              </div>
+              <div class="comp-barre__fond">
+                <div class="comp-barre__remplissage comp-barre__remplissage--soft"
+                     style="width: 65%;"></div>
+              </div>
+              <p class="comp-item__desc">
+                Analyse logique, débogage méthodique, recherche de solutions créatives
+              </p>
+            </div><!-- /Résolution de problèmes -->
+
+          </div><!-- /comp-softskills -->
+
+
+        </div><!-- /competences__grille -->
+      </div><!-- /conteneur -->
+    </section><!-- /section compétences -->
+
+  </main><!-- /contenu-principal -->
+
+  <footer class="footer" role="contentinfo">
+    <div class="conteneur">
+      <div class="footer__grille">
+
+        <div>
+          <span class="footer__logo">MAURY Martin</span>
+          <p class="footer__tagline">Étudiant en BUT GEII<br>IUT de Gradignan</p>
+        </div>
+
+        <div>
+          <p class="footer__bloc-titre">Navigation</p>
+          <nav class="footer__nav" aria-label="Navigation pied de page">
+            <a href="index.html" class="footer__nav-lien">Accueil</a>
+            <a href="projects.html" class="footer__nav-lien">Projets</a>
+            <a href="competences.html" class="footer__nav-lien">Compétences</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer__bloc-titre">Contact</p>
+          <div class="footer__contact">
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone">✉</span>
+              <a href="mailto:martinmaury202@gmail.com" class="footer__contact-lien">martinmaury202@gmail.com</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone">☎</span>
+              <a href="tel:+33780066496" class="footer__contact-lien">07 80 06 64 96</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone">in</span>
+              <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__contact-lien" target="_blank" rel="noopener">linkedin.com/in/martin-maury-9a10003b6</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone">⌨</span>
+              <a href="https://github.com/nectalion" class="footer__contact-lien" target="_blank" rel="noopener">github.com/nectalion</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p class="footer__copyright">© 2025 MAURY Martin — Tous droits réservés</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+

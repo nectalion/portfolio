@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- ===================================================
+       Métadonnées — Page détail : Projet 1
+       =================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO : titre spécifique à ce projet -->
+  <title>Carte Son et Lumière Rafale — MAURY Martin</title>
+  <meta name="description"
+        content="Projet de conception d'une carte électronique reproduisant l'éclairage d'un Rafale, réalisé en première année de BUT GEII à l'IUT de Gradignan." />
+  <meta name="author" content="MAURY Martin" />
+
+  <!-- Feuille de styles partagée -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="corps-page">
+
+  <!-- ===================================================
+       NAVIGATION PRINCIPALE
+       Aucun lien n'est "actif" sur les pages détail projet
+       (on vient de la page "Projets").
+       =================================================== -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" />
+    <div class="nav-conteneur">
+
+      <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil">Portfolio de Martin</a>
+
+      <label for="nav-toggle" class="nav-hamburger" aria-label="Ouvrir ou fermer le menu">
+        <span class="nav-hamburger__trait"></span>
+        <span class="nav-hamburger__trait"></span>
+        <span class="nav-hamburger__trait"></span>
+      </label>
+
+      <ul class="nav-menu" role="menubar">
+        <li role="none">
+          <a href="index.html" class="nav-lien" role="menuitem">Accueil</a>
+        </li>
+        <li role="none">
+          <!-- On laisse "Projets" non-actif, mais on pourrait aussi l'activer si souhaité -->
+          <a href="projects.html" class="nav-lien" role="menuitem">Projets</a>
+        </li>
+        <li role="none">
+          <a href="competences.html" class="nav-lien" role="menuitem">Compétences</a>
+        </li>
+        <li class="nav-contact" role="none">
+          <span class="nav-contact-btn" tabindex="0" role="button" aria-haspopup="true">Contact</span>
+          <div class="panneau-contact" role="tooltip">
+            <p class="panneau-contact__titre">Me contacter</p>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone">✉</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">Email</span>
+                <a href="mailto:martinmaury202@gmail.com" class="contact-ligne__valeur">martinmaury202@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone">☎</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">Téléphone</span>
+                <a href="tel:+33780066496" class="contact-ligne__valeur">07 80 06 64 96</a>
+              </div>
+            </div>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone">in</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">linkedin.com/in/martin-maury-9a10003b6</a>
+              </div>
+            </div>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone">⌨</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">GitHub</span>
+                <a href="https://github.com/nectalion" class="contact-ligne__valeur" target="_blank" rel="noopener">github.com/nectalion</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav><!-- /navbar -->
+
+
+  <!-- ===================================================
+       CONTENU PRINCIPAL — DÉTAIL PROJET 1
+       =================================================== -->
+  <main id="contenu-principal">
+    <div class="detail-projet">
+      <div class="conteneur">
+
+        <!-- Bouton retour vers la liste des projets -->
+        <a href="projects.html" class="btn--retour" id="btn-retour-p1">
+          ← Retour aux projets
+        </a>
+
+        <!-- Grande image illustrant le projet -->
+        <img
+          src="images/projet1.png"
+          alt="Schéma électronique de la carte son et lumière Rafale"
+          class="detail__image"
+          width="1100"
+          height="460"
+        />
+
+        <!-- En-tête du projet : catégorie + titre -->
+        <p class="detail__sous-titre">Électronique — BUT GEII 1ère année</p>
+        <h1 class="detail__titre">Carte Son et Lumière — Rafale</h1>
+
+        <hr class="separateur" />
+
+        <!-- Composants utilisés -->
+        <p class="detail__tech-titre">Composants utilisés</p>
+        <div class="tech-badges">
+          <span class="tech-badge">NE555</span>
+          <span class="tech-badge">LED Rouge</span>
+          <span class="tech-badge">LED Verte</span>
+          <span class="tech-badge">LED Jaune</span>
+          <span class="tech-badge">Résistances</span>
+          <span class="tech-badge">Condensateurs</span>
+        </div>
+
+        <!-- Description complète -->
+        <p class="detail__description">
+          Dans le cadre de ma première année de BUT GEII, j'ai conçu en binôme une
+          carte électronique reproduisant le système d'éclairage d'un avion de chasse
+          Rafale. Ce projet avait pour objectif de nous faire découvrir l'ensemble du
+          processus de création d'une carte électronique, de la lecture du cahier des
+          charges à la réalisation physique du circuit.
+        </p>
+
+        <p class="detail__description">
+          La carte fonctionne de la manière suivante : une fois alimentée, elle allume
+          en permanence une LED rouge et une LED verte, reproduisant les feux de navigation
+          fixes du Rafale. Un circuit génère également un signal oscillant qui fait clignoter
+          une LED jaune à fréquence prédéterminée, imitant le feu anti-collision de l'appareil.
+          Le schéma est organisé en quatre blocs fonctionnels. Le bloc alimentation fournit
+          la tension nécessaire à l'ensemble du circuit. Le bloc acquisition reçoit le signal
+          d'entrée. Le bloc traitement repose sur un timer NE555 câblé en mode astable qui
+          génère le signal de clignotement. Enfin, le bloc action pilote les trois LEDs :
+          la rouge et la verte sont alimentées en continu, tandis que la jaune clignote
+          au rythme du signal généré par le NE555.
+        </p>
+
+        <p class="detail__description">
+          Ce projet m'a permis de lire et concevoir un schéma électronique structuré par blocs
+          fonctionnels, et de réaliser concrètement un circuit imprimé.
+        </p>
+
+        <hr class="separateur" />
+
+        <!-- Lien placeholder vers le projet -->
+        <a href="projects.html" class="btn btn--outline" id="btn-bas-retour-p1">
+          ← Retour aux projets
+        </a>
+
+      </div><!-- /conteneur -->
+    </div><!-- /detail-projet -->
+  </main><!-- /contenu-principal -->
+
+  <footer class="footer" role="contentinfo">
+    <div class="conteneur">
+      <div class="footer__grille">
+        <div>
+          <span class="footer__logo">MAURY Martin</span>
+          <p class="footer__tagline">Étudiant en BUT GEII<br>IUT de Gradignan</p>
+        </div>
+        <div>
+          <p class="footer__bloc-titre">Navigation</p>
+          <nav class="footer__nav" aria-label="Navigation pied de page">
+            <a href="index.html" class="footer__nav-lien">Accueil</a>
+            <a href="projects.html" class="footer__nav-lien">Projets</a>
+            <a href="competences.html" class="footer__nav-lien">Compétences</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__bloc-titre">Contact</p>
+          <div class="footer__contact">
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone">✉</span>
+              <a href="mailto:martinmaury202@gmail.com" class="footer__contact-lien">martinmaury202@gmail.com</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone">☎</span>
+              <a href="tel:+33780066496" class="footer__contact-lien">07 80 06 64 96</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone">in</span>
+              <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__contact-lien" target="_blank" rel="noopener">linkedin.com/in/martin-maury-9a10003b6</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone">⌨</span>
+              <a href="https://github.com/nectalion" class="footer__contact-lien" target="_blank" rel="noopener">github.com/nectalion</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="footer__copyright">© 2025 MAURY Martin — Tous droits réservés</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+

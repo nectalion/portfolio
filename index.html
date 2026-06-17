@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- ===================================================
+       Métadonnées de la page
+       =================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO : titre et description -->
+  <title>MAURY Martin — Portfolio</title>
+  <meta name="description"
+        content="Portfolio de Martin MAURY, développeur web passionné. Découvrez mes projets, mes compétences et mes coordonnées." />
+  <meta name="author" content="MAURY Martin" />
+
+  <!-- Feuille de styles principale (partagée sur toutes les pages) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="corps-page">
+
+  <!-- ===================================================
+       NAVIGATION PRINCIPALE
+       La navigation est identique sur toutes les pages.
+       Seul le lien de la page courante porte la classe "actif".
+       Sur cette page : "Accueil" est actif.
+       =================================================== -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+
+    <!--
+      Checkbox invisible utilisée pour le menu hamburger mobile.
+      La technique CSS pur : quand la checkbox est cochée,
+      le sélecteur :checked permet d'afficher le menu.
+    -->
+    <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" />
+
+    <div class="nav-conteneur">
+
+      <!-- Logo : nom du portfolio, lien vers l'accueil -->
+      <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil">Portfolio de Martin</a>
+
+      <!-- Icône hamburger — visible uniquement sur mobile (voir style.css section 06 et 15) -->
+      <label for="nav-toggle" class="nav-hamburger" aria-label="Ouvrir ou fermer le menu">
+        <span class="nav-hamburger__trait"></span>
+        <span class="nav-hamburger__trait"></span>
+        <span class="nav-hamburger__trait"></span>
+      </label>
+
+      <!-- Menu de navigation -->
+      <ul class="nav-menu" id="main-nav" role="menubar">
+
+        <!-- Accueil — actif sur cette page -->
+        <li role="none">
+          <a href="index.html" class="nav-lien actif" role="menuitem" aria-current="page">Accueil</a>
+        </li>
+
+        <!-- Projets -->
+        <li role="none">
+          <a href="projects.html" class="nav-lien" role="menuitem">Projets</a>
+        </li>
+
+        <!-- Compétences -->
+        <li role="none">
+          <a href="competences.html" class="nav-lien" role="menuitem">Compétences</a>
+        </li>
+
+        <!--
+          Contact — pas de page dédiée.
+          Sur desktop : survol du bouton → panneau déroulant (CSS pur, pas de JS).
+          Sur mobile  : panneau affiché en statique dans le menu hamburger.
+          Voir style.css sections 05 et 15 pour les détails CSS.
+        -->
+        <li class="nav-contact" role="none">
+
+          <!-- Bouton déclencheur (cursor: default — pas de navigation) -->
+          <span class="nav-contact-btn" tabindex="0" role="button" aria-haspopup="true">
+            Contact
+          </span>
+
+          <!-- Panneau déroulant avec les coordonnées -->
+          <div class="panneau-contact" role="tooltip" aria-label="Informations de contact">
+
+            <p class="panneau-contact__titre">Me contacter</p>
+
+            <!-- Email (placeholder) -->
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone" aria-hidden="true">✉</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">Email</span>
+                <a href="mailto:martinmaury202@gmail.com" class="contact-ligne__valeur">martinmaury202@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone" aria-hidden="true">☎</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">Téléphone</span>
+                <a href="tel:+33780066496" class="contact-ligne__valeur">07 80 06 64 96</a>
+              </div>
+            </div>
+
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone" aria-hidden="true">in</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">linkedin.com/in/martin-maury-9a10003b6</a>
+              </div>
+            </div>
+
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone" aria-hidden="true">⌨</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">GitHub</span>
+                <a href="https://github.com/nectalion" class="contact-ligne__valeur" target="_blank" rel="noopener">github.com/nectalion</a>
+              </div>
+            </div>
+
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone" aria-hidden="true">↓</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">CV</span>
+                <a href="cv-martin-maury.pdf" class="contact-ligne__valeur" download>Télécharger mon CV (PDF)</a>
+              </div>
+            </div>
+
+          </div><!-- /panneau-contact -->
+        </li><!-- /Contact -->
+
+      </ul><!-- /nav-menu -->
+    </div><!-- /nav-conteneur -->
+  </nav><!-- /navbar -->
+
+
+  <!-- ===================================================
+       CONTENU PRINCIPAL DE LA PAGE ACCUEIL
+       =================================================== -->
+  <main id="contenu-principal">
+
+    <!-- =================================================
+         1. SECTION HÉROS — épurée
+         ================================================= -->
+    <section class="hero" aria-labelledby="hero-titre">
+      <div class="conteneur">
+        <div class="hero__grille">
+
+          <div class="hero__texte">
+            <p class="hero__accroche">Bonjour, je suis</p>
+            <h1 class="hero__nom" id="hero-titre">
+              MAURY <span class="hero__prenom">Martin</span>
+            </h1>
+            <p class="hero__role">Étudiant en BUT Génie Électrique et Informatique Industrielle</p>
+            <p class="hero__intro">
+              Passionné par l'électronique, l'automatisme et l'informatique industrielle,
+              je suis actuellement en première année de BUT GEII à l'IUT de Gradignan.
+              Titulaire d'un Baccalauréat avec les spécialités Physique et AMC, je cherche
+              à approfondir mes compétences techniques dans un environnement stimulant.
+            </p>
+            <div class="hero__cta">
+              <a href="projects.html" class="btn btn--accent">Voir mes projets →</a>
+              <a href="competences.html" class="btn btn--outline">Mes compétences →</a>
+            </div>
+          </div>
+
+          <div class="hero__photo-zone">
+            <img
+              src="images/profile.png"
+              alt="Photo de profil de Martin MAURY"
+              class="hero__photo"
+              width="380"
+              height="460"
+            />
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /hero -->
+
+
+    <!-- =================================================
+         2. SECTION OBJECTIF — pleine largeur, fond sombre
+         ================================================= -->
+    <section class="objectif" aria-labelledby="titre-objectif">
+      <div class="conteneur">
+        <h2 class="titre-section titre-section--blanc" id="titre-objectif">Objectif</h2>
+        <div class="objectif__grille">
+          <p class="objectif__texte">
+            Mon objectif est de développer une expertise solide en génie électrique et
+            informatique industrielle, en combinant rigueur technique et curiosité.
+            Je suis particulièrement attiré par les projets alliant électronique embarquée
+            et programmation.
+          </p>
+          <p class="objectif__texte">
+            Curieux et motivé, je m'investis pleinement dans chaque apprentissage.
+            Mon projet à horizon 2027 est d'effectuer un stage au Japon, une expérience
+            qui me permettra de découvrir un environnement industriel et technologique
+            d'excellence, ainsi que de nouvelles cultures et paysages.
+          </p>
+        </div>
+      </div>
+    </section><!-- /objectif -->
+
+
+
+
+    <!-- =================================================
+         FRISE CHRONOLOGIQUE — PARCOURS SCOLAIRE
+         ================================================= -->
+    <section class="frise" aria-labelledby="titre-frise">
+      <div class="conteneur">
+
+        <h2 class="titre-section frise__titre" id="titre-frise">Mon Parcours</h2>
+
+        <div class="frise__ligne">
+
+          <!-- Étape 1 : Bac -->
+          <div class="frise__etape">
+            <div class="frise__point"></div>
+            <div class="frise__carte">
+              <span class="frise__annee">2025</span>
+              <h3 class="frise__nom">Baccalauréat</h3>
+              <p class="frise__lieu">Lycée Tyrosse Sud des Landes</p>
+              <p class="frise__detail">Spécialités Physique-Chimie et AMC</p>
+            </div>
+          </div>
+
+          <!-- Étape 2 : BUT GEII -->
+          <div class="frise__etape">
+            <div class="frise__point frise__point--actif"></div>
+            <div class="frise__carte frise__carte--actif">
+              <span class="frise__annee">2025 — 2028</span>
+              <h3 class="frise__nom">BUT Génie Électrique et Informatique Industrielle</h3>
+              <p class="frise__lieu">IUT de Gradignan</p>
+              <p class="frise__detail">Formation en électronique, automatismes et programmation industrielle</p>
+            </div>
+          </div>
+
+          <!-- Étape 3 : Stage Japon -->
+          <div class="frise__etape frise__etape--futur">
+            <div class="frise__point frise__point--futur"></div>
+            <div class="frise__carte frise__carte--futur">
+              <span class="frise__annee">2027</span>
+              <h3 class="frise__nom">Stage au Japon</h3>
+              <p class="frise__lieu">À venir</p>
+              <p class="frise__detail">Découverte d'un environnement industriel et technologique d'excellence</p>
+            </div>
+          </div>
+
+        </div><!-- /frise__ligne -->
+      </div><!-- /conteneur -->
+    </section><!-- /frise -->
+
+  </main><!-- /contenu-principal -->
+
+  <footer class="footer" role="contentinfo">
+    <div class="conteneur">
+      <div class="footer__grille">
+
+        <!-- Colonne 1 : identité -->
+        <div>
+          <span class="footer__logo">MAURY Martin</span>
+          <p class="footer__tagline">Étudiant en BUT GEII<br>IUT de Gradignan</p>
+        </div>
+
+        <!-- Colonne 2 : navigation -->
+        <div>
+          <p class="footer__bloc-titre">Navigation</p>
+          <nav class="footer__nav" aria-label="Navigation pied de page">
+            <a href="index.html" class="footer__nav-lien">Accueil</a>
+            <a href="projects.html" class="footer__nav-lien">Projets</a>
+            <a href="competences.html" class="footer__nav-lien">Compétences</a>
+          </nav>
+        </div>
+
+        <!-- Colonne 3 : contact -->
+        <div>
+          <p class="footer__bloc-titre">Contact</p>
+          <div class="footer__contact">
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone">✉</span>
+              <a href="mailto:martinmaury202@gmail.com" class="footer__contact-lien">martinmaury202@gmail.com</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone">☎</span>
+              <a href="tel:+33780066496" class="footer__contact-lien">07 80 06 64 96</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone">in</span>
+              <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__contact-lien" target="_blank" rel="noopener">linkedin.com/in/martin-maury-9a10003b6</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone">⌨</span>
+              <a href="https://github.com/nectalion" class="footer__contact-lien" target="_blank" rel="noopener">github.com/nectalion</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p class="footer__copyright">© 2025 MAURY Martin — Tous droits réservés</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
