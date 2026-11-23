@@ -1348,159 +1348,222 @@ img.image--entiere { object-fit: contain; }
 
 
 /* ============================================================
-   16. COMPÉTENCES (domaines + pastilles de niveau)
+   16. COMPÉTENCES (points forts + compétences du BUT + « et aussi »)
    ============================================================ */
 
-/* Légende sous le titre de la page */
-.legende-niveaux {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem 1.25rem;
+/* Section avec moins d'espace vertical (juste sous l'en-tête de page) */
+.section--serree { padding: var(--esp-md) 0 var(--esp-lg); }
+
+/* Petite note à droite d'un titre de section */
+.section__note {
   font-size: 0.82rem;
+  font-weight: 600;
   color: var(--sombre-60);
-  margin-top: var(--esp-md);
 }
 
-/*
-   Grille des domaines :
-   Électronique à gauche | Programmation + Logiciels à droite
-   Compétences transversales sur toute la largeur en dessous
-*/
-.domaines {
+/* --- Points forts --- */
+.points-forts {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
 }
 
-.domaines__colonne {
+.point-fort {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  background-color: var(--sombre);
+  color: var(--blanc);
+  border-radius: var(--rayon-lg);
+  padding: 1.5rem;
+  box-shadow: var(--ombre-sm);
 }
 
-.domaines > .domaine:last-child { grid-column: 1 / -1; }
+.point-fort__num {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
 
-.domaines > .domaine:last-child .domaine__liste {
+.point-fort__titre {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0.35rem 0 0.5rem;
+}
+
+.point-fort__texte {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--blanc-70);
+}
+
+
+
+
+
+/* --- Compétences du BUT (3 colonnes) --- */
+.comps-but {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
 }
 
-.domaine {
+.comp-but {
+  display: flex;
+  flex-direction: column;
   background-color: var(--blanc);
   border: 1px solid var(--sombre-10);
-  border-top: 4px solid var(--accent);
   border-radius: var(--rayon-lg);
   box-shadow: var(--ombre-xs);
-  padding: 1.4rem 1.5rem 1.2rem;
+  padding: 1.5rem;
 }
 
-.domaine__titre {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--sombre);
-  margin-bottom: 0.5rem;
-}
-
-/* Une compétence : nom + description à gauche, niveau à droite */
-.comp {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.7rem 0;
+.comp-but__entete {
+  padding-bottom: 0.9rem;
+  margin-bottom: 0.9rem;
   border-bottom: 1px solid var(--sombre-10);
 }
 
-.comp__texte {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
+.comp-but__code {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--blanc);
+  background-color: var(--accent);
+  padding: 0.15rem 0.55rem;
+  border-radius: 6px;
 }
 
-.comp__nom {
-  font-size: 0.93rem;
-  font-weight: 600;
+.comp-but__verbe {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  color: var(--sombre);
+  margin-top: 0.5rem;
+}
+
+.comp-but__officiel {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--sombre-60);
+}
+
+.comp-but__clair {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  font-weight: 500;
   color: var(--sombre);
 }
 
-.comp__desc {
+.comp-but__sous-titre {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin: 1.1rem 0 0.45rem;
+}
+
+/* Liste « Ce que je sais faire » avec puces corail */
+.comp-but__liste li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--sombre-75);
+  margin-bottom: 0.35rem;
+}
+
+.comp-but__liste li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.comp-but__outils {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.outil {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--blanc);
+  background-color: var(--sombre);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+}
+
+/* Preuves : lien vers le projet + ce que j'y ai fait */
+.preuves {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.preuves li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.55rem 0.75rem;
+  background-color: var(--sombre-05);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+}
+
+.preuve__projet {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--sombre);
+  transition: color var(--t-vite);
+}
+
+.preuve__projet:hover { color: var(--accent); }
+
+.preuve__projet::after { content: ' →'; color: var(--accent); }
+
+.preuve__texte {
   font-size: 0.8rem;
   line-height: 1.45;
   color: var(--sombre-60);
 }
 
-/* Pastille de niveau : ●●○ Intermédiaire */
-.niv {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  flex-shrink: 0;
-  font-size: 0.74rem;
+/* --- Et aussi : savoir-être, logiciels, bases --- */
+.et-aussi {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem 2rem;
+}
+
+.et-aussi__titre {
+  font-size: 1rem;
   font-weight: 700;
-  color: var(--accent);
-  background-color: var(--accent-pale);
-  padding: 0.25rem 0.7rem;
-  border-radius: 20px;
-  white-space: nowrap;
+  color: var(--sombre);
+  margin-bottom: 0.6rem;
 }
 
-.niv__points {
-  display: inline-flex;
-  gap: 3px;
-}
-
-.niv__point {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: rgba(249, 112, 104, 0.3);
-}
-
-.niv__point--plein { background-color: var(--accent); }
-
-/* Niveau avancé : pastille pleine */
-.niv--3 {
-  color: var(--blanc);
-  background-color: var(--accent);
-}
-
-.niv--3 .niv__point--plein { background-color: var(--blanc); }
-
-/* « Mis en pratique dans : » + liens vers les projets */
-.domaine__preuves {
+.et-aussi__pastilles {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   gap: 0.4rem;
-  margin-top: 0.9rem;
+}
+
+.pastille {
   font-size: 0.8rem;
-  color: var(--sombre-60);
-}
-
-.domaine__preuves > span:first-child {
-  font-weight: 600;
-  margin-right: 0.2rem;
-}
-
-.puce-projet {
-  font-size: 0.76rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--sombre);
-  background-color: var(--sombre-05);
-  border: 1px solid var(--sombre-10);
-  padding: 0.2rem 0.65rem;
+  background-color: var(--blanc);
+  border: 1px solid var(--sombre-20);
+  padding: 0.3rem 0.8rem;
   border-radius: 20px;
-  transition: background-color var(--t-vite), color var(--t-vite), border-color var(--t-vite);
-}
-
-.puce-projet:hover {
-  background-color: var(--accent);
-  border-color: var(--accent);
-  color: var(--blanc);
 }
 
 
@@ -1672,7 +1735,10 @@ img.image--entiere { object-fit: contain; }
   .fiche__item--composants { grid-column: 1 / -1; }
 
   /* Compétences : une colonne */
-  .domaines { grid-template-columns: 1fr; }
+  .points-forts,
+  .comps-but { grid-template-columns: 1fr; }
+
+  .et-aussi { grid-template-columns: 1fr 1fr; }
 }
 
 
@@ -1865,9 +1931,8 @@ img.image--entiere { object-fit: contain; }
   .footer__nav { justify-content: center; }
 
   /* ---- Compétences ---- */
-  .domaine { padding: 1.2rem 1.1rem 1rem; }
+  .et-aussi { grid-template-columns: 1fr; }
 
-  .domaines > .domaine:last-child .domaine__liste { grid-template-columns: 1fr; }
-
-  .comp { align-items: flex-start; }
+  .point-fort,
+  .comp-but { padding: 1.25rem; }
 }
