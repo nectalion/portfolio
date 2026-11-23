@@ -112,53 +112,29 @@
 
 
   <!-- ===================================================
-       PIED DE PAGE (identique sur toutes les pages)
+       PIED DE PAGE (compact, identique sur toutes les pages)
        =================================================== -->
   <footer class="footer">
-    <div class="conteneur">
-      <div class="footer__grille">
-
-        <div>
-          <span class="footer__logo">MAURY Martin</span>
-          <p class="footer__tagline">Étudiant en 2e année de BUT GEII<br>Parcours ESE — IUT de Bordeaux</p>
-        </div>
-
-        <div>
-          <p class="footer__bloc-titre">Navigation</p>
-          <nav class="footer__nav" aria-label="Navigation pied de page">
-            <a href="index.html" class="footer__nav-lien">Accueil</a>
-            <a href="projects.html" class="footer__nav-lien">Projets</a>
-            <a href="competences.html" class="footer__nav-lien">Compétences</a>
-          </nav>
-        </div>
-
-        <div>
-          <p class="footer__bloc-titre">Contact</p>
-          <div class="footer__contact">
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">✉</span>
-              <a href="mailto:martinmaury202@gmail.com" class="footer__contact-lien">martinmaury202@gmail.com</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">☎</span>
-              <a href="tel:+33780066496" class="footer__contact-lien">07 80 06 64 96</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">in</span>
-              <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__contact-lien" target="_blank" rel="noopener">Martin Maury</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">⌨</span>
-              <a href="https://github.com/nectalion" class="footer__contact-lien" target="_blank" rel="noopener">github.com/nectalion</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">↓</span>
-              <a href="cv-martin-maury.pdf" class="footer__contact-lien" download>Télécharger mon CV (PDF)</a>
-            </div>
-          </div>
-        </div>
-
+    <div class="conteneur footer__ligne">
+      <div class="footer__identite">
+        <span class="footer__logo">Martin <span>Maury</span></span>
+        <span class="footer__tagline">BUT GEII · parcours ESE · IUT de Bordeaux</span>
       </div>
+      <nav class="footer__nav" aria-label="Navigation pied de page">
+          <a href="index.html" class="footer__lien">Accueil</a>
+          <a href="projects.html" class="footer__lien">Projets</a>
+          <a href="competences.html" class="footer__lien">Compétences</a>
+          <a href="index.html#contact" class="footer__lien">Contact</a>
+      </nav>
+      <div class="footer__icones">
+          <a href="mailto:martinmaury202@gmail.com" class="footer__icone" aria-label="Email" title="Email">✉</a>
+          <a href="tel:+33780066496" class="footer__icone" aria-label="Téléphone" title="Téléphone">☎</a>
+          <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__icone" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">in</a>
+          <a href="https://github.com/nectalion" class="footer__icone" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener">⌨</a>
+          <a href="cv-martin-maury.pdf" class="footer__icone" aria-label="Télécharger mon CV (PDF)" title="Télécharger mon CV (PDF)" download>↓</a>
+      </div>
+    </div>
+    <div class="conteneur">
       <p class="footer__copyright">© 2026 MAURY Martin — Tous droits réservés</p>
     </div>
   </footer>
