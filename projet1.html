@@ -19,7 +19,7 @@
     <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" tabindex="-1" />
     <div class="nav-conteneur">
 
-      <a href="index.html" class="nav-logo">Portfolio de Martin</a>
+      <a href="index.html" class="nav-logo">Martin <span>Maury</span></a>
 
       <label for="nav-toggle" class="nav-hamburger" aria-label="Ouvrir ou fermer le menu">
         <span class="nav-hamburger__trait"></span>
@@ -31,49 +31,8 @@
         <li><a href="index.html" class="nav-lien">Accueil</a></li>
         <li><a href="projects.html" class="nav-lien actif" aria-current="page">Projets</a></li>
         <li><a href="competences.html" class="nav-lien">Compétences</a></li>
-
-        <!-- Contact : panneau déroulant au survol (desktop) / affiché à plat (mobile) -->
-        <li class="nav-contact">
-          <span class="nav-contact-btn" tabindex="0">Contact</span>
-          <div class="panneau-contact">
-            <p class="panneau-contact__titre">Me contacter</p>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">✉</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">Email</span>
-                <a href="mailto:martinmaury202@gmail.com" class="contact-ligne__valeur">martinmaury202@gmail.com</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">☎</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">Téléphone</span>
-                <a href="tel:+33780066496" class="contact-ligne__valeur">07 80 06 64 96</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">in</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">Martin Maury</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">⌨</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">GitHub</span>
-                <a href="https://github.com/nectalion" class="contact-ligne__valeur" target="_blank" rel="noopener">github.com/nectalion</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">↓</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">CV</span>
-                <a href="cv-martin-maury.pdf" class="contact-ligne__valeur" download>Télécharger mon CV (PDF)</a>
-              </div>
-            </div>
-          </div>
-        </li>
+        <li><a href="index.html#contact" class="nav-lien">Contact</a></li>
+        <li><a href="cv-martin-maury.pdf" class="nav-cv" download>CV ↓</a></li>
       </ul>
     </div>
   </nav>
@@ -84,37 +43,42 @@
 
         <a href="projects.html" class="lien-retour">← Retour aux projets</a>
 
-        <img src="images/projet1.jpg" alt="Carte électronique son et lumière Rafale réalisée en binôme" class="detail__image"
-             width="1400" height="826" />
-
-        <div class="detail__entete">
-          <p class="sur-titre">Électronique — BUT GEII 1re année</p>
-        </div>
+        <p class="sur-titre">Électronique — BUT GEII 1re année</p>
         <h1 class="detail__titre">Carte Son et Lumière — Rafale</h1>
 
-        <!-- Fiche synthétique -->
-        <div class="fiche">
-          <div class="fiche__item"><span class="fiche__label">Année</span><span class="fiche__valeur">1re année de BUT</span></div>
-          <div class="fiche__item"><span class="fiche__label">Équipe</span><span class="fiche__valeur">Binôme</span></div>
-          <div class="fiche__item"><span class="fiche__label">Mon rôle</span><span class="fiche__valeur">Conception et réalisation de la carte</span></div>
-          <div class="fiche__item"><span class="fiche__label">Statut</span><span class="fiche__valeur">Terminé</span></div>
-        </div>
+        <div class="detail__grille">
 
-        <div class="detail__contenu">
+          <div class="detail__media">
+        <a href="#photo-projet1-1" class="detail__zoom" aria-label="Agrandir la photo">
+          <img src="images/projet1.jpg" alt="Carte électronique son et lumière Rafale réalisée en binôme" class="detail__image"
+               width="1400" height="826" />
+        </a>
+          </div>
+
+          <!-- Fiche synthétique -->
+          <aside class="fiche" aria-label="Fiche du projet">
+            <div class="fiche__item"><span class="fiche__label">Statut</span><span class="fiche__valeur">Terminé</span></div>
+            <div class="fiche__item"><span class="fiche__label">Année</span><span class="fiche__valeur">1re année de BUT</span></div>
+            <div class="fiche__item"><span class="fiche__label">Équipe</span><span class="fiche__valeur">Binôme</span></div>
+            <div class="fiche__item"><span class="fiche__label">Mon rôle</span><span class="fiche__valeur">Conception et réalisation de la carte</span></div>
+          <div class="fiche__item fiche__item--composants">
+            <span class="fiche__label">Composants utilisés</span>
+            <div class="tech-badges">
+              <span class="tech-badge">NE555</span>
+              <span class="tech-badge">LED rouge</span>
+              <span class="tech-badge">LED verte</span>
+              <span class="tech-badge">LED jaune</span>
+              <span class="tech-badge">Résistances</span>
+              <span class="tech-badge">Condensateurs</span>
+            </div>
+          </div>
+          </aside>
+
+          <div class="detail__contenu">
           <h2 class="detail__h2">Contexte</h2>
           <p class="detail__texte">
             Dans le cadre de ma première année de BUT GEII, j'ai conçu en binôme une carte électronique reproduisant le système d'éclairage d'un avion de chasse Rafale. L'objectif était de découvrir l'ensemble du processus de création d'une carte électronique, de la lecture du cahier des charges à la réalisation physique du circuit.
           </p>
-
-          <h2 class="detail__h2">Composants utilisés</h2>
-          <div class="tech-badges">
-            <span class="tech-badge">NE555</span>
-            <span class="tech-badge">LED rouge</span>
-            <span class="tech-badge">LED verte</span>
-            <span class="tech-badge">LED jaune</span>
-            <span class="tech-badge">Résistances</span>
-            <span class="tech-badge">Condensateurs</span>
-          </div>
 
           <h2 class="detail__h2">Fonctionnement</h2>
           <p class="detail__texte">
@@ -143,6 +107,8 @@
           <p class="detail__texte">
             Ce projet m'a permis de lire et de concevoir un schéma électronique structuré par blocs fonctionnels, et de réaliser concrètement un circuit imprimé.
           </p>
+          </div>
+
         </div>
 
         <nav class="detail__nav" aria-label="Navigation entre les projets">
@@ -153,6 +119,14 @@
       </div>
     </article>
   </main>
+  <div class="visionneuse" id="photo-projet1-1" role="dialog" aria-label="Carte Son et Lumière — Rafale : photo 1 sur 1">
+    <a href="#fermer" class="visionneuse__fond" aria-label="Fermer"></a>
+    <img src="images/projet1.jpg" alt="Carte électronique son et lumière Rafale réalisée en binôme" class="visionneuse__image" width="1400" height="826" loading="lazy" />
+    <p class="visionneuse__legende">Carte Son et Lumière — Rafale — 1 / 1</p>
+    <a href="#photo-projet1-1" class="visionneuse__bouton visionneuse__precedent" aria-label="Photo précédente">‹</a>
+    <a href="#photo-projet1-1" class="visionneuse__bouton visionneuse__suivant" aria-label="Photo suivante">›</a>
+    <a href="#fermer" class="visionneuse__bouton visionneuse__fermer" aria-label="Fermer">×</a>
+  </div>
 
   <!-- ===================================================
        PIED DE PAGE (identique sur toutes les pages)

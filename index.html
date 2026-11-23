@@ -19,7 +19,7 @@
     <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" tabindex="-1" />
     <div class="nav-conteneur">
 
-      <a href="index.html" class="nav-logo">Portfolio de Martin</a>
+      <a href="index.html" class="nav-logo">Martin <span>Maury</span></a>
 
       <label for="nav-toggle" class="nav-hamburger" aria-label="Ouvrir ou fermer le menu">
         <span class="nav-hamburger__trait"></span>
@@ -31,49 +31,8 @@
         <li><a href="index.html" class="nav-lien actif" aria-current="page">Accueil</a></li>
         <li><a href="projects.html" class="nav-lien">Projets</a></li>
         <li><a href="competences.html" class="nav-lien">Compétences</a></li>
-
-        <!-- Contact : panneau déroulant au survol (desktop) / affiché à plat (mobile) -->
-        <li class="nav-contact">
-          <span class="nav-contact-btn" tabindex="0">Contact</span>
-          <div class="panneau-contact">
-            <p class="panneau-contact__titre">Me contacter</p>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">✉</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">Email</span>
-                <a href="mailto:martinmaury202@gmail.com" class="contact-ligne__valeur">martinmaury202@gmail.com</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">☎</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">Téléphone</span>
-                <a href="tel:+33780066496" class="contact-ligne__valeur">07 80 06 64 96</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">in</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">Martin Maury</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">⌨</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">GitHub</span>
-                <a href="https://github.com/nectalion" class="contact-ligne__valeur" target="_blank" rel="noopener">github.com/nectalion</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">↓</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">CV</span>
-                <a href="cv-martin-maury.pdf" class="contact-ligne__valeur" download>Télécharger mon CV (PDF)</a>
-              </div>
-            </div>
-          </div>
-        </li>
+        <li><a href="#contact" class="nav-lien">Contact</a></li>
+        <li><a href="cv-martin-maury.pdf" class="nav-cv" download>CV ↓</a></li>
       </ul>
     </div>
   </nav>
@@ -86,18 +45,23 @@
         <div class="hero__grille">
 
           <div class="hero__texte">
-            <p class="hero__accroche">Bonjour, je suis</p>
+            <p class="badge-objectif">Objectif 2027 · Stage au Japon</p>
             <h1 class="hero__nom" id="hero-titre">MAURY <span class="hero__prenom">Martin</span></h1>
             <p class="hero__role">Étudiant en 2e année de BUT Génie Électrique et Informatique Industrielle — parcours Électronique et Systèmes Embarqués</p>
             <p class="hero__intro">
-              À l'IUT de Bordeaux, sur le site de Gradignan, j'aime concevoir et fabriquer des cartes
-              électroniques : schéma sous KiCad, soudure, tests et mesures. J'assemble et j'optimise aussi mes propres PC.
+              J'aime concevoir et fabriquer des cartes électroniques : schéma sous KiCad,
+              soudure, tests et mesures. J'assemble et j'optimise aussi mes propres PC.
               Je souhaite mettre ces compétences en pratique en entreprise.
             </p>
             <div class="hero__cta">
-              <a href="projects.html" class="btn btn--accent">Voir mes projets →</a>
-              <a href="competences.html" class="btn btn--outline">Mes compétences →</a>
+              <a href="#projets" class="btn btn--accent">Voir mes projets →</a>
+              <a href="cv-martin-maury.pdf" class="btn btn--outline" download>Télécharger mon CV ↓</a>
             </div>
+            <dl class="chiffres">
+              <div class="chiffre"><dt class="chiffre__valeur">2e</dt><dd class="chiffre__label">année de BUT GEII</dd></div>
+              <div class="chiffre"><dt class="chiffre__valeur">4</dt><dd class="chiffre__label">projets en équipe</dd></div>
+              <div class="chiffre"><dt class="chiffre__valeur">ESE</dt><dd class="chiffre__label">parcours électronique et systèmes embarqués</dd></div>
+            </dl>
           </div>
 
           <div class="hero__photo-zone">
@@ -110,23 +74,55 @@
     </section>
 
 
-    <!-- ================= OBJECTIF ================= -->
-    <section class="section section--sombre" aria-labelledby="titre-objectif">
+    <!-- ================= PROJETS PHARES ================= -->
+    <section class="section section--teinte" id="projets" aria-labelledby="titre-projets-phares">
       <div class="conteneur">
-        <h2 class="titre-section titre-section--blanc" id="titre-objectif">Objectif</h2>
-        <div class="objectif__grille">
-          <p class="objectif__texte">
-            Mon objectif est de développer une expertise solide en génie électrique et
-            informatique industrielle, en combinant rigueur technique et curiosité.
-            Je suis particulièrement attiré par les projets alliant électronique embarquée
-            et programmation.
-          </p>
-          <p class="objectif__texte">
-            Curieux et motivé, je m'investis pleinement dans chaque apprentissage.
-            Mon projet à horizon 2027 est d'effectuer un stage au Japon, une expérience
-            qui me permettra de découvrir un environnement industriel et technologique
-            d'excellence, ainsi que de nouvelles cultures et paysages.
-          </p>
+        <div class="section__entete">
+          <h2 class="titre-section" id="titre-projets-phares">Projets phares</h2>
+          <a href="projects.html" class="lien-fleche">Tous les projets en détail →</a>
+        </div>
+        <div class="vignettes">
+          <article class="vignette">
+            <div class="vignette__image">
+              <img src="images/projet4.svg" alt="Illustration provisoire d'un robot sumo sur son ring" class="image--entiere" width="1200" height="700" loading="lazy" />
+              <span class="statut">En cours</span>
+            </div>
+            <div class="vignette__corps">
+              <p class="vignette__meta">2e année · Équipe de 5</p>
+              <h3 class="vignette__titre"><a href="projet4.html" class="vignette__lien">Robot Sumo</a></h3>
+              <p class="vignette__role">Mon rôle : conception, soudure et tests</p>
+            </div>
+          </article>
+          <article class="vignette">
+            <div class="vignette__image">
+              <img src="images/projet1.jpg" alt="Carte électronique son et lumière Rafale réalisée en binôme" class="" width="1400" height="826" loading="lazy" />
+            </div>
+            <div class="vignette__corps">
+              <p class="vignette__meta">1re année · Binôme</p>
+              <h3 class="vignette__titre"><a href="projet1.html" class="vignette__lien">Carte Son et Lumière — Rafale</a></h3>
+              <p class="vignette__role">Mon rôle : conception et réalisation de la carte</p>
+            </div>
+          </article>
+          <article class="vignette">
+            <div class="vignette__image">
+              <img src="images/projet2.jpg" alt="Carte électronique du thermomètre de bain pour bébé" class="" width="691" height="452" loading="lazy" />
+            </div>
+            <div class="vignette__corps">
+              <p class="vignette__meta">1re année · Équipe de 4</p>
+              <h3 class="vignette__titre"><a href="projet2.html" class="vignette__lien">Thermomètre de Bain Bébé</a></h3>
+              <p class="vignette__role">Mon rôle : conception du circuit, soudure, tests</p>
+            </div>
+          </article>
+          <article class="vignette">
+            <div class="vignette__image">
+              <img src="images/projet3.jpg" alt="L'équipe de six étudiants ayant réalisé le kart à hélice" class="" width="1021" height="591" loading="lazy" />
+            </div>
+            <div class="vignette__corps">
+              <p class="vignette__meta">1re année · Équipe de 6</p>
+              <h3 class="vignette__titre"><a href="projet3.html" class="vignette__lien">Kart à Hélice Radiocommandé</a></h3>
+              <p class="vignette__role">Mon rôle : télécommande : conception, soudure, tests</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -136,9 +132,7 @@
     <section class="section" aria-labelledby="titre-parcours">
       <div class="conteneur">
         <h2 class="titre-section" id="titre-parcours">Mon Parcours</h2>
-
         <div class="frise">
-
           <div class="frise__etape">
             <div class="frise__point"></div>
             <div class="frise__carte">
@@ -148,28 +142,31 @@
               <p class="frise__detail">Spécialités Physique-Chimie et AMC (Anglais Monde Contemporain)</p>
             </div>
           </div>
-
-          <div class="frise__etape">
-            <div class="frise__point frise__point--actif"></div>
-            <div class="frise__carte frise__carte--actif">
-              <span class="frise__annee">2025 — 2028 · En cours (2e année)</span>
+          <div class="frise__etape frise__etape--actif">
+            <div class="frise__point"></div>
+            <div class="frise__carte">
+              <span class="frise__annee">2025 — 2028 · En cours</span>
               <h3 class="frise__nom">BUT Génie Électrique et Informatique Industrielle</h3>
               <p class="frise__lieu">IUT de Bordeaux — site de Gradignan</p>
-              <p class="frise__detail">Parcours Électronique et Systèmes Embarqués (ESE) : électronique, programmation, automatismes et projets en équipe</p>
+              <p class="frise__detail">2e année, parcours Électronique et Systèmes Embarqués (ESE)</p>
             </div>
           </div>
-
-          <div class="frise__etape">
-            <div class="frise__point frise__point--futur"></div>
-            <div class="frise__carte frise__carte--futur">
+          <div class="frise__etape frise__etape--futur">
+            <div class="frise__point"></div>
+            <div class="frise__carte">
               <span class="frise__annee">2027</span>
               <h3 class="frise__nom">Stage au Japon</h3>
-              <p class="frise__lieu">À venir</p>
-              <p class="frise__detail">Découverte d'un environnement industriel et technologique d'excellence</p>
+              <p class="frise__lieu">Objectif</p>
+              <p class="frise__detail">Découvrir un environnement industriel et technologique d'excellence</p>
             </div>
           </div>
-
         </div>
+        <p class="objectif">
+          <strong>Mon objectif :</strong> développer une expertise solide en génie électrique et
+          informatique industrielle, en particulier sur les projets alliant électronique embarquée
+          et programmation, puis effectuer en 2027 un stage au Japon pour découvrir un
+          environnement industriel d'excellence, ainsi que de nouvelles cultures et paysages.
+        </p>
       </div>
     </section>
 
@@ -241,6 +238,42 @@
           <div class="loisir">
             <p class="loisir__nom">Théâtre</p>
             <p class="loisir__detail">4 ans en club : aisance devant un public, improvisation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section" id="contact" aria-labelledby="titre-contact">
+      <div class="conteneur">
+        <div class="contact">
+          <div class="contact__texte">
+            <h2 class="titre-section titre-section--blanc" id="titre-contact">Me contacter</h2>
+            <p>Une question sur un projet, une proposition de stage ? Écrivez-moi, je réponds rapidement.</p>
+            <a href="cv-martin-maury.pdf" class="btn btn--accent" download>Télécharger mon CV ↓</a>
+          </div>
+          <div class="contact__tuiles">
+            <a href="mailto:martinmaury202@gmail.com" class="tuile-contact">
+              <span class="tuile-contact__icone" aria-hidden="true">✉</span>
+              <span class="tuile-contact__label">Email</span>
+              <span class="tuile-contact__valeur">martinmaury202@gmail.com</span>
+            </a>
+            <a href="tel:+33780066496" class="tuile-contact">
+              <span class="tuile-contact__icone" aria-hidden="true">☎</span>
+              <span class="tuile-contact__label">Téléphone</span>
+              <span class="tuile-contact__valeur">07 80 06 64 96</span>
+            </a>
+            <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="tuile-contact" target="_blank" rel="noopener">
+              <span class="tuile-contact__icone" aria-hidden="true">in</span>
+              <span class="tuile-contact__label">LinkedIn</span>
+              <span class="tuile-contact__valeur">Martin Maury</span>
+            </a>
+            <a href="https://github.com/nectalion" class="tuile-contact" target="_blank" rel="noopener">
+              <span class="tuile-contact__icone" aria-hidden="true">⌨</span>
+              <span class="tuile-contact__label">GitHub</span>
+              <span class="tuile-contact__valeur">github.com/nectalion</span>
+            </a>
           </div>
         </div>
       </div>

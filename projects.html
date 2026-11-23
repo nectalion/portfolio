@@ -19,7 +19,7 @@
     <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" tabindex="-1" />
     <div class="nav-conteneur">
 
-      <a href="index.html" class="nav-logo">Portfolio de Martin</a>
+      <a href="index.html" class="nav-logo">Martin <span>Maury</span></a>
 
       <label for="nav-toggle" class="nav-hamburger" aria-label="Ouvrir ou fermer le menu">
         <span class="nav-hamburger__trait"></span>
@@ -31,49 +31,8 @@
         <li><a href="index.html" class="nav-lien">Accueil</a></li>
         <li><a href="projects.html" class="nav-lien actif" aria-current="page">Projets</a></li>
         <li><a href="competences.html" class="nav-lien">Compétences</a></li>
-
-        <!-- Contact : panneau déroulant au survol (desktop) / affiché à plat (mobile) -->
-        <li class="nav-contact">
-          <span class="nav-contact-btn" tabindex="0">Contact</span>
-          <div class="panneau-contact">
-            <p class="panneau-contact__titre">Me contacter</p>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">✉</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">Email</span>
-                <a href="mailto:martinmaury202@gmail.com" class="contact-ligne__valeur">martinmaury202@gmail.com</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">☎</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">Téléphone</span>
-                <a href="tel:+33780066496" class="contact-ligne__valeur">07 80 06 64 96</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">in</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">Martin Maury</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">⌨</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">GitHub</span>
-                <a href="https://github.com/nectalion" class="contact-ligne__valeur" target="_blank" rel="noopener">github.com/nectalion</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">↓</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">CV</span>
-                <a href="cv-martin-maury.pdf" class="contact-ligne__valeur" download>Télécharger mon CV (PDF)</a>
-              </div>
-            </div>
-          </div>
-        </li>
+        <li><a href="index.html#contact" class="nav-lien">Contact</a></li>
+        <li><a href="cv-martin-maury.pdf" class="nav-cv" download>CV ↓</a></li>
       </ul>
     </div>
   </nav>
@@ -95,7 +54,7 @@
         <div class="grille-projets">
 
           <!-- ===== Robot Sumo → projet4.html ===== -->
-          <article class="carte">
+          <article class="carte carte--vedette">
             <div class="carte__image-zone">
               <img src="images/projet4.svg" alt="Illustration provisoire d'un robot sumo sur son ring" class="carte__image image--entiere"
                    width="1200" height="700" loading="eager" />
@@ -131,7 +90,7 @@
           <article class="carte">
             <div class="carte__image-zone">
               <img src="images/projet2.jpg" alt="Carte électronique du thermomètre de bain pour bébé" class="carte__image"
-                   width="691" height="452" loading="lazy" />
+                   width="691" height="452" loading="eager" />
             </div>
             <div class="carte__corps">
               <div class="carte__entete">
