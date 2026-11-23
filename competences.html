@@ -19,7 +19,7 @@
     <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" tabindex="-1" />
     <div class="nav-conteneur">
 
-      <a href="index.html" class="nav-logo">Portfolio de Martin</a>
+      <a href="index.html" class="nav-logo">Martin <span>Maury</span></a>
 
       <label for="nav-toggle" class="nav-hamburger" aria-label="Ouvrir ou fermer le menu">
         <span class="nav-hamburger__trait"></span>
@@ -31,49 +31,8 @@
         <li><a href="index.html" class="nav-lien">Accueil</a></li>
         <li><a href="projects.html" class="nav-lien">Projets</a></li>
         <li><a href="competences.html" class="nav-lien actif" aria-current="page">Compétences</a></li>
-
-        <!-- Contact : panneau déroulant au survol (desktop) / affiché à plat (mobile) -->
-        <li class="nav-contact">
-          <span class="nav-contact-btn" tabindex="0">Contact</span>
-          <div class="panneau-contact">
-            <p class="panneau-contact__titre">Me contacter</p>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">✉</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">Email</span>
-                <a href="mailto:martinmaury202@gmail.com" class="contact-ligne__valeur">martinmaury202@gmail.com</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">☎</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">Téléphone</span>
-                <a href="tel:+33780066496" class="contact-ligne__valeur">07 80 06 64 96</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">in</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">Martin Maury</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">⌨</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">GitHub</span>
-                <a href="https://github.com/nectalion" class="contact-ligne__valeur" target="_blank" rel="noopener">github.com/nectalion</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">↓</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">CV</span>
-                <a href="cv-martin-maury.pdf" class="contact-ligne__valeur" download>Télécharger mon CV (PDF)</a>
-              </div>
-            </div>
-          </div>
-        </li>
+        <li><a href="index.html#contact" class="nav-lien">Contact</a></li>
+        <li><a href="cv-martin-maury.pdf" class="nav-cv" download>CV ↓</a></li>
       </ul>
     </div>
   </nav>
@@ -88,170 +47,141 @@
           de ma formation en BUT GEII et de mes projets en équipe.
         </p>
         <p class="legende-niveaux">
-          <span><strong>Débutant</strong> : bases acquises</span>
-          <span><strong>Intermédiaire</strong> : mis en pratique en projet</span>
-          <span><strong>Avancé</strong> : maîtrisé et autonome</span>
+          <span class="niv niv--1" role="img" aria-label="Niveau débutant (1 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point"></span><span class="niv__point"></span></span>Débutant</span> bases acquises
+          <span class="niv niv--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point"></span></span>Intermédiaire</span> mis en pratique en projet
+          <span class="niv niv--3" role="img" aria-label="Niveau avancé (3 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span></span>Avancé</span> maîtrisé et autonome
         </p>
       </div>
     </header>
 
     <section class="section" aria-labelledby="titre-competences">
       <div class="conteneur">
-        <div class="competences__grille">
-
-          <div class="comp-bloc">
-            <h2 class="comp-bloc__titre">Électronique</h2>
-            <div class="comp-item">
-              <div class="comp-item__entete">
-                <span class="comp-item__nom">Schémas et composants</span>
-                <span class="comp-item__niveau">Intermédiaire</span>
-              </div>
-              <div class="niveau niveau--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)">
-                <span></span><span></span><span></span>
-              </div>
-              <p class="comp-item__desc">Lecture et conception de schémas, composants passifs et actifs, AOP en comparateur, timer NE555</p>
-            </div>
-            <div class="comp-item">
-              <div class="comp-item__entete">
-                <span class="comp-item__nom">Soudure</span>
-                <span class="comp-item__niveau">Intermédiaire</span>
-              </div>
-              <div class="niveau niveau--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)">
-                <span></span><span></span><span></span>
-              </div>
-              <p class="comp-item__desc">Soudure des composants sur les cartes de chaque projet</p>
-            </div>
-            <div class="comp-item">
-              <div class="comp-item__entete">
-                <span class="comp-item__nom">Conception PCB</span>
-                <span class="comp-item__niveau">Intermédiaire</span>
-              </div>
-              <div class="niveau niveau--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)">
-                <span></span><span></span><span></span>
-              </div>
-              <p class="comp-item__desc">Schéma et routage de circuits imprimés sous KiCad et Proteus</p>
-            </div>
-            <div class="comp-item">
-              <div class="comp-item__entete">
-                <span class="comp-item__nom">Câblage de circuits</span>
-                <span class="comp-item__niveau">Intermédiaire</span>
-              </div>
-              <div class="niveau niveau--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)">
-                <span></span><span></span><span></span>
-              </div>
-              <p class="comp-item__desc">Câblage, assemblage et mise en service de circuits</p>
-            </div>
-            <div class="comp-item">
-              <div class="comp-item__entete">
-                <span class="comp-item__nom">Mesures</span>
-                <span class="comp-item__niveau">Intermédiaire</span>
-              </div>
-              <div class="niveau niveau--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)">
-                <span></span><span></span><span></span>
-              </div>
-              <p class="comp-item__desc">Oscilloscope et multimètre : tests et mise au point des cartes</p>
-            </div>
-            <div class="comp-item">
-              <div class="comp-item__entete">
-                <span class="comp-item__nom">Électrotechnique</span>
-                <span class="comp-item__niveau">Intermédiaire</span>
-              </div>
-              <div class="niveau niveau--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)">
-                <span></span><span></span><span></span>
-              </div>
-              <p class="comp-item__desc">Circuits électriques, courant alternatif, machines électriques</p>
-            </div>
-            <div class="comp-item">
-              <div class="comp-item__entete">
-                <span class="comp-item__nom">Motorisation</span>
-                <span class="comp-item__niveau">Débutant</span>
-              </div>
-              <div class="niveau niveau--1" role="img" aria-label="Niveau débutant (1 sur 3)">
-                <span></span><span></span><span></span>
-              </div>
-              <p class="comp-item__desc">Bases de la commande de moteurs électriques</p>
-            </div>
+        <div class="domaines">
+          <section class="domaine" aria-label="Électronique">
+            <h2 class="domaine__titre">Électronique</h2>
+            <ul class="domaine__liste">
+              <li class="comp">
+                <div class="comp__texte">
+                  <span class="comp__nom">Schémas et composants</span>
+                  <span class="comp__desc">Lecture et conception de schémas, composants passifs et actifs, AOP en comparateur, timer NE555</span>
+                </div>
+                <span class="niv niv--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point"></span></span>Intermédiaire</span>
+              </li>
+              <li class="comp">
+                <div class="comp__texte">
+                  <span class="comp__nom">Soudure</span>
+                  <span class="comp__desc">Soudure des composants sur les cartes de chaque projet</span>
+                </div>
+                <span class="niv niv--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point"></span></span>Intermédiaire</span>
+              </li>
+              <li class="comp">
+                <div class="comp__texte">
+                  <span class="comp__nom">Conception PCB</span>
+                  <span class="comp__desc">Schéma et routage de circuits imprimés sous KiCad et Proteus</span>
+                </div>
+                <span class="niv niv--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point"></span></span>Intermédiaire</span>
+              </li>
+              <li class="comp">
+                <div class="comp__texte">
+                  <span class="comp__nom">Câblage de circuits</span>
+                  <span class="comp__desc">Câblage, assemblage et mise en service de circuits</span>
+                </div>
+                <span class="niv niv--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point"></span></span>Intermédiaire</span>
+              </li>
+              <li class="comp">
+                <div class="comp__texte">
+                  <span class="comp__nom">Mesures</span>
+                  <span class="comp__desc">Oscilloscope et multimètre : tests et mise au point des cartes</span>
+                </div>
+                <span class="niv niv--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point"></span></span>Intermédiaire</span>
+              </li>
+              <li class="comp">
+                <div class="comp__texte">
+                  <span class="comp__nom">Électrotechnique</span>
+                  <span class="comp__desc">Circuits électriques, courant alternatif, machines électriques</span>
+                </div>
+                <span class="niv niv--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point"></span></span>Intermédiaire</span>
+              </li>
+              <li class="comp">
+                <div class="comp__texte">
+                  <span class="comp__nom">Motorisation</span>
+                  <span class="comp__desc">Bases de la commande de moteurs électriques</span>
+                </div>
+                <span class="niv niv--1" role="img" aria-label="Niveau débutant (1 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point"></span><span class="niv__point"></span></span>Débutant</span>
+              </li>
+            </ul>
+            <p class="domaine__preuves"><span>Mis en pratique dans :</span> <a href="projet4.html" class="puce-projet">Robot Sumo</a> <a href="projet1.html" class="puce-projet">Carte Son et Lumière — Rafale</a> <a href="projet2.html" class="puce-projet">Thermomètre de Bain Bébé</a> <a href="projet3.html" class="puce-projet">Kart à Hélice Radiocommandé</a></p>
+          </section>
+          <div class="domaines__colonne">
+          <section class="domaine" aria-label="Programmation et automatismes">
+            <h2 class="domaine__titre">Programmation et automatismes</h2>
+            <ul class="domaine__liste">
+              <li class="comp">
+                <div class="comp__texte">
+                  <span class="comp__nom">C, Python, Arduino</span>
+                  <span class="comp__desc">Programmation de microcontrôleurs, dont un ATmega (projet kart)</span>
+                </div>
+                <span class="niv niv--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point"></span></span>Intermédiaire</span>
+              </li>
+              <li class="comp">
+                <div class="comp__texte">
+                  <span class="comp__nom">Automatismes</span>
+                  <span class="comp__desc">Logique combinatoire et séquentielle, grafcet, logigrammes</span>
+                </div>
+                <span class="niv niv--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point"></span></span>Intermédiaire</span>
+              </li>
+            </ul>
+            <p class="domaine__preuves"><span>Mis en pratique dans :</span> <a href="projet3.html" class="puce-projet">Kart à Hélice Radiocommandé</a></p>
+          </section>
+          <section class="domaine" aria-label="Compétences transversales">
+            <h2 class="domaine__titre">Compétences transversales</h2>
+            <ul class="domaine__liste">
+              <li class="comp">
+                <div class="comp__texte">
+                  <span class="comp__nom">Travail en équipe</span>
+                  <span class="comp__desc">Quatre projets menés en groupe, du binôme à l'équipe de six</span>
+                </div>
+                <span class="niv niv--3" role="img" aria-label="Niveau avancé (3 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span></span>Avancé</span>
+              </li>
+              <li class="comp">
+                <div class="comp__texte">
+                  <span class="comp__nom">Adaptabilité</span>
+                  <span class="comp__desc">Projets variés, travail en équipe et emplois saisonniers</span>
+                </div>
+                <span class="niv niv--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point"></span></span>Intermédiaire</span>
+              </li>
+              <li class="comp">
+                <div class="comp__texte">
+                  <span class="comp__nom">Résolution de problèmes</span>
+                  <span class="comp__desc">Analyse logique, débogage méthodique, recherche de solutions</span>
+                </div>
+                <span class="niv niv--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point"></span></span>Intermédiaire</span>
+              </li>
+              <li class="comp">
+                <div class="comp__texte">
+                  <span class="comp__nom">Communication</span>
+                  <span class="comp__desc">Présentation de projets, rédaction technique claire, écoute active</span>
+                </div>
+                <span class="niv niv--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point"></span></span>Intermédiaire</span>
+              </li>
+            </ul>
+            <p class="domaine__preuves"><span>Mis en pratique dans :</span> <a href="projet4.html" class="puce-projet">Robot Sumo</a> <a href="projet1.html" class="puce-projet">Carte Son et Lumière — Rafale</a> <a href="projet2.html" class="puce-projet">Thermomètre de Bain Bébé</a> <a href="projet3.html" class="puce-projet">Kart à Hélice Radiocommandé</a></p>
+          </section>
           </div>
-
-          <div class="comp-bloc">
-            <h2 class="comp-bloc__titre">Programmation</h2>
-            <div class="comp-item">
-              <div class="comp-item__entete">
-                <span class="comp-item__nom">C, Python, Arduino</span>
-                <span class="comp-item__niveau">Intermédiaire</span>
-              </div>
-              <div class="niveau niveau--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)">
-                <span></span><span></span><span></span>
-              </div>
-              <p class="comp-item__desc">Programmation de microcontrôleurs, dont un ATmega (projet kart)</p>
-            </div>
-            <div class="comp-item">
-              <div class="comp-item__entete">
-                <span class="comp-item__nom">Automatismes</span>
-                <span class="comp-item__niveau">Intermédiaire</span>
-              </div>
-              <div class="niveau niveau--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)">
-                <span></span><span></span><span></span>
-              </div>
-              <p class="comp-item__desc">Logique combinatoire et séquentielle, grafcet, logigrammes</p>
-            </div>
-
-            <h2 class="comp-bloc__titre comp-bloc__titre--suite">Compétences transversales</h2>
-            <div class="comp-item">
-              <div class="comp-item__entete">
-                <span class="comp-item__nom">Travail en équipe</span>
-                <span class="comp-item__niveau">Avancé</span>
-              </div>
-              <div class="niveau niveau--3" role="img" aria-label="Niveau avancé (3 sur 3)">
-                <span></span><span></span><span></span>
-              </div>
-              <p class="comp-item__desc">Quatre projets menés en groupe, du binôme à l'équipe de six</p>
-            </div>
-            <div class="comp-item">
-              <div class="comp-item__entete">
-                <span class="comp-item__nom">Adaptabilité</span>
-                <span class="comp-item__niveau">Intermédiaire</span>
-              </div>
-              <div class="niveau niveau--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)">
-                <span></span><span></span><span></span>
-              </div>
-              <p class="comp-item__desc">Projets variés, travail en équipe et emplois saisonniers</p>
-            </div>
-            <div class="comp-item">
-              <div class="comp-item__entete">
-                <span class="comp-item__nom">Résolution de problèmes</span>
-                <span class="comp-item__niveau">Intermédiaire</span>
-              </div>
-              <div class="niveau niveau--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)">
-                <span></span><span></span><span></span>
-              </div>
-              <p class="comp-item__desc">Analyse logique, débogage méthodique, recherche de solutions</p>
-            </div>
-            <div class="comp-item">
-              <div class="comp-item__entete">
-                <span class="comp-item__nom">Communication</span>
-                <span class="comp-item__niveau">Intermédiaire</span>
-              </div>
-              <div class="niveau niveau--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)">
-                <span></span><span></span><span></span>
-              </div>
-              <p class="comp-item__desc">Présentation de projets, rédaction technique claire, écoute active</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="logiciels">
-          <h2 class="comp-bloc__titre">Logiciels</h2>
-          <p class="logiciels__texte">Conception et simulation de circuits, calcul scientifique et bureautique.</p>
-          <div class="logiciels__ligne">
-            <span class="comp-item__niveau">Intermédiaire</span>
-            <div class="tech-badges"><span class="tech-badge">Proteus</span><span class="tech-badge">KiCad</span><span class="tech-badge">Suite Office</span></div>
-          </div>
-          <div class="logiciels__ligne">
-            <span class="comp-item__niveau">Débutant</span>
-            <div class="tech-badges"><span class="tech-badge">MATLAB</span><span class="tech-badge">LTspice</span></div>
-          </div>
+          <section class="domaine" aria-label="Logiciels">
+            <h2 class="domaine__titre">Logiciels</h2>
+            <ul class="domaine__liste">
+              <li class="comp">
+                <div class="comp__texte"><span class="comp__nom">Proteus, KiCad, Suite Office</span></div>
+                <span class="niv niv--2" role="img" aria-label="Niveau intermédiaire (2 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point niv__point--plein"></span><span class="niv__point"></span></span>Intermédiaire</span>
+              </li>
+              <li class="comp">
+                <div class="comp__texte"><span class="comp__nom">MATLAB, LTspice</span></div>
+                <span class="niv niv--1" role="img" aria-label="Niveau débutant (1 sur 3)"><span class="niv__points" aria-hidden="true"><span class="niv__point niv__point--plein"></span><span class="niv__point"></span><span class="niv__point"></span></span>Débutant</span>
+              </li>
+            </ul>
+            <p class="domaine__preuves"><span>Usage :</span> <span>conception et simulation de circuits, calcul scientifique, bureautique</span></p>
+          </section>
         </div>
       </div>
     </section>
@@ -259,53 +189,29 @@
   </main>
 
   <!-- ===================================================
-       PIED DE PAGE (identique sur toutes les pages)
+       PIED DE PAGE (compact, identique sur toutes les pages)
        =================================================== -->
   <footer class="footer">
-    <div class="conteneur">
-      <div class="footer__grille">
-
-        <div>
-          <span class="footer__logo">MAURY Martin</span>
-          <p class="footer__tagline">Étudiant en 2e année de BUT GEII<br>Parcours ESE — IUT de Bordeaux</p>
-        </div>
-
-        <div>
-          <p class="footer__bloc-titre">Navigation</p>
-          <nav class="footer__nav" aria-label="Navigation pied de page">
-            <a href="index.html" class="footer__nav-lien">Accueil</a>
-            <a href="projects.html" class="footer__nav-lien">Projets</a>
-            <a href="competences.html" class="footer__nav-lien">Compétences</a>
-          </nav>
-        </div>
-
-        <div>
-          <p class="footer__bloc-titre">Contact</p>
-          <div class="footer__contact">
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">✉</span>
-              <a href="mailto:martinmaury202@gmail.com" class="footer__contact-lien">martinmaury202@gmail.com</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">☎</span>
-              <a href="tel:+33780066496" class="footer__contact-lien">07 80 06 64 96</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">in</span>
-              <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__contact-lien" target="_blank" rel="noopener">Martin Maury</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">⌨</span>
-              <a href="https://github.com/nectalion" class="footer__contact-lien" target="_blank" rel="noopener">github.com/nectalion</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">↓</span>
-              <a href="cv-martin-maury.pdf" class="footer__contact-lien" download>Télécharger mon CV (PDF)</a>
-            </div>
-          </div>
-        </div>
-
+    <div class="conteneur footer__ligne">
+      <div class="footer__identite">
+        <span class="footer__logo">Martin <span>Maury</span></span>
+        <span class="footer__tagline">BUT GEII · parcours ESE · IUT de Bordeaux</span>
       </div>
+      <nav class="footer__nav" aria-label="Navigation pied de page">
+          <a href="index.html" class="footer__lien">Accueil</a>
+          <a href="projects.html" class="footer__lien">Projets</a>
+          <a href="competences.html" class="footer__lien">Compétences</a>
+          <a href="index.html#contact" class="footer__lien">Contact</a>
+      </nav>
+      <div class="footer__icones">
+          <a href="mailto:martinmaury202@gmail.com" class="footer__icone" aria-label="Email" title="Email">✉</a>
+          <a href="tel:+33780066496" class="footer__icone" aria-label="Téléphone" title="Téléphone">☎</a>
+          <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__icone" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">in</a>
+          <a href="https://github.com/nectalion" class="footer__icone" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener">⌨</a>
+          <a href="cv-martin-maury.pdf" class="footer__icone" aria-label="Télécharger mon CV (PDF)" title="Télécharger mon CV (PDF)" download>↓</a>
+      </div>
+    </div>
+    <div class="conteneur">
       <p class="footer__copyright">© 2026 MAURY Martin — Tous droits réservés</p>
     </div>
   </footer>

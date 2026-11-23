@@ -19,7 +19,7 @@
     <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" tabindex="-1" />
     <div class="nav-conteneur">
 
-      <a href="index.html" class="nav-logo">Portfolio de Martin</a>
+      <a href="index.html" class="nav-logo">Martin <span>Maury</span></a>
 
       <label for="nav-toggle" class="nav-hamburger" aria-label="Ouvrir ou fermer le menu">
         <span class="nav-hamburger__trait"></span>
@@ -31,49 +31,8 @@
         <li><a href="index.html" class="nav-lien">Accueil</a></li>
         <li><a href="projects.html" class="nav-lien actif" aria-current="page">Projets</a></li>
         <li><a href="competences.html" class="nav-lien">Compétences</a></li>
-
-        <!-- Contact : panneau déroulant au survol (desktop) / affiché à plat (mobile) -->
-        <li class="nav-contact">
-          <span class="nav-contact-btn" tabindex="0">Contact</span>
-          <div class="panneau-contact">
-            <p class="panneau-contact__titre">Me contacter</p>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">✉</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">Email</span>
-                <a href="mailto:martinmaury202@gmail.com" class="contact-ligne__valeur">martinmaury202@gmail.com</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">☎</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">Téléphone</span>
-                <a href="tel:+33780066496" class="contact-ligne__valeur">07 80 06 64 96</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">in</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">Martin Maury</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">⌨</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">GitHub</span>
-                <a href="https://github.com/nectalion" class="contact-ligne__valeur" target="_blank" rel="noopener">github.com/nectalion</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">↓</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">CV</span>
-                <a href="cv-martin-maury.pdf" class="contact-ligne__valeur" download>Télécharger mon CV (PDF)</a>
-              </div>
-            </div>
-          </div>
-        </li>
+        <li><a href="index.html#contact" class="nav-lien">Contact</a></li>
+        <li><a href="cv-martin-maury.pdf" class="nav-cv" download>CV ↓</a></li>
       </ul>
     </div>
   </nav>
@@ -84,24 +43,25 @@
 
         <a href="projects.html" class="lien-retour">← Retour aux projets</a>
 
-        <img src="images/projet4.svg" alt="Illustration provisoire d'un robot sumo sur son ring" class="detail__image image--entiere"
-             width="1200" height="700" />
-
-        <div class="detail__entete">
-          <p class="sur-titre">Électronique · Systèmes embarqués — BUT GEII 2e année</p>
-          <span class="statut">En cours</span>
-        </div>
+        <p class="sur-titre">Électronique · Systèmes embarqués — BUT GEII 2e année</p>
         <h1 class="detail__titre">Robot Sumo</h1>
 
-        <!-- Fiche synthétique -->
-        <div class="fiche">
-          <div class="fiche__item"><span class="fiche__label">Année</span><span class="fiche__valeur">2e année de BUT</span></div>
-          <div class="fiche__item"><span class="fiche__label">Équipe</span><span class="fiche__valeur">Équipe de 5</span></div>
-          <div class="fiche__item"><span class="fiche__label">Mon rôle</span><span class="fiche__valeur">Conception, soudure et tests</span></div>
-          <div class="fiche__item"><span class="fiche__label">Statut</span><span class="fiche__valeur">En cours</span></div>
-        </div>
+        <div class="detail__grille">
 
-        <div class="detail__contenu">
+          <div class="detail__media">
+        <img src="images/projet4.svg" alt="Illustration provisoire d'un robot sumo sur son ring" class="detail__image image--entiere"
+               width="1200" height="700" />
+          </div>
+
+          <!-- Fiche synthétique -->
+          <aside class="fiche" aria-label="Fiche du projet">
+            <div class="fiche__item"><span class="fiche__label">Statut</span><span class="statut">En cours</span></div>
+            <div class="fiche__item"><span class="fiche__label">Année</span><span class="fiche__valeur">2e année de BUT</span></div>
+            <div class="fiche__item"><span class="fiche__label">Équipe</span><span class="fiche__valeur">Équipe de 5</span></div>
+            <div class="fiche__item"><span class="fiche__label">Mon rôle</span><span class="fiche__valeur">Conception, soudure et tests</span></div>
+          </aside>
+
+          <div class="detail__contenu">
           <h2 class="detail__h2">Contexte</h2>
           <p class="detail__texte">
             Dans le cadre de ma deuxième année de BUT GEII, je participe en équipe de cinq à la conception d'un robot sumo autonome. Le principe : deux robots s'affrontent sur un ring circulaire, et chacun doit pousser l'adversaire hors de l'arène, sans aucune intervention humaine une fois le combat lancé.
@@ -137,6 +97,8 @@
 
           <!-- À compléter : composants, photos (images/projet4.jpg) et résultats -->
           <p class="encadre">Projet en cours : cette page sera complétée au fil de l'avancement (composants retenus, choix de conception, photos et résultats).</p>
+          </div>
+
         </div>
 
         <nav class="detail__nav" aria-label="Navigation entre les projets">
@@ -148,54 +110,31 @@
     </article>
   </main>
 
+
   <!-- ===================================================
-       PIED DE PAGE (identique sur toutes les pages)
+       PIED DE PAGE (compact, identique sur toutes les pages)
        =================================================== -->
   <footer class="footer">
-    <div class="conteneur">
-      <div class="footer__grille">
-
-        <div>
-          <span class="footer__logo">MAURY Martin</span>
-          <p class="footer__tagline">Étudiant en 2e année de BUT GEII<br>Parcours ESE — IUT de Bordeaux</p>
-        </div>
-
-        <div>
-          <p class="footer__bloc-titre">Navigation</p>
-          <nav class="footer__nav" aria-label="Navigation pied de page">
-            <a href="index.html" class="footer__nav-lien">Accueil</a>
-            <a href="projects.html" class="footer__nav-lien">Projets</a>
-            <a href="competences.html" class="footer__nav-lien">Compétences</a>
-          </nav>
-        </div>
-
-        <div>
-          <p class="footer__bloc-titre">Contact</p>
-          <div class="footer__contact">
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">✉</span>
-              <a href="mailto:martinmaury202@gmail.com" class="footer__contact-lien">martinmaury202@gmail.com</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">☎</span>
-              <a href="tel:+33780066496" class="footer__contact-lien">07 80 06 64 96</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">in</span>
-              <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__contact-lien" target="_blank" rel="noopener">Martin Maury</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">⌨</span>
-              <a href="https://github.com/nectalion" class="footer__contact-lien" target="_blank" rel="noopener">github.com/nectalion</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">↓</span>
-              <a href="cv-martin-maury.pdf" class="footer__contact-lien" download>Télécharger mon CV (PDF)</a>
-            </div>
-          </div>
-        </div>
-
+    <div class="conteneur footer__ligne">
+      <div class="footer__identite">
+        <span class="footer__logo">Martin <span>Maury</span></span>
+        <span class="footer__tagline">BUT GEII · parcours ESE · IUT de Bordeaux</span>
       </div>
+      <nav class="footer__nav" aria-label="Navigation pied de page">
+          <a href="index.html" class="footer__lien">Accueil</a>
+          <a href="projects.html" class="footer__lien">Projets</a>
+          <a href="competences.html" class="footer__lien">Compétences</a>
+          <a href="index.html#contact" class="footer__lien">Contact</a>
+      </nav>
+      <div class="footer__icones">
+          <a href="mailto:martinmaury202@gmail.com" class="footer__icone" aria-label="Email" title="Email">✉</a>
+          <a href="tel:+33780066496" class="footer__icone" aria-label="Téléphone" title="Téléphone">☎</a>
+          <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__icone" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">in</a>
+          <a href="https://github.com/nectalion" class="footer__icone" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener">⌨</a>
+          <a href="cv-martin-maury.pdf" class="footer__icone" aria-label="Télécharger mon CV (PDF)" title="Télécharger mon CV (PDF)" download>↓</a>
+      </div>
+    </div>
+    <div class="conteneur">
       <p class="footer__copyright">© 2026 MAURY Martin — Tous droits réservés</p>
     </div>
   </footer>

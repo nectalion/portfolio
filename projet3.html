@@ -19,7 +19,7 @@
     <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" tabindex="-1" />
     <div class="nav-conteneur">
 
-      <a href="index.html" class="nav-logo">Portfolio de Martin</a>
+      <a href="index.html" class="nav-logo">Martin <span>Maury</span></a>
 
       <label for="nav-toggle" class="nav-hamburger" aria-label="Ouvrir ou fermer le menu">
         <span class="nav-hamburger__trait"></span>
@@ -31,49 +31,8 @@
         <li><a href="index.html" class="nav-lien">Accueil</a></li>
         <li><a href="projects.html" class="nav-lien actif" aria-current="page">Projets</a></li>
         <li><a href="competences.html" class="nav-lien">Compétences</a></li>
-
-        <!-- Contact : panneau déroulant au survol (desktop) / affiché à plat (mobile) -->
-        <li class="nav-contact">
-          <span class="nav-contact-btn" tabindex="0">Contact</span>
-          <div class="panneau-contact">
-            <p class="panneau-contact__titre">Me contacter</p>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">✉</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">Email</span>
-                <a href="mailto:martinmaury202@gmail.com" class="contact-ligne__valeur">martinmaury202@gmail.com</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">☎</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">Téléphone</span>
-                <a href="tel:+33780066496" class="contact-ligne__valeur">07 80 06 64 96</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">in</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">Martin Maury</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">⌨</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">GitHub</span>
-                <a href="https://github.com/nectalion" class="contact-ligne__valeur" target="_blank" rel="noopener">github.com/nectalion</a>
-              </div>
-            </div>
-            <div class="contact-ligne">
-              <div class="contact-ligne__icone" aria-hidden="true">↓</div>
-              <div class="contact-ligne__info">
-                <span class="contact-ligne__label">CV</span>
-                <a href="cv-martin-maury.pdf" class="contact-ligne__valeur" download>Télécharger mon CV (PDF)</a>
-              </div>
-            </div>
-          </div>
-        </li>
+        <li><a href="index.html#contact" class="nav-lien">Contact</a></li>
+        <li><a href="cv-martin-maury.pdf" class="nav-cv" download>CV ↓</a></li>
       </ul>
     </div>
   </nav>
@@ -84,39 +43,44 @@
 
         <a href="projects.html" class="lien-retour">← Retour aux projets</a>
 
-        <img src="images/projet3.jpg" alt="L'équipe de six étudiants ayant réalisé le kart à hélice" class="detail__image"
-             width="1021" height="591" />
-
-        <div class="detail__entete">
-          <p class="sur-titre">Électronique · Programmation — BUT GEII 1re année</p>
-        </div>
+        <p class="sur-titre">Électronique · Programmation — BUT GEII 1re année</p>
         <h1 class="detail__titre">Kart à Hélice Radiocommandé</h1>
 
-        <!-- Fiche synthétique -->
-        <div class="fiche">
-          <div class="fiche__item"><span class="fiche__label">Année</span><span class="fiche__valeur">1re année de BUT</span></div>
-          <div class="fiche__item"><span class="fiche__label">Équipe</span><span class="fiche__valeur">Équipe de 6</span></div>
-          <div class="fiche__item"><span class="fiche__label">Mon rôle</span><span class="fiche__valeur">Télécommande : conception, soudure, tests</span></div>
-          <div class="fiche__item"><span class="fiche__label">Statut</span><span class="fiche__valeur">Terminé</span></div>
-        </div>
+        <div class="detail__grille">
 
-        <div class="detail__contenu">
+          <div class="detail__media">
+        <a href="#photo-projet3-1" class="detail__zoom" aria-label="Agrandir la photo">
+          <img src="images/projet3.jpg" alt="L'équipe de six étudiants ayant réalisé le kart à hélice" class="detail__image"
+               width="1021" height="591" />
+        </a>
+          </div>
+
+          <!-- Fiche synthétique -->
+          <aside class="fiche" aria-label="Fiche du projet">
+            <div class="fiche__item"><span class="fiche__label">Statut</span><span class="fiche__valeur">Terminé</span></div>
+            <div class="fiche__item"><span class="fiche__label">Année</span><span class="fiche__valeur">1re année de BUT</span></div>
+            <div class="fiche__item"><span class="fiche__label">Équipe</span><span class="fiche__valeur">Équipe de 6</span></div>
+            <div class="fiche__item"><span class="fiche__label">Mon rôle</span><span class="fiche__valeur">Télécommande : conception, soudure, tests</span></div>
+          <div class="fiche__item fiche__item--composants">
+            <span class="fiche__label">Composants utilisés (émetteur)</span>
+            <div class="tech-badges">
+              <span class="tech-badge">ATmega328P</span>
+              <span class="tech-badge">TSAL6200</span>
+              <span class="tech-badge">BC337</span>
+              <span class="tech-badge">LM78L05</span>
+              <span class="tech-badge">Potentiomètres 10 kΩ</span>
+              <span class="tech-badge">LED verte</span>
+              <span class="tech-badge">Condensateurs</span>
+              <span class="tech-badge">Résistances</span>
+            </div>
+          </div>
+          </aside>
+
+          <div class="detail__contenu">
           <h2 class="detail__h2">Contexte</h2>
           <p class="detail__texte">
             Dans le cadre de ma première année de BUT GEII, j'ai participé en groupe de six à la conception d'un kart à hélice radiocommandé par infrarouge. Le groupe était divisé en deux équipes de trois : l'une sur la carte réceptrice embarquée sur le kart, l'autre — dont je faisais partie — sur la télécommande émettrice.
           </p>
-
-          <h2 class="detail__h2">Composants utilisés (émetteur)</h2>
-          <div class="tech-badges">
-            <span class="tech-badge">ATmega328P</span>
-            <span class="tech-badge">TSAL6200</span>
-            <span class="tech-badge">BC337</span>
-            <span class="tech-badge">LM78L05</span>
-            <span class="tech-badge">Potentiomètres 10 kΩ</span>
-            <span class="tech-badge">LED verte</span>
-            <span class="tech-badge">Condensateurs</span>
-            <span class="tech-badge">Résistances</span>
-          </div>
 
           <h2 class="detail__h2">Fonctionnement</h2>
           <p class="detail__texte">
@@ -142,15 +106,21 @@
           </div>
 
           <h2 class="detail__h2">Le kart terminé</h2>
-          <figure class="detail__figure">
-            <img src="images/projet3_1.jpg" alt="Le kart à hélice terminé, numéro 41, posé sur une table" width="787" height="1400" loading="lazy" />
-            <figcaption>Le kart terminé, avec son hélice protégée par un arceau.</figcaption>
-          </figure>
+          <div class="galerie">
+            <figure class="galerie__item">
+              <a href="#photo-projet3-2" class="galerie__lien" aria-label="Agrandir : Le kart à hélice terminé, numéro 41, posé sur une table">
+                <img src="images/projet3_1.jpg" alt="Le kart à hélice terminé, numéro 41, posé sur une table" width="787" height="1400" loading="lazy" />
+              </a>
+              <figcaption>Le kart terminé, avec son hélice protégée par un arceau.</figcaption>
+            </figure>
+          </div>
 
           <h2 class="detail__h2">Ce que j'ai appris</h2>
           <p class="detail__texte">
             Ce projet m'a permis de découvrir la programmation d'un microcontrôleur ATmega, la transmission de données par infrarouge, et la conception d'une chaîne complète, de l'interface utilisateur jusqu'à l'émission du signal de commande.
           </p>
+          </div>
+
         </div>
 
         <nav class="detail__nav" aria-label="Navigation entre les projets">
@@ -161,55 +131,47 @@
       </div>
     </article>
   </main>
+  <div class="visionneuse" id="photo-projet3-1" role="dialog" aria-label="Kart à Hélice Radiocommandé : photo 1 sur 2">
+    <a href="#fermer" class="visionneuse__fond" aria-label="Fermer"></a>
+    <img src="images/projet3.jpg" alt="L'équipe de six étudiants ayant réalisé le kart à hélice" class="visionneuse__image" width="1021" height="591" loading="lazy" />
+    <p class="visionneuse__legende">Kart à Hélice Radiocommandé — 1 / 2</p>
+    <a href="#photo-projet3-2" class="visionneuse__bouton visionneuse__precedent" aria-label="Photo précédente">‹</a>
+    <a href="#photo-projet3-2" class="visionneuse__bouton visionneuse__suivant" aria-label="Photo suivante">›</a>
+    <a href="#fermer" class="visionneuse__bouton visionneuse__fermer" aria-label="Fermer">×</a>
+  </div>
+  <div class="visionneuse" id="photo-projet3-2" role="dialog" aria-label="Kart à Hélice Radiocommandé : photo 2 sur 2">
+    <a href="#fermer" class="visionneuse__fond" aria-label="Fermer"></a>
+    <img src="images/projet3_1.jpg" alt="Le kart à hélice terminé, numéro 41, posé sur une table" class="visionneuse__image" width="787" height="1400" loading="lazy" />
+    <p class="visionneuse__legende">Kart à Hélice Radiocommandé — 2 / 2</p>
+    <a href="#photo-projet3-1" class="visionneuse__bouton visionneuse__precedent" aria-label="Photo précédente">‹</a>
+    <a href="#photo-projet3-1" class="visionneuse__bouton visionneuse__suivant" aria-label="Photo suivante">›</a>
+    <a href="#fermer" class="visionneuse__bouton visionneuse__fermer" aria-label="Fermer">×</a>
+  </div>
 
   <!-- ===================================================
-       PIED DE PAGE (identique sur toutes les pages)
+       PIED DE PAGE (compact, identique sur toutes les pages)
        =================================================== -->
   <footer class="footer">
-    <div class="conteneur">
-      <div class="footer__grille">
-
-        <div>
-          <span class="footer__logo">MAURY Martin</span>
-          <p class="footer__tagline">Étudiant en 2e année de BUT GEII<br>Parcours ESE — IUT de Bordeaux</p>
-        </div>
-
-        <div>
-          <p class="footer__bloc-titre">Navigation</p>
-          <nav class="footer__nav" aria-label="Navigation pied de page">
-            <a href="index.html" class="footer__nav-lien">Accueil</a>
-            <a href="projects.html" class="footer__nav-lien">Projets</a>
-            <a href="competences.html" class="footer__nav-lien">Compétences</a>
-          </nav>
-        </div>
-
-        <div>
-          <p class="footer__bloc-titre">Contact</p>
-          <div class="footer__contact">
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">✉</span>
-              <a href="mailto:martinmaury202@gmail.com" class="footer__contact-lien">martinmaury202@gmail.com</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">☎</span>
-              <a href="tel:+33780066496" class="footer__contact-lien">07 80 06 64 96</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">in</span>
-              <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__contact-lien" target="_blank" rel="noopener">Martin Maury</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">⌨</span>
-              <a href="https://github.com/nectalion" class="footer__contact-lien" target="_blank" rel="noopener">github.com/nectalion</a>
-            </div>
-            <div class="footer__contact-ligne">
-              <span class="footer__contact-icone" aria-hidden="true">↓</span>
-              <a href="cv-martin-maury.pdf" class="footer__contact-lien" download>Télécharger mon CV (PDF)</a>
-            </div>
-          </div>
-        </div>
-
+    <div class="conteneur footer__ligne">
+      <div class="footer__identite">
+        <span class="footer__logo">Martin <span>Maury</span></span>
+        <span class="footer__tagline">BUT GEII · parcours ESE · IUT de Bordeaux</span>
       </div>
+      <nav class="footer__nav" aria-label="Navigation pied de page">
+          <a href="index.html" class="footer__lien">Accueil</a>
+          <a href="projects.html" class="footer__lien">Projets</a>
+          <a href="competences.html" class="footer__lien">Compétences</a>
+          <a href="index.html#contact" class="footer__lien">Contact</a>
+      </nav>
+      <div class="footer__icones">
+          <a href="mailto:martinmaury202@gmail.com" class="footer__icone" aria-label="Email" title="Email">✉</a>
+          <a href="tel:+33780066496" class="footer__icone" aria-label="Téléphone" title="Téléphone">☎</a>
+          <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__icone" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">in</a>
+          <a href="https://github.com/nectalion" class="footer__icone" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener">⌨</a>
+          <a href="cv-martin-maury.pdf" class="footer__icone" aria-label="Télécharger mon CV (PDF)" title="Télécharger mon CV (PDF)" download>↓</a>
+      </div>
+    </div>
+    <div class="conteneur">
       <p class="footer__copyright">© 2026 MAURY Martin — Tous droits réservés</p>
     </div>
   </footer>
