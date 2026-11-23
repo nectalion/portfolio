@@ -1,32 +1,25 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- ===================================================
-       Métadonnées — Page détail : Projet 2
-       =================================================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO -->
   <title>Thermomètre de Bain Bébé — MAURY Martin</title>
-  <meta name="description"
-        content="Projet de conception d'une carte électronique thermomètre de bain pour bébé, avec indication par LEDs colorées, réalisé en groupe en première année de BUT GEII." />
+  <meta name="description" content="Projet de 1re année de BUT GEII : conception en groupe d'un thermomètre de bain pour bébé avec indication par LEDs colorées." />
   <meta name="author" content="MAURY Martin" />
-
-  <!-- Feuille de styles partagée -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="corps-page">
 
   <!-- ===================================================
-       NAVIGATION PRINCIPALE
-       (même structure que sur toutes les pages)
+       NAVIGATION PRINCIPALE (identique sur toutes les pages)
+       Le lien de la page courante porte la classe "actif".
        =================================================== -->
-  <nav class="navbar" role="navigation" aria-label="Navigation principale">
-    <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" />
+  <nav class="navbar" aria-label="Navigation principale">
+    <!-- Checkbox invisible : ouvre / ferme le menu mobile (CSS pur) -->
+    <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" tabindex="-1" />
     <div class="nav-conteneur">
 
-      <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil">Portfolio de Martin</a>
+      <a href="index.html" class="nav-logo">Portfolio de Martin</a>
 
       <label for="nav-toggle" class="nav-hamburger" aria-label="Ouvrir ou fermer le menu">
         <span class="nav-hamburger__trait"></span>
@@ -34,139 +27,147 @@
         <span class="nav-hamburger__trait"></span>
       </label>
 
-      <ul class="nav-menu" role="menubar">
-        <li role="none">
-          <a href="index.html" class="nav-lien" role="menuitem">Accueil</a>
-        </li>
-        <li role="none">
-          <a href="projects.html" class="nav-lien" role="menuitem">Projets</a>
-        </li>
-        <li role="none">
-          <a href="competences.html" class="nav-lien" role="menuitem">Compétences</a>
-        </li>
-        <li class="nav-contact" role="none">
-          <span class="nav-contact-btn" tabindex="0" role="button" aria-haspopup="true">Contact</span>
-          <div class="panneau-contact" role="tooltip">
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-lien">Accueil</a></li>
+        <li><a href="projects.html" class="nav-lien actif" aria-current="page">Projets</a></li>
+        <li><a href="competences.html" class="nav-lien">Compétences</a></li>
+
+        <!-- Contact : panneau déroulant au survol (desktop) / affiché à plat (mobile) -->
+        <li class="nav-contact">
+          <span class="nav-contact-btn" tabindex="0">Contact</span>
+          <div class="panneau-contact">
             <p class="panneau-contact__titre">Me contacter</p>
             <div class="contact-ligne">
-              <div class="contact-ligne__icone">✉</div>
+              <div class="contact-ligne__icone" aria-hidden="true">✉</div>
               <div class="contact-ligne__info">
                 <span class="contact-ligne__label">Email</span>
                 <a href="mailto:martinmaury202@gmail.com" class="contact-ligne__valeur">martinmaury202@gmail.com</a>
               </div>
             </div>
             <div class="contact-ligne">
-              <div class="contact-ligne__icone">☎</div>
+              <div class="contact-ligne__icone" aria-hidden="true">☎</div>
               <div class="contact-ligne__info">
                 <span class="contact-ligne__label">Téléphone</span>
                 <a href="tel:+33780066496" class="contact-ligne__valeur">07 80 06 64 96</a>
               </div>
             </div>
             <div class="contact-ligne">
-              <div class="contact-ligne__icone">in</div>
+              <div class="contact-ligne__icone" aria-hidden="true">in</div>
               <div class="contact-ligne__info">
                 <span class="contact-ligne__label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">linkedin.com/in/martin-maury-9a10003b6</a>
+                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">Martin Maury</a>
               </div>
             </div>
             <div class="contact-ligne">
-              <div class="contact-ligne__icone">⌨</div>
+              <div class="contact-ligne__icone" aria-hidden="true">⌨</div>
               <div class="contact-ligne__info">
                 <span class="contact-ligne__label">GitHub</span>
                 <a href="https://github.com/nectalion" class="contact-ligne__valeur" target="_blank" rel="noopener">github.com/nectalion</a>
+              </div>
+            </div>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone" aria-hidden="true">↓</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">CV</span>
+                <a href="cv-martin-maury.pdf" class="contact-ligne__valeur" download>Télécharger mon CV (PDF)</a>
               </div>
             </div>
           </div>
         </li>
       </ul>
     </div>
-  </nav><!-- /navbar -->
+  </nav>
 
-
-  <!-- ===================================================
-       CONTENU PRINCIPAL — DÉTAIL PROJET 2
-       =================================================== -->
   <main id="contenu-principal">
-    <div class="detail-projet">
+    <article class="detail-projet">
       <div class="conteneur">
 
-        <!-- Bouton retour en haut de page -->
-        <a href="projects.html" class="btn--retour" id="btn-retour-p2">
-          ← Retour aux projets
-        </a>
+        <a href="projects.html" class="lien-retour">← Retour aux projets</a>
 
-        <!-- Grande image du projet -->
-        <img
-          src="images/projet2.png"
-          alt="Schéma électronique du thermomètre de bain bébé"
-          class="detail__image"
-          width="1100"
-          height="460"
-        />
+        <img src="images/projet2.jpg" alt="Carte électronique du thermomètre de bain pour bébé" class="detail__image"
+             width="691" height="452" />
 
-        <!-- En-tête : catégorie + titre -->
-        <p class="detail__sous-titre">Électronique — BUT GEII 1ère année</p>
+        <div class="detail__entete">
+          <p class="sur-titre">Électronique — BUT GEII 1re année</p>
+        </div>
         <h1 class="detail__titre">Thermomètre de Bain Bébé</h1>
 
-        <hr class="separateur" />
-
-        <!-- Composants utilisés -->
-        <p class="detail__tech-titre">Composants utilisés</p>
-        <div class="tech-badges">
-          <span class="tech-badge">LM35</span>
-          <span class="tech-badge">MCP6002</span>
-          <span class="tech-badge">74HC00</span>
-          <span class="tech-badge">LM7805</span>
-          <span class="tech-badge">LED Rouge</span>
-          <span class="tech-badge">LED Verte</span>
-          <span class="tech-badge">LED Bleue</span>
-          <span class="tech-badge">Résistances</span>
+        <!-- Fiche synthétique -->
+        <div class="fiche">
+          <div class="fiche__item"><span class="fiche__label">Année</span><span class="fiche__valeur">1re année de BUT</span></div>
+          <div class="fiche__item"><span class="fiche__label">Équipe</span><span class="fiche__valeur">Équipe de 4</span></div>
+          <div class="fiche__item"><span class="fiche__label">Mon rôle</span><span class="fiche__valeur">Conception et réalisation de la carte</span></div>
+          <div class="fiche__item"><span class="fiche__label">Statut</span><span class="fiche__valeur">Terminé</span></div>
         </div>
 
-        <!-- Description complète -->
-        <p class="detail__description">
-          Dans le cadre de ma première année de BUT GEII, j'ai conçu en groupe de quatre
-          une carte électronique faisant office de thermomètre de bain pour bébé. L'objectif
-          était de concevoir un système capable d'indiquer visuellement si la température
-          de l'eau est trop froide, idéale ou trop chaude, à l'aide de trois LEDs colorées.
-        </p>
+        <div class="detail__contenu">
+          <h2 class="detail__h2">Contexte</h2>
+          <p class="detail__texte">
+            Dans le cadre de ma première année de BUT GEII, j'ai conçu en groupe de quatre une carte électronique faisant office de thermomètre de bain pour bébé. Le système devait indiquer visuellement si la température de l'eau est trop froide, idéale ou trop chaude.
+          </p>
 
-        <p class="detail__description">
-          La carte mesure la température de l'eau du bain et indique visuellement si elle
-          est adaptée à un bébé : une LED bleue s'allume si l'eau est trop froide, une LED
-          verte si la température est idéale, et une LED rouge si elle est trop chaude.
-          La carte fonctionne grâce à quatre blocs fonctionnels. Le bloc alimentation fournit
-          une tension stabilisée à l'ensemble du circuit via une batterie et un régulateur.
-          Le bloc acquisition mesure la température de l'eau et génère deux seuils de
-          référence : un seuil chaud et un seuil froid. Le bloc traitement compare en
-          permanence la température mesurée à ces deux seuils afin de déterminer dans
-          quelle zone se situe la température. Enfin, le bloc action allume la LED
-          correspondante en fonction du résultat.
-        </p>
+          <h2 class="detail__h2">Composants utilisés</h2>
+          <div class="tech-badges">
+            <span class="tech-badge">LM35</span>
+            <span class="tech-badge">MCP6002</span>
+            <span class="tech-badge">74HC00</span>
+            <span class="tech-badge">LM7805</span>
+            <span class="tech-badge">LED rouge</span>
+            <span class="tech-badge">LED verte</span>
+            <span class="tech-badge">LED bleue</span>
+            <span class="tech-badge">Résistances</span>
+          </div>
 
-        <p class="detail__description">
-          Ce projet m'a permis d'approfondir l'utilisation des amplificateurs opérationnels
-          en mode comparateur, la logique combinatoire appliquée à un système réel, et la
-          conception d'une chaîne de mesure complète allant du capteur jusqu'à l'actionneur.
-        </p>
+          <h2 class="detail__h2">Fonctionnement</h2>
+          <p class="detail__texte">
+            La carte mesure la température de l'eau et allume la LED correspondante : bleue (trop froid), verte (idéal) ou rouge (trop chaud). Elle s'organise en quatre blocs :
+          </p>
+          <div class="blocs">
+            <div class="bloc">
+              <p class="bloc__nom">Alimentation</p>
+              <p class="bloc__texte">Une batterie et un régulateur LM7805 fournissent une tension stabilisée.</p>
+            </div>
+            <div class="bloc">
+              <p class="bloc__nom">Acquisition</p>
+              <p class="bloc__texte">Le capteur LM35 mesure la température ; deux seuils de référence (chaud et froid) sont générés.</p>
+            </div>
+            <div class="bloc">
+              <p class="bloc__nom">Traitement</p>
+              <p class="bloc__texte">Des comparateurs (MCP6002) et une porte logique (74HC00) situent la température par rapport aux seuils.</p>
+            </div>
+            <div class="bloc">
+              <p class="bloc__nom">Action</p>
+              <p class="bloc__texte">La LED correspondant à la zone de température s'allume.</p>
+            </div>
+          </div>
 
-        <hr class="separateur" />
+          <h2 class="detail__h2">Ce que j'ai appris</h2>
+          <p class="detail__texte">
+            Ce projet m'a permis d'approfondir l'utilisation des amplificateurs opérationnels en mode comparateur, la logique combinatoire appliquée à un système réel, et la conception d'une chaîne de mesure complète, du capteur jusqu'à l'actionneur.
+          </p>
+        </div>
 
-        <a href="projects.html" class="btn btn--outline" id="btn-bas-retour-p2">
-          ← Retour aux projets
-        </a>
+        <nav class="detail__nav" aria-label="Navigation entre les projets">
+          <a href="projects.html" class="btn btn--outline">← Tous les projets</a>
+          <a href="projet3.html" class="btn btn--accent">Projet suivant : Kart à Hélice Radiocommandé →</a>
+        </nav>
 
-      </div><!-- /conteneur -->
-    </div><!-- /detail-projet -->
-  </main><!-- /contenu-principal -->
+      </div>
+    </article>
+  </main>
 
-  <footer class="footer" role="contentinfo">
+  <!-- ===================================================
+       PIED DE PAGE (identique sur toutes les pages)
+       =================================================== -->
+  <footer class="footer">
     <div class="conteneur">
       <div class="footer__grille">
+
         <div>
           <span class="footer__logo">MAURY Martin</span>
-          <p class="footer__tagline">Étudiant en BUT GEII<br>IUT de Gradignan</p>
+          <p class="footer__tagline">Étudiant en 2e année de BUT GEII<br>IUT de Bordeaux — site de Gradignan</p>
         </div>
+
         <div>
           <p class="footer__bloc-titre">Navigation</p>
           <nav class="footer__nav" aria-label="Navigation pied de page">
@@ -175,32 +176,37 @@
             <a href="competences.html" class="footer__nav-lien">Compétences</a>
           </nav>
         </div>
+
         <div>
           <p class="footer__bloc-titre">Contact</p>
           <div class="footer__contact">
             <div class="footer__contact-ligne">
-              <span class="footer__contact-icone">✉</span>
+              <span class="footer__contact-icone" aria-hidden="true">✉</span>
               <a href="mailto:martinmaury202@gmail.com" class="footer__contact-lien">martinmaury202@gmail.com</a>
             </div>
             <div class="footer__contact-ligne">
-              <span class="footer__contact-icone">☎</span>
+              <span class="footer__contact-icone" aria-hidden="true">☎</span>
               <a href="tel:+33780066496" class="footer__contact-lien">07 80 06 64 96</a>
             </div>
             <div class="footer__contact-ligne">
-              <span class="footer__contact-icone">in</span>
-              <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__contact-lien" target="_blank" rel="noopener">linkedin.com/in/martin-maury-9a10003b6</a>
+              <span class="footer__contact-icone" aria-hidden="true">in</span>
+              <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__contact-lien" target="_blank" rel="noopener">Martin Maury</a>
             </div>
             <div class="footer__contact-ligne">
-              <span class="footer__contact-icone">⌨</span>
+              <span class="footer__contact-icone" aria-hidden="true">⌨</span>
               <a href="https://github.com/nectalion" class="footer__contact-lien" target="_blank" rel="noopener">github.com/nectalion</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone" aria-hidden="true">↓</span>
+              <a href="cv-martin-maury.pdf" class="footer__contact-lien" download>Télécharger mon CV (PDF)</a>
             </div>
           </div>
         </div>
+
       </div>
-      <p class="footer__copyright">© 2025 MAURY Martin — Tous droits réservés</p>
+      <p class="footer__copyright">© 2026 MAURY Martin — Tous droits réservés</p>
     </div>
   </footer>
 
 </body>
 </html>
-

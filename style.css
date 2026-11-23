@@ -1,93 +1,92 @@
 /* ============================================================
    PORTFOLIO — MAURY Martin
-   style.css — Feuille de styles principale
+   style.css — Feuille de styles commune à toutes les pages
 
-   Auteur  : MAURY Martin
    Palette : #FFFFFF (blanc) | #212738 (bleu nuit) | #F97068 (corail)
 
    Table des matières
    ------------------
-   01. Importation de la police Google Fonts
-   02. Variables CSS (design tokens)
+   01. Police
+   02. Variables (design tokens)
    03. Reset et styles de base
-   04. Typographie et utilitaires (titres, boutons)
-   05. Navigation principale (barre + panneau Contact)
-   06. Menu hamburger — mobile, CSS pur (technique checkbox)
+   04. Utilitaires : titres, boutons, badges
+   05. Navigation principale + panneau Contact
+   06. Menu hamburger (mobile, CSS pur)
    07. Mise en page générale (conteneur, sections, en-têtes)
-   08. Page Accueil — Héros (intro + photo)
-   09. Page Accueil — Section Objectif (texte + aperçu compétences)
-   10. Page Projets  — Grille de cartes
-   11. Pages Détail Projet
-   12. Page Compétences — Barres de progression CSS
-   13. Animations CSS (@keyframes)
-   14. Responsive tablette (max-width: 900px)
-   15. Responsive mobile   (max-width: 700px)
+   08. Accueil — Héros
+   09. Accueil — Objectif
+   10. Accueil — Parcours (frise)
+   11. Accueil — Loisirs
+   12. Projets — Grille de cartes
+   13. Détail projet
+   14. Compétences
+   15. Pied de page
+   16. Animations
+   17. Responsive tablette (max-width: 900px)
+   18. Responsive mobile   (max-width: 700px)
    ============================================================ */
 
 
 /* ============================================================
-   01. IMPORTATION DE LA POLICE
-   Inter — sans-serif moderne, lisible, professionnelle
+   01. POLICE
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 
 /* ============================================================
-   02. VARIABLES CSS (design tokens)
-   Toutes les valeurs réutilisables centralisées ici.
+   02. VARIABLES
    ============================================================ */
 :root {
-
-  /* --- Palette (les 3 seules couleurs autorisées) --- */
+  /* Palette (3 couleurs) */
   --blanc  : #FFFFFF;
   --sombre : #212738;
   --accent : #F97068;
 
-  /* Dérivées par transparence uniquement (pas de nouvelles teintes) */
-  --sombre-05  : rgba(33, 39, 56, 0.05);
-  --sombre-10  : rgba(33, 39, 56, 0.10);
-  --sombre-20  : rgba(33, 39, 56, 0.20);
-  --accent-pale: rgba(249, 112, 104, 0.12);
-  --blanc-70   : rgba(255, 255, 255, 0.70);
-  --blanc-15   : rgba(255, 255, 255, 0.15);
+  /* Dérivées par transparence uniquement */
+  --sombre-05   : rgba(33, 39, 56, 0.05);
+  --sombre-10   : rgba(33, 39, 56, 0.10);
+  --sombre-20   : rgba(33, 39, 56, 0.20);
+  --sombre-60   : rgba(33, 39, 56, 0.60);
+  --sombre-75   : rgba(33, 39, 56, 0.75);
+  --accent-pale : rgba(249, 112, 104, 0.12);
+  --blanc-70    : rgba(255, 255, 255, 0.70);
+  --blanc-15    : rgba(255, 255, 255, 0.15);
 
-  /* --- Typographie --- */
-  --police : 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typographie */
+  --police : 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  /* --- Espacements --- */
-  --esp-xs : 0.5rem;    /*  8px */
-  --esp-sm : 1rem;      /* 16px */
-  --esp-md : 2rem;      /* 32px */
-  --esp-lg : 4rem;      /* 64px */
-  --esp-xl : 6rem;      /* 96px */
+  /* Espacements */
+  --esp-xs : 0.5rem;   /*  8px */
+  --esp-sm : 1rem;     /* 16px */
+  --esp-md : 2rem;     /* 32px */
+  --esp-lg : 4rem;     /* 64px */
+  --esp-xl : 6rem;     /* 96px */
 
-  /* --- Transitions --- */
+  /* Transitions */
   --t-vite  : 0.20s ease;
   --t-norm  : 0.35s ease;
   --t-lente : 0.60s ease;
 
-  /* --- Ombres portées --- */
+  /* Ombres */
   --ombre-xs : 0 2px  8px rgba(33, 39, 56, 0.07);
   --ombre-sm : 0 4px 20px rgba(33, 39, 56, 0.12);
   --ombre-lg : 0 8px 40px rgba(33, 39, 56, 0.22);
 
-  /* --- Rayons de bordure --- */
+  /* Rayons */
   --rayon    :  8px;
   --rayon-lg : 16px;
   --rayon-xl : 24px;
 
-  /* --- Mise en page --- */
-  --largeur-max : 1100px;   /* Largeur maximale du contenu centré */
-  --hauteur-nav :   70px;   /* Hauteur de la barre de navigation fixe */
+  /* Mise en page */
+  --largeur-max   : 1100px;
+  --largeur-texte : 760px;   /* Largeur confortable pour les longs textes */
+  --hauteur-nav   : 70px;
 }
 
 
 /* ============================================================
    03. RESET ET STYLES DE BASE
-   Suppression des marges/paddings par défaut,
-   cohérence du box-model sur tous les navigateurs.
    ============================================================ */
-
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -96,7 +95,7 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;    /* Défilement fluide pour les ancres internes */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -104,8 +103,8 @@ body {
   background-color: var(--blanc);
   color: var(--sombre);
   line-height: 1.7;
-  -webkit-font-smoothing: antialiased;    /* Lissage sub-pixel (navigateurs webkit) */
-  -moz-osx-font-smoothing: grayscale;    /* Lissage sub-pixel (Firefox sur macOS) */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -114,7 +113,7 @@ body {
 main { flex: 1; }
 
 img {
-  display: block;     /* Supprime l'espace "inline" sous les images */
+  display: block;
   max-width: 100%;
   height: auto;
 }
@@ -124,24 +123,30 @@ a {
   color: inherit;
 }
 
-ul, ol {
-  list-style: none;
+ul, ol { list-style: none; }
+
+/* Contour de focus visible pour la navigation au clavier */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 
 /* ============================================================
-   04. TYPOGRAPHIE ET UTILITAIRES
+   04. UTILITAIRES : TITRES, BOUTONS, BADGES
    ============================================================ */
 
-/* --- Titre de section (avec trait corail dessous) --- */
+/* Titre de section (h1 des pages internes, h2 des sections) */
 .titre-section {
-  font-size: clamp(1.7rem, 3vw, 2.2rem);   /* Taille fluide selon la largeur d'écran */
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
   font-weight: 700;
   color: var(--sombre);
   line-height: 1.2;
+  margin-bottom: var(--esp-md);
 }
 
-/* Trait décoratif corail affiché sous chaque titre de section */
+/* Trait décoratif corail sous chaque titre */
 .titre-section::after {
   content: '';
   display: block;
@@ -152,107 +157,190 @@ ul, ol {
   margin-top: 0.65rem;
 }
 
-/* Variante blanche — utilisée sur les sections à fond sombre */
 .titre-section--blanc { color: var(--blanc); }
 
-/* --- Bouton principal (fond corail) --- */
+/* Petit sur-titre en capitales corail (ex. « Électronique · 1re année ») */
+.sur-titre {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Boutons --- */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: var(--police);
   font-size: 0.95rem;
   font-weight: 600;
-  padding: 0.82rem 1.9rem;
+  padding: 0.75rem 1.8rem;
   border-radius: var(--rayon);
+  border: 2px solid transparent;
   cursor: pointer;
-  border: none;
   transition: background-color var(--t-vite),
-              transform       var(--t-vite),
-              box-shadow      var(--t-vite);
+              color            var(--t-vite),
+              transform        var(--t-vite),
+              box-shadow       var(--t-vite);
 }
 
 .btn--accent {
   background-color: var(--accent);
+  border-color: var(--accent);
   color: var(--blanc);
   box-shadow: 0 4px 14px rgba(249, 112, 104, 0.35);
 }
 
 .btn--accent:hover {
   background-color: var(--sombre);
+  border-color: var(--sombre);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(33, 39, 56, 0.25);
 }
 
-/* --- Bouton retour (lien avec flèche) --- */
-.btn--retour {
+.btn--outline {
+  background-color: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn--outline:hover {
+  background-color: var(--accent);
+  color: var(--blanc);
+  transform: translateY(-2px);
+}
+
+/* Lien discret avec flèche (« ← Retour aux projets ») */
+.lien-retour {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.88rem;
   font-weight: 500;
-  color: var(--sombre);
-  opacity: 0.6;
+  color: var(--sombre-60);
   margin-bottom: var(--esp-md);
-  transition: opacity var(--t-vite), gap var(--t-vite);
+  transition: color var(--t-vite), gap var(--t-vite);
 }
 
-.btn--retour:hover {
-  opacity: 1;
-  gap: 0.75rem;    /* La flèche "avance" légèrement au survol */
+.lien-retour:hover {
+  color: var(--sombre);
+  gap: 0.75rem;
+}
+
+/* Lien texte corail avec flèche (« Voir le projet → ») */
+.lien-fleche {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent);
+  transition: gap var(--t-vite);
+}
+
+.lien-fleche:hover { gap: 0.7rem; }
+
+/* --- Badges --- */
+
+/* Étiquette de catégorie (pilule corail pâle) */
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  background-color: var(--accent-pale);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+/* Badge technique (pilule sombre : composants, logiciels) */
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-badge {
+  background-color: var(--sombre);
+  color: var(--blanc);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+/* Badge de statut « En cours » */
+.statut {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--blanc);
+  background-color: var(--accent);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.statut::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--blanc);
+  animation: pulser 1.6s ease-in-out infinite;
 }
 
 
 /* ============================================================
    05. NAVIGATION PRINCIPALE
-   Barre fixe en haut de toutes les pages.
-   Fond blanc (#FFFFFF) comme demandé.
    ============================================================ */
-
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: var(--hauteur-nav);
-  background-color: var(--sombre);            /* Fond bleu nuit */
-  border-bottom: 1px solid var(--sombre-10);
+  background-color: var(--sombre);
   box-shadow: var(--ombre-xs);
   z-index: 1000;
-  overflow: visible;    /* Nécessaire pour que le menu mobile dépasse la navbar */
 }
 
-/* Conteneur interne : logo à gauche, menu à droite */
 .nav-conteneur {
   max-width: var(--largeur-max);
+  height: 100%;
   margin: 0 auto;
   padding: 0 var(--esp-md);
-  height: var(--hauteur-nav);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;    /* Référence de positionnement pour le menu mobile */
+  position: relative;
 }
 
-/* Logo ("Portfolio de Martin") */
 .nav-logo {
-  font-size: 1rem;          /* Réduit pour que le texte long tienne dans la navbar */
+  font-size: 1rem;
   font-weight: 700;
   color: var(--blanc);
-  letter-spacing: 0px;      /* Pas de letter-spacing négatif avec du texte long */
-  white-space: nowrap;      /* Empêche le retour à la ligne */
+  white-space: nowrap;
   transition: color var(--t-vite);
-  z-index: 2;    /* Au-dessus du menu mobile */
 }
 
 .nav-logo:hover { color: var(--accent); }
 
-/* Liste des liens */
 .nav-menu {
   display: flex;
   align-items: center;
   gap: 2.2rem;
 }
 
-/* Lien standard */
 .nav-lien {
   font-size: 0.92rem;
   font-weight: 500;
@@ -262,7 +350,7 @@ ul, ol {
   transition: color var(--t-vite);
 }
 
-/* Soulignement animé : se déploie de gauche à droite au survol */
+/* Soulignement animé */
 .nav-lien::after {
   content: '';
   position: absolute;
@@ -279,15 +367,11 @@ ul, ol {
 .nav-lien.actif { color: var(--accent); }
 
 .nav-lien:hover::after,
-.nav-lien.actif::after { width: 100%; }  /* Soulignement complet */
+.nav-lien.actif::after { width: 100%; }
 
-
-/* --- Élément Contact avec panneau déroulant (CSS pur, sans JS) --- */
-
-/* Conteneur positionné pour ancrer le panneau déroulant */
+/* --- Contact : panneau déroulant au survol / focus (CSS pur) --- */
 .nav-contact { position: relative; }
 
-/* Bouton déclencheur "Contact" — badge corail */
 .nav-contact-btn {
   display: inline-flex;
   align-items: center;
@@ -298,12 +382,11 @@ ul, ol {
   background-color: var(--accent);
   padding: 0.45rem 1.1rem;
   border-radius: var(--rayon);
-  cursor: default;        /* Pas de navigation : juste un déclencheur de survol */
+  cursor: default;
   user-select: none;
   transition: background-color var(--t-vite);
 }
 
-/* Flèche indicatrice générée en CSS (pas de HTML supplémentaire) */
 .nav-contact-btn::after {
   content: '▾';
   font-size: 0.72rem;
@@ -311,37 +394,46 @@ ul, ol {
   transition: transform var(--t-norm);
 }
 
-/* Au survol : fond sombre + rotation de la flèche */
-.nav-contact:hover .nav-contact-btn { background-color: var(--sombre); }
-.nav-contact:hover .nav-contact-btn::after { transform: rotate(180deg); }
+.nav-contact:hover .nav-contact-btn,
+.nav-contact:focus-within .nav-contact-btn { background-color: var(--blanc-15); }
 
-/* Panneau déroulant — invisible par défaut */
+.nav-contact:hover .nav-contact-btn::after,
+.nav-contact:focus-within .nav-contact-btn::after { transform: rotate(180deg); }
+
 .panneau-contact {
   position: absolute;
   top: 100%;
   right: 0;
-  width: 295px;
+  width: 300px;
+  margin-top: 14px;
   background-color: var(--sombre);
   border-radius: var(--rayon-lg);
-  padding: var(--esp-sm) var(--esp-md);
-  padding-top: calc(var(--esp-sm) + 14px);  /* compense la suppression du gap */
-  box-shadow: var(--ombre-lg);
   border-top: 3px solid var(--accent);
-
+  padding: var(--esp-sm) var(--esp-md);
+  box-shadow: var(--ombre-lg);
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
   transition: opacity var(--t-norm), transform var(--t-norm);
 }
 
-/* Affichage au survol de l'élément .nav-contact */
-.nav-contact:hover .panneau-contact {
+/* Zone invisible qui « relie » le bouton au panneau (le survol ne se perd pas) */
+.panneau-contact::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -17px;
+  height: 17px;
+}
+
+.nav-contact:hover .panneau-contact,
+.nav-contact:focus-within .panneau-contact {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-/* Titre du panneau */
 .panneau-contact__titre {
   font-size: 0.72rem;
   font-weight: 700;
@@ -353,19 +445,16 @@ ul, ol {
   margin-bottom: 0.5rem;
 }
 
-/* Ligne de contact individuelle */
 .contact-ligne {
   display: flex;
   align-items: center;
   gap: 0.85rem;
   padding: 0.6rem 0;
   border-bottom: 1px solid var(--blanc-15);
-  transition: background-color var(--t-vite);
 }
 
 .contact-ligne:last-child { border-bottom: none; }
 
-/* Icône ronde */
 .contact-ligne__icone {
   width: 34px;
   height: 34px;
@@ -376,16 +465,15 @@ ul, ol {
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
-  color: var(--accent);
   font-weight: 700;
-  font-style: normal;
+  color: var(--accent);
 }
 
-/* Informations textuelles */
 .contact-ligne__info {
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
+  min-width: 0;
 }
 
 .contact-ligne__label {
@@ -400,6 +488,7 @@ ul, ol {
   font-size: 0.83rem;
   color: var(--blanc-70);
   line-height: 1.3;
+  overflow-wrap: anywhere;
   transition: color var(--t-vite);
 }
 
@@ -407,13 +496,8 @@ ul, ol {
 
 
 /* ============================================================
-   06. MENU HAMBURGER — MOBILE (CSS pur)
-   Technique : checkbox invisible + label cliquable.
-   L'activation de la checkbox permet d'afficher/masquer
-   le menu via le sélecteur CSS :checked.
+   06. MENU HAMBURGER (mobile, CSS pur — technique checkbox)
    ============================================================ */
-
-/* La checkbox de contrôle est toujours invisible à l'utilisateur */
 .nav-checkbox {
   position: absolute;
   opacity: 0;
@@ -422,148 +506,131 @@ ul, ol {
   pointer-events: none;
 }
 
-/* Icône hamburger (3 traits) — masquée sur desktop */
 .nav-hamburger {
-  display: none;               /* Affiché uniquement sur mobile via media query */
+  display: none;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
   cursor: pointer;
   padding: 6px;
-  z-index: 2;
 }
 
-/* Chaque trait horizontal du hamburger */
 .nav-hamburger__trait {
   display: block;
   width: 24px;
   height: 2px;
   background-color: var(--blanc);
   border-radius: 1px;
-  transition: transform var(--t-norm), opacity var(--t-vite);
   transform-origin: center;
+  transition: transform var(--t-norm), opacity var(--t-vite);
 }
 
-/*
-   Animation de transformation en croix (×) quand le menu est ouvert.
-   Sélecteur : checkbox cochée → (+) conteneur → (espace) hamburger → trait nth-child
-*/
-.nav-checkbox:checked + .nav-conteneur .nav-hamburger__trait:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.nav-checkbox:checked + .nav-conteneur .nav-hamburger__trait:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-.nav-checkbox:checked + .nav-conteneur .nav-hamburger__trait:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
+/* Transformation en croix quand le menu est ouvert */
+.nav-checkbox:checked + .nav-conteneur .nav-hamburger__trait:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-checkbox:checked + .nav-conteneur .nav-hamburger__trait:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-checkbox:checked + .nav-conteneur .nav-hamburger__trait:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 
 /* ============================================================
    07. MISE EN PAGE GÉNÉRALE
    ============================================================ */
 
-/* Compense la hauteur de la navbar fixe (évite que le contenu soit masqué) */
+/* Compense la hauteur de la navbar fixe */
 .corps-page { padding-top: var(--hauteur-nav); }
 
-/* Conteneur centré avec largeur maximale */
 .conteneur {
   max-width: var(--largeur-max);
   margin: 0 auto;
   padding: 0 var(--esp-md);
 }
 
-/* Section générique */
+/* Section standard (même rythme vertical partout) */
 .section { padding: var(--esp-lg) 0; }
 
-/* En-tête de page : titre + sous-titre, centrés */
+/* Variante sur fond sombre */
+.section--sombre { background-color: var(--sombre); }
+
+/* Variante sur fond légèrement teinté */
+.section--teinte { background-color: var(--sombre-05); }
+
+/* En-tête des pages internes (Projets, Compétences) */
 .en-tete-page {
   text-align: center;
-  padding: var(--esp-lg) 0 var(--esp-md);
+  padding: var(--esp-lg) 0 0;
 }
 
-/* Centre le trait décoratif sous le titre */
+.en-tete-page .titre-section { margin-bottom: var(--esp-sm); }
+
 .en-tete-page .titre-section::after {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Sous-titre de l'en-tête de page */
 .en-tete-page__sous-titre {
   font-size: 1rem;
-  color: var(--sombre);
-  opacity: 0.60;
-  margin-top: var(--esp-sm);
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
+  color: var(--sombre-60);
+  max-width: 540px;
+  margin: 0 auto;
 }
 
 
 /* ============================================================
-   08. PAGE ACCUEIL — HÉROS
+   08. ACCUEIL — HÉROS
    ============================================================ */
-
-/* Section héros : hauteur automatique (le contenu détermine la hauteur) */
 .hero {
   padding: var(--esp-xl) 0;
-  overflow: hidden;     /* Évite le débordement horizontal du décor */
+  overflow: hidden;
 }
 
-/* Grille deux colonnes : texte à gauche | photo à droite */
 .hero__grille {
   display: grid;
   grid-template-columns: 1fr 380px;
   gap: var(--esp-lg);
-  align-items: start;   /* Alignement en haut : la colonne gauche est maintenant plus longue */
+  align-items: center;
 }
 
-/* Phrase d'accroche courte au-dessus du nom */
 .hero__accroche {
   font-size: 1rem;
   font-weight: 500;
   color: var(--accent);
-  margin-bottom: 0.55rem;
   letter-spacing: 0.05em;
+  margin-bottom: 0.55rem;
 }
 
-/* Nom principal — élément le plus proéminent */
 .hero__nom {
   font-size: clamp(2.8rem, 6vw, 4.4rem);
   font-weight: 900;
   line-height: 1.05;
-  color: var(--sombre);
   letter-spacing: -2px;
+  color: var(--sombre);
   margin-bottom: 0.5rem;
 }
 
-/* Prénom mis en valeur en corail */
 .hero__prenom { color: var(--accent); }
 
-/* Rôle / métier affiché sous le nom */
 .hero__role {
   font-size: 1rem;
-  font-weight: 400;
-  color: var(--sombre);
-  opacity: 0.55;
+  color: var(--sombre-60);
   margin-bottom: var(--esp-md);
 }
 
-/* Texte d'introduction */
 .hero__intro {
   font-size: 1rem;
   line-height: 1.85;
-  color: var(--sombre);
-  opacity: 0.72;
-  max-width: 500px;
-  margin-bottom: var(--esp-md);
+  color: var(--sombre-75);
+  max-width: 520px;
 }
 
-/* Zone de la photo : position relative pour le décor */
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: var(--esp-md);
+}
+
 .hero__photo-zone { position: relative; }
 
-/* Décoration géométrique corail derrière la photo */
+/* Décor corail derrière la photo */
 .hero__photo-zone::before {
   content: '';
   position: absolute;
@@ -574,13 +641,10 @@ ul, ol {
   background-color: var(--accent);
   border-radius: var(--rayon-xl);
   opacity: 0.18;
-  z-index: 0;
 }
 
-/* Photo de profil */
 .hero__photo {
   position: relative;
-  z-index: 1;               /* Au-dessus du décor */
   width: 100%;
   height: 460px;
   object-fit: cover;
@@ -589,264 +653,183 @@ ul, ol {
 }
 
 
-/* Groupe de boutons CTA dans le héros */
-.hero__cta {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
-}
-
-/* Bouton secondaire (contour corail) */
-.btn--outline {
-  background-color: transparent;
-  color: var(--accent);
-  border: 2px solid var(--accent);
-}
-
-.btn--outline:hover {
-  background-color: var(--accent);
-  color: var(--blanc);
-  transform: translateY(-2px);
-}
-
-/* Section objectif : 2 colonnes côte à côte */
+/* ============================================================
+   09. ACCUEIL — OBJECTIF
+   ============================================================ */
 .objectif__grille {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--esp-lg);
-  margin-top: var(--esp-md);
-  align-items: start;
 }
 
-.objectif__texte {
-  margin: 0;
-  padding-top: 0;
-}
-
-/* Aperçu compétences : 2 colonnes */
-.apercu__grille {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--esp-lg);
-  margin-top: var(--esp-md);
-}
-
-.apercu__bloc-titre {
-  font-size: 0.74rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--accent);
-  margin-bottom: var(--esp-sm);
-}
-
-/* Variantes claires pour les barres sur fond blanc */
-.mini-comp__nom--sombre { color: var(--sombre); }
-
-.mini-comp__fond--clair {
-  background-color: var(--sombre-10);
-}
-
-/* Lien "voir compétences" sur fond blanc */
-.apercu__lien--sombre {
-  color: var(--accent);
-  margin-top: var(--esp-md);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.88rem;
-  font-weight: 600;
-  transition: gap var(--t-vite);
-}
-
-.apercu__lien--sombre:hover { gap: 0.7rem; }
-
-@media (max-width: 900px) {
-  .objectif__grille  { grid-template-columns: 1fr; gap: var(--esp-md); }
-  .apercu__grille    { grid-template-columns: 1fr; gap: var(--esp-md); }
-}
-
-/* ============================================================
-   09. PAGE ACCUEIL — OBJECTIF EN CARTE (intégré dans le héros)
-   Carte sombre positionnée directement sous le texte d'intro.
-   ============================================================ */
-
-/* Carte principale : fond sombre, coins arrondis */
-.objectif-carte {
-  background-color: var(--sombre);
-  border-radius: var(--rayon-lg);
-  padding: var(--esp-md);
-  margin-top: var(--esp-md);
-  border-left: 4px solid var(--accent);   /* Trait corail à gauche comme repère visuel */
-}
-
-/* Titre de la carte */
-.objectif-carte__titre {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--blanc);
-  margin-bottom: 0.5rem;
-  position: relative;
-}
-
-/* Trait décoratif corail sous le titre */
-.objectif-carte__titre::after {
-  content: '';
-  display: block;
-  width: 36px;
-  height: 3px;
-  background-color: var(--accent);
-  border-radius: 2px;
-  margin-top: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-/* Paragraphes de texte dans la carte (fond sombre → texte clair) */
-.objectif-carte__texte {
-  font-size: 0.92rem;
-  line-height: 1.8;
-  color: var(--blanc-70);
-  margin-bottom: var(--esp-xs);
-}
-
-/* Dans la carte, le titre "APERÇU DES COMPÉTENCES" reste en accent */
-.objectif-carte .apercu__titre {
-  color: var(--accent);
-}
-
-/* ============================================================
-   10. PAGE ACCUEIL — SECTION OBJECTIF PLEINE LARGEUR (ancien style)
-   Conservé pour compatibilité si réutilisé.
-   ============================================================ */
-
-/* Fond sombre contrastant avec le héros blanc */
-.objectif {
-  background-color: var(--sombre);
-  padding: var(--esp-lg) 0;
-}
-
-/* Grille deux colonnes : texte | aperçu compétences */
-.objectif__grille {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--esp-lg);
-  align-items: start;
-}
-
-/* Paragraphes de l'objectif professionnel */
 .objectif__texte {
   font-size: 1rem;
   line-height: 1.9;
   color: var(--blanc-70);
 }
 
-.objectif__grille .objectif__texte { margin-top: 0; }
 
-/* Titre de l'aperçu de compétences */
-.apercu__titre {
-  font-size: 0.74rem;
+/* ============================================================
+   10. ACCUEIL — PARCOURS (frise chronologique)
+   ============================================================ */
+.frise {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-md);
+  padding-left: 2rem;
+}
+
+/* Ligne verticale */
+.frise::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--sombre-20);
+}
+
+.frise__etape { position: relative; }
+
+.frise__point {
+  position: absolute;
+  left: -2rem;
+  top: 1.2rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--sombre-20);
+  border: 2px solid transparent;
+}
+
+.frise__point--actif {
+  background-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(249, 112, 104, 0.25);
+}
+
+.frise__point--futur {
+  background-color: var(--blanc);
+  border: 2px dashed var(--accent);
+}
+
+.frise__carte {
+  background-color: var(--sombre-05);
+  border: 1px solid var(--sombre-10);
+  border-radius: var(--rayon-lg);
+  padding: var(--esp-sm) var(--esp-md);
+}
+
+.frise__carte--actif {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.frise__carte--futur {
+  background-color: transparent;
+  border: 2px dashed var(--sombre-20);
+}
+
+.frise__annee {
+  display: block;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.09em;
   color: var(--accent);
-  margin-bottom: var(--esp-sm);
+  margin-bottom: 0.3rem;
 }
 
-/* Item de mini-compétence */
-.mini-comp { margin-bottom: 1.3rem; }
-
-.mini-comp__entete {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.45rem;
-}
-
-.mini-comp__nom {
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--blanc);
-}
-
-.mini-comp__pct {
-  font-size: 0.82rem;
+.frise__nom {
+  font-size: 1rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--sombre);
+  margin-bottom: 0.25rem;
 }
 
-/* Barre de fond (grise translucide) */
-.mini-comp__fond {
-  height: 6px;
-  background-color: var(--blanc-15);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-/*
-   Barre de remplissage animée.
-   La largeur cible (ex: "width: 90%") est définie en HTML via l'attribut style.
-   L'animation scaleX(0 → 1) crée l'effet de remplissage progressif.
-*/
-.mini-comp__barre {
-  height: 100%;
-  background-color: var(--accent);
-  border-radius: 3px;
-  transform-origin: left center;
-  animation: remplir 0.9s ease-out 0.3s both;
-}
-
-/* Lien vers la page compétences complètes */
-.apercu__lien {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: var(--esp-sm);
-  font-size: 0.88rem;
+.frise__lieu {
+  font-size: 0.85rem;
   font-weight: 600;
-  color: var(--accent);
-  transition: gap var(--t-vite);
+  color: var(--sombre-60);
+  margin-bottom: 0.2rem;
 }
 
-.apercu__lien:hover { gap: 0.7rem; }
+.frise__detail {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--sombre-60);
+}
+
+/* Textes clairs sur la carte « active » (fond corail) */
+.frise__carte--actif .frise__annee,
+.frise__carte--actif .frise__lieu,
+.frise__carte--actif .frise__detail { color: rgba(255, 255, 255, 0.85); }
+
+.frise__carte--actif .frise__nom { color: var(--blanc); }
 
 
 /* ============================================================
-   10. PAGE PROJETS — GRILLE DE CARTES
+   11. ACCUEIL — LOISIRS
    ============================================================ */
+.loisirs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: var(--esp-sm);
+}
 
-.section-projets { padding-bottom: var(--esp-lg); }
+.loisir {
+  background-color: var(--blanc);
+  border: 1px solid var(--sombre-10);
+  border-radius: var(--rayon-lg);
+  padding: var(--esp-sm) 1.25rem;
+  border-left: 4px solid var(--accent);
+  box-shadow: var(--ombre-xs);
+}
 
-/* Grille responsive auto-ajustée */
+.loisir__nom {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--sombre);
+}
+
+.loisir__detail {
+  font-size: 0.82rem;
+  color: var(--sombre-60);
+}
+
+
+/* ============================================================
+   12. PROJETS — GRILLE DE CARTES
+   ============================================================ */
 .grille-projets {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--esp-md);
 }
 
-/* Carte projet */
 .carte {
-  background-color: var(--blanc);
-  border-radius: var(--rayon-lg);
-  overflow: hidden;
-  box-shadow: var(--ombre-xs);
-  border: 1px solid var(--sombre-10);
+  position: relative;
   display: flex;
   flex-direction: column;
+  background-color: var(--blanc);
+  border: 1px solid var(--sombre-10);
+  border-radius: var(--rayon-lg);
+  box-shadow: var(--ombre-xs);
+  overflow: hidden;
   transition: transform var(--t-norm), box-shadow var(--t-norm);
 }
 
-/* Élévation au survol */
 .carte:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: var(--ombre-lg);
 }
 
-/* Zone image (hauteur fixe, overflow caché pour l'effet zoom) */
 .carte__image-zone {
+  position: relative;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  height: 210px;
-  background-color: var(--sombre-05);
+  background-color: var(--sombre);
 }
 
 .carte__image {
@@ -856,178 +839,256 @@ ul, ol {
   transition: transform var(--t-lente);
 }
 
-/* Zoom de l'image au survol de la carte */
-.carte:hover .carte__image { transform: scale(1.06); }
+.carte:hover .carte__image { transform: scale(1.05); }
 
-/* Corps de la carte */
+/* Illustration (SVG) : affichée en entier, sans recadrage */
+.image--entiere { object-fit: contain; }
+
+/* Badge de statut posé sur l'image */
+.carte__image-zone .statut {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
 .carte__corps {
-  padding: var(--esp-md);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  padding: var(--esp-md);
 }
 
-/* Badge technologie (pilule) */
-.carte__tag {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  background-color: var(--accent-pale);
-  padding: 0.25rem 0.7rem;
-  border-radius: 20px;
+.carte__entete {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
   margin-bottom: 0.75rem;
-  align-self: flex-start;
+}
+
+.carte__meta {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--sombre-60);
 }
 
 .carte__titre {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
+  line-height: 1.3;
   color: var(--sombre);
   margin-bottom: 0.5rem;
-  line-height: 1.3;
 }
 
 .carte__description {
-  font-size: 0.9rem;
-  line-height: 1.65;
-  color: var(--sombre);
-  opacity: 0.68;
   flex-grow: 1;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--sombre-75);
+  margin-bottom: var(--esp-sm);
 }
 
-/* Lien "Voir le projet →" */
-.carte__lien {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: var(--esp-sm);
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--accent);
-  transition: gap var(--t-vite);
+/* Toute la carte devient cliquable via le lien « Voir le projet » */
+.carte__lien::after {
+  content: '';
+  position: absolute;
+  inset: 0;
 }
-
-.carte__lien:hover { gap: 0.7rem; }
 
 
 /* ============================================================
-   11. PAGES DÉTAIL PROJET
+   13. DÉTAIL PROJET
    ============================================================ */
-
 .detail-projet { padding: var(--esp-md) 0 var(--esp-lg); }
 
-/* Grande image du projet */
 .detail__image {
   width: 100%;
-  max-height: 460px;
+  aspect-ratio: 12 / 5;
   object-fit: cover;
+  background-color: var(--sombre);
   border-radius: var(--rayon-lg);
   box-shadow: var(--ombre-sm);
   margin-bottom: var(--esp-md);
 }
 
-/* Catégorie / type affiché au-dessus du titre */
-.detail__sous-titre {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
+.detail__entete {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
   margin-bottom: 0.5rem;
 }
 
-/* Titre principal du projet (très grand) */
+.detail__entete .sur-titre { margin-bottom: 0; }
+
 .detail__titre {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 900;
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
   color: var(--sombre);
-  letter-spacing: -1.5px;
-  line-height: 1.1;
   margin-bottom: var(--esp-md);
 }
 
-/* Séparateur horizontal léger */
-.separateur {
-  border: none;
-  border-top: 1px solid var(--sombre-10);
-  margin: var(--esp-md) 0;
+.detail__titre::after {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 4px;
+  background-color: var(--accent);
+  border-radius: 2px;
+  margin-top: 0.85rem;
 }
 
-/* Titre de la liste des technologies */
-.detail__tech-titre {
+/* Fiche synthétique : Année / Équipe / Mon rôle / Statut */
+.fiche {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: var(--sombre-05);
+  border: 1px solid var(--sombre-10);
+  border-radius: var(--rayon-lg);
+  margin-bottom: var(--esp-md);
+}
+
+.fiche__item {
+  padding: 1rem 1.25rem;
+  border-right: 1px solid var(--sombre-10);
+}
+
+.fiche__item:last-child { border-right: none; }
+
+.fiche__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.fiche__valeur {
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--sombre);
+}
+
+/* Corps du texte : largeur limitée pour la lisibilité */
+.detail__contenu { max-width: var(--largeur-texte); }
+
+.detail__h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--sombre);
+  margin: var(--esp-md) 0 0.75rem;
+}
+
+.detail__contenu > .detail__h2:first-child { margin-top: 0; }
+
+.detail__texte {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--sombre-75);
+  margin-bottom: var(--esp-sm);
+}
+
+.detail__contenu .tech-badges { margin-bottom: var(--esp-sm); }
+
+/* Les 4 blocs fonctionnels (alimentation, acquisition, traitement, action) */
+.blocs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: var(--esp-sm);
+}
+
+.bloc {
+  border: 1px solid var(--sombre-10);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--rayon);
+  padding: 0.85rem 1rem;
+}
+
+.bloc__nom {
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.06em;
   color: var(--sombre);
-  opacity: 0.50;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.2rem;
 }
 
-/* Conteneur des badges de technologie */
-.tech-badges {
+.bloc__texte {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--sombre-75);
+}
+
+/* Encadré d'information (ex. projet en cours) */
+.encadre {
+  background-color: var(--accent-pale);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--rayon);
+  padding: 1rem 1.25rem;
+  font-size: 0.92rem;
+  color: var(--sombre);
+  margin-bottom: var(--esp-sm);
+}
+
+/* Navigation bas de page : retour + projet suivant */
+.detail__nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: var(--esp-md);
-}
-
-/* Badge individuel (pilule sombre) */
-.tech-badge {
-  background-color: var(--sombre);
-  color: var(--blanc);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.35rem 1rem;
-  border-radius: 20px;
-  letter-spacing: 0.02em;
-}
-
-/* Description longue du projet */
-.detail__description {
-  font-size: 1rem;
-  line-height: 1.9;
-  color: var(--sombre);
-  opacity: 0.78;
-  margin-bottom: var(--esp-sm);
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--sombre-10);
+  padding-top: var(--esp-md);
+  margin-top: var(--esp-md);
 }
 
 
 /* ============================================================
-   12. PAGE COMPÉTENCES — BARRES DE PROGRESSION
+   14. COMPÉTENCES
    ============================================================ */
-
-/* Grille deux colonnes : techniques | soft skills */
 .competences__grille {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--esp-lg);
-  padding-bottom: var(--esp-lg);
 }
 
-/* Titre du bloc (avec bordure corail en bas) */
 .comp-bloc__titre {
+  display: inline-block;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--sombre);
   border-bottom: 3px solid var(--accent);
   padding-bottom: 0.6rem;
   margin-bottom: var(--esp-md);
-  display: inline-block;
 }
 
-/* Item de compétence individuel */
-.comp-item { margin-bottom: 2rem; }
+/* Légende des niveaux */
+.legende-niveaux {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.82rem;
+  color: var(--sombre-60);
+  margin-top: var(--esp-md);
+}
 
-/* En-tête : nom à gauche, pourcentage à droite */
+.legende-niveaux strong { color: var(--sombre); }
+
+.comp-item { margin-bottom: 1.75rem; }
+
 .comp-item__entete {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 0.6rem;
+  gap: 1rem;
+  margin-bottom: 0.55rem;
 }
 
 .comp-item__nom {
@@ -1036,53 +1097,63 @@ ul, ol {
   color: var(--sombre);
 }
 
-.comp-item__pct {
-  font-size: 0.88rem;
+.comp-item__niveau {
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--accent);
+  white-space: nowrap;
 }
 
-/* Piste de fond de la barre */
-.comp-barre__fond {
-  height: 10px;
-  background-color: var(--sombre-10);
-  border-radius: 5px;
-  overflow: hidden;
+.comp-item__desc {
+  font-size: 0.82rem;
+  color: var(--sombre-60);
+  margin-top: 0.45rem;
 }
 
 /*
-   Barre de remplissage — compétences techniques.
-   Dégradé : corail → sombre.
-   La largeur est définie via "style" dans le HTML.
-   L'animation scaleX crée l'effet de remplissage au chargement.
+   Indicateur de niveau en 3 segments.
+   niveau--1 = Notions | niveau--2 = Intermédiaire | niveau--3 = Avancé
 */
-.comp-barre__remplissage {
-  height: 100%;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--sombre) 100%);
-  border-radius: 5px;
+.niveau {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.niveau span {
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--sombre-10);
+}
+
+.niveau--1 span:nth-child(-n+1),
+.niveau--2 span:nth-child(-n+2),
+.niveau--3 span {
+  background-color: var(--accent);
   transform-origin: left center;
-  animation: remplir 1.1s ease-out 0.4s both;
+  animation: remplir 0.6s ease-out both;
 }
 
-/* Variante soft skills — dégradé inversé (sombre → corail) */
-.comp-barre__remplissage--soft {
-  background: linear-gradient(90deg, var(--sombre) 0%, var(--accent) 100%);
+.niveau span:nth-child(2) { animation-delay: 0.15s; }
+.niveau span:nth-child(3) { animation-delay: 0.30s; }
+
+/* Bloc Logiciels (pleine largeur sous les deux colonnes) */
+.logiciels {
+  border-top: 1px solid var(--sombre-10);
+  padding-top: var(--esp-md);
+  margin-top: var(--esp-sm);
 }
 
-/* Description courte en italique sous la barre */
-.comp-item__desc {
-  font-size: 0.8rem;
-  color: var(--sombre);
-  opacity: 0.52;
-  margin-top: 0.45rem;
-  font-style: italic;
+.logiciels__texte {
+  font-size: 0.9rem;
+  color: var(--sombre-60);
+  margin-bottom: var(--esp-sm);
 }
 
 
 /* ============================================================
-   13. PIED DE PAGE
+   15. PIED DE PAGE
    ============================================================ */
-
 .footer {
   background-color: var(--sombre);
   padding: var(--esp-lg) 0 var(--esp-md);
@@ -1104,402 +1175,234 @@ ul, ol {
   margin-bottom: var(--esp-sm);
 }
 
-/* Colonne logo */
 .footer__logo {
+  display: block;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--blanc);
   margin-bottom: 0.5rem;
-  display: block;
 }
 
 .footer__tagline {
   font-size: 0.85rem;
-  color: var(--blanc-70);
   line-height: 1.6;
-}
-
-/* Colonne navigation */
-.footer__nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.footer__nav-lien {
-  font-size: 0.88rem;
   color: var(--blanc-70);
-  transition: color var(--t-vite);
 }
 
-.footer__nav-lien:hover { color: var(--accent); }
-
-/* Colonne contact */
+.footer__nav,
 .footer__contact {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
 }
 
+.footer__nav-lien,
+.footer__contact-lien {
+  font-size: 0.88rem;
+  color: var(--blanc-70);
+  overflow-wrap: anywhere;
+  transition: color var(--t-vite);
+}
+
+.footer__nav-lien:hover,
+.footer__contact-lien:hover { color: var(--accent); }
+
 .footer__contact-ligne {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.85rem;
-  color: var(--blanc-70);
 }
-
-.footer__contact-lien {
-  color: var(--blanc-70);
-  transition: color var(--t-vite);
-}
-
-.footer__contact-lien:hover { color: var(--accent); }
 
 .footer__contact-icone {
-  color: var(--accent);
-  font-size: 0.9rem;
   width: 16px;
   text-align: center;
+  font-size: 0.9rem;
+  color: var(--accent);
 }
 
-/* Copyright */
 .footer__copyright {
   text-align: center;
   padding-top: var(--esp-sm);
+  border-top: 1px solid var(--blanc-15);
   font-size: 0.78rem;
   color: var(--blanc-70);
-  opacity: 0.6;
 }
 
+
+/* ============================================================
+   16. ANIMATIONS
+   ============================================================ */
+
+/* Remplissage progressif (barres de niveau) */
+@keyframes remplir {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Pastille « En cours » qui pulse */
+@keyframes pulser {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+
+/* Respect du réglage « réduire les animations » du système */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ============================================================
+   17. RESPONSIVE — TABLETTE (max-width: 900px)
+   ============================================================ */
 @media (max-width: 900px) {
+
+  /* Héros : une colonne, photo au-dessus */
+  .hero__grille {
+    grid-template-columns: 1fr;
+    gap: var(--esp-md);
+    text-align: center;
+  }
+
+  .hero__photo-zone {
+    order: -1;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .hero__photo { height: 380px; }
+
+  .hero__intro { margin: 0 auto; }
+
+  .hero__cta { justify-content: center; }
+
+  .objectif__grille,
+  .competences__grille {
+    grid-template-columns: 1fr;
+    gap: var(--esp-md);
+  }
+
+  .fiche { grid-template-columns: repeat(2, 1fr); }
+
+  .fiche__item:nth-child(2) { border-right: none; }
+
+  .fiche__item:nth-child(-n+2) { border-bottom: 1px solid var(--sombre-10); }
+
   .footer__grille {
     grid-template-columns: 1fr 1fr;
     gap: var(--esp-md);
   }
 }
 
-@media (max-width: 700px) {
-  .footer__grille {
-    grid-template-columns: 1fr;
-    gap: var(--esp-md);
-  }
-}
-
 
 /* ============================================================
-   14. FRISE CHRONOLOGIQUE
+   18. RESPONSIVE — MOBILE (max-width: 700px)
    ============================================================ */
-
-.frise {
-  padding: var(--esp-lg) 0;
-  background-color: var(--blanc);
-}
-
-.frise__titre {
-  color: var(--sombre);
-  margin-bottom: var(--esp-lg);
-}
-
-/* Ligne verticale centrale */
-.frise__ligne {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: var(--esp-md);
-  padding-left: 2rem;
-}
-
-.frise__ligne::before {
-  content: '';
-  position: absolute;
-  left: 7px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: var(--sombre-20);
-}
-
-/* Étape individuelle */
-.frise__etape {
-  position: relative;
-  display: flex;
-  gap: var(--esp-md);
-  align-items: flex-start;
-}
-
-/* Point sur la ligne */
-.frise__point {
-  position: absolute;
-  left: -2rem;
-  top: 0.35rem;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: var(--sombre-20);
-  border: 2px solid var(--sombre-20);
-  flex-shrink: 0;
-}
-
-.frise__point--actif {
-  background-color: var(--accent);
-  border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(249, 112, 104, 0.25);
-}
-
-.frise__point--futur {
-  background-color: transparent;
-  border-color: var(--accent);
-  border-style: dashed;
-}
-
-/* Carte de contenu */
-.frise__carte {
-  background-color: var(--sombre-05);
-  border-radius: var(--rayon-lg);
-  padding: var(--esp-sm) var(--esp-md);
-  flex: 1;
-  border: 1px solid var(--sombre-10);
-}
-
-.frise__carte--actif {
-  background-color: var(--accent);
-  border-color: var(--accent);
-}
-
-.frise__carte--futur {
-  background-color: transparent;
-  border: 2px dashed var(--sombre-20);
-}
-
-.frise__annee {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--accent);
-  display: block;
-  margin-bottom: 0.3rem;
-}
-
-.frise__carte--actif .frise__annee {
-  color: rgba(255,255,255,0.85);
-}
-
-.frise__nom {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--sombre);
-  margin-bottom: 0.25rem;
-}
-
-.frise__carte--actif .frise__nom {
-  color: var(--blanc);
-}
-
-.frise__lieu {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--sombre);
-  opacity: 0.60;
-  margin-bottom: 0.2rem;
-}
-
-.frise__detail {
-  font-size: 0.82rem;
-  color: var(--sombre);
-  opacity: 0.55;
-  line-height: 1.5;
-}
-
-.frise__carte--actif .frise__lieu,
-.frise__carte--actif .frise__detail {
-  color: rgba(255,255,255,0.80);
-  opacity: 1;
-}
-
-@media (max-width: 700px) {
-  .frise__ligne { padding-left: 1.5rem; }
-  .frise__point { left: -1.5rem; }
-}
-
-
-/* ============================================================
-   14. ANIMATIONS CSS
-   ============================================================ */
-
-/*
-   Animation de remplissage des barres de compétences.
-   Principe : l'élément a déjà sa largeur cible définie (via "style"),
-   mais il est visuellement écrasé (scaleX = 0) au départ.
-   L'animation le ramène à sa taille normale (scaleX = 1),
-   donnant l'illusion d'un remplissage progressif de gauche à droite.
-   Nécessite : transform-origin: left center sur l'élément.
-*/
-@keyframes remplir {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
-
-
-/* ============================================================
-   14. RESPONSIVE — TABLETTE (max-width: 900px)
-   ============================================================ */
-
-@media (max-width: 900px) {
-
-  /* Héros : passage en une seule colonne */
-  .hero__grille {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: var(--esp-md);
-  }
-
-  /* Photo placée avant le texte sur tablette */
-  .hero__photo-zone { order: -1; }
-
-  /* Ajustement du décor géométrique */
-  .hero__photo-zone::before {
-    top: 12px;
-    left: 15%;
-    right: 5%;
-    bottom: -12px;
-  }
-
-  /* Réduction de la photo */
-  .hero__photo {
-    height: 380px;
-    max-width: 340px;
-    margin: 0 auto;
-  }
-
-  /* Centrage du texte d'intro */
-  .hero__intro { margin: 0 auto var(--esp-md); }
-
-  /* Objectif : une seule colonne */
-  .objectif__grille {
-    grid-template-columns: 1fr;
-    gap: var(--esp-md);
-  }
-
-  /* Compétences : une seule colonne */
-  .competences__grille {
-    grid-template-columns: 1fr;
-    gap: var(--esp-md);
-  }
-}
-
-
-/* ============================================================
-   15. RESPONSIVE — MOBILE (max-width: 700px)
-   ============================================================ */
-
 @media (max-width: 700px) {
 
-  /* ---- Navigation mobile ---- */
+  /* Espacements globaux réduits */
+  :root {
+    --esp-lg : 2.5rem;
+    --esp-xl : 3rem;
+  }
 
-  /* Réduction du padding horizontal */
+  .conteneur     { padding: 0 var(--esp-sm); }
   .nav-conteneur { padding: 0 var(--esp-sm); }
 
-  /* Affichage de l'icône hamburger sur mobile */
+  /* ---- Navigation ---- */
   .nav-hamburger { display: flex; }
 
-  /* Menu masqué par défaut sur mobile */
   .nav-menu {
     display: none;
     position: absolute;
-    top: var(--hauteur-nav);    /* Ancré sous la navbar fixe */
+    top: var(--hauteur-nav);
     left: 0;
     right: 0;
-    background-color: var(--sombre);
-    border-bottom: 2px solid var(--accent);
-    box-shadow: var(--ombre-sm);
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: var(--esp-xs) 0;
-    z-index: 999;
+    padding: var(--esp-xs) 0 0;
+    background-color: var(--sombre);
+    border-bottom: 2px solid var(--accent);
+    box-shadow: var(--ombre-sm);
+    max-height: calc(100vh - var(--hauteur-nav));
+    overflow-y: auto;
   }
 
-  /* Menu affiché quand la checkbox est cochée */
   .nav-checkbox:checked + .nav-conteneur .nav-menu { display: flex; }
 
-  /* Séparateurs entre items */
-  .nav-menu > li { border-bottom: 1px solid var(--sombre-05); }
+  .nav-menu > li { border-bottom: 1px solid var(--blanc-15); }
   .nav-menu > li:last-child { border-bottom: none; }
 
-  /* Lien mobile (bloc, plus grand pour le touch) */
   .nav-lien {
     display: block;
-    padding: 0.85rem var(--esp-md);
+    padding: 0.85rem var(--esp-sm);
     font-size: 1rem;
   }
 
-  /* Soulignement animé désactivé sur mobile (hover peu fiable sur touch) */
   .nav-lien::after { display: none; }
 
-  /* ---- Contact mobile ---- */
-
-  /* Le bouton Contact prend toute la largeur de la ligne */
-  .nav-contact { width: 100%; }
-
+  /* Contact : le panneau s'affiche à plat sous le bouton */
   .nav-contact-btn {
     display: block;
     width: 100%;
-    text-align: left;
     border-radius: 0;
-    padding: 0.85rem var(--esp-md);
+    padding: 0.85rem var(--esp-sm);
     font-size: 1rem;
-    color: var(--blanc);
-    background-color: var(--accent);
   }
 
-  /*
-     Sur mobile, le panneau contact est affiché en mode statique
-     (inline, sous le bouton) au lieu du popup absolu du desktop.
-     Il reste toujours visible quand le menu hamburger est ouvert.
-  */
+  .nav-contact-btn::after { display: none; }
+
   .panneau-contact {
-    position: static;       /* Flux normal, pas de positionnement absolu */
+    position: static;
+    width: 100%;
+    margin-top: 0;
     opacity: 1;
     transform: none;
     pointer-events: auto;
     border-radius: 0;
     border-top: none;
-    border-left: 3px solid var(--accent);
-    width: 100%;
-    padding: var(--esp-sm) var(--esp-md);
     box-shadow: none;
-    background-color: var(--sombre);
+    padding: var(--esp-xs) var(--esp-sm);
   }
 
-  /* ---- Héros mobile ---- */
+  .panneau-contact::before { display: none; }
 
-  .hero {
-    padding: var(--esp-md) 0;
-    min-height: auto;           /* Pas de pleine hauteur sur mobile */
-  }
+  /* ---- Héros ---- */
+  .hero { padding: var(--esp-md) 0 var(--esp-lg); }
 
   .hero__nom {
     font-size: 2.4rem;
     letter-spacing: -1px;
   }
 
-  .hero__photo {
-    height: 300px;
-    max-width: 280px;
-  }
+  .hero__photo-zone { max-width: 280px; }
 
-  /* ---- Projets : une colonne sur mobile ---- */
+  .hero__photo { height: 320px; }
+
+  /* ---- Frise ---- */
+  .frise { padding-left: 1.5rem; }
+  .frise__point { left: -1.5rem; }
+  .frise__carte { padding: var(--esp-sm); }
+
+  /* ---- Projets ---- */
   .grille-projets { grid-template-columns: 1fr; }
 
-  /* ---- Détail projet ---- */
-  .detail__titre { font-size: 1.8rem; }
-  .detail__image { max-height: 260px; }
+  .carte__corps { padding: 1.5rem; }
 
-  /* ---- Réduction des espacements globaux ---- */
-  :root {
-    --esp-lg : 2.5rem;
-    --esp-xl : 3rem;
-  }
+  /* ---- Détail projet ---- */
+  .detail__image { aspect-ratio: 16 / 10; }
+
+  .blocs { grid-template-columns: 1fr; }
+
+  .detail__nav { flex-direction: column; }
+
+  .detail__nav .btn { justify-content: center; }
+
+  /* ---- Pied de page ---- */
+  .footer__grille { grid-template-columns: 1fr; }
 }
