@@ -798,6 +798,119 @@ ul, ol { list-style: none; }
   color: var(--sombre-60);
 }
 
+/* --- Grandes cartes avec photos (cuisine, Lego, randonnée) --- */
+.loisirs-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--esp-sm);
+  margin-bottom: var(--esp-sm);
+}
+
+.loisir-carte {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blanc);
+  border: 1px solid var(--sombre-10);
+  border-radius: var(--rayon-lg);
+  box-shadow: var(--ombre-xs);
+  overflow: hidden;
+}
+
+.loisir-carte__corps {
+  padding: var(--esp-sm) 1.25rem;
+  border-top: 3px solid var(--accent);
+}
+
+/*
+   Mosaïque de photos.
+   2 photos : côte à côte | 3 photos : 1 grande à gauche + 2 petites à droite
+*/
+.mosaique {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 130px 130px;
+  gap: 3px;
+  background-color: var(--sombre-10);
+}
+
+.mosaique--2 .mosaique__lien      { grid-row: span 2; }
+.mosaique--3 .mosaique__lien:first-child { grid-row: span 2; }
+
+.mosaique__lien {
+  display: block;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.mosaique__lien img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-lente);
+}
+
+.mosaique__lien:hover img { transform: scale(1.06); }
+
+/* --- Visionneuse plein écran (CSS pur, technique :target) --- */
+.visionneuse {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: var(--esp-md);
+  background-color: rgba(33, 39, 56, 0.94);
+}
+
+.visionneuse:target { display: flex; }
+
+/* Clic sur le fond = fermer */
+.visionneuse__fond {
+  position: absolute;
+  inset: 0;
+  cursor: zoom-out;
+}
+
+.visionneuse__image {
+  position: relative;
+  max-width: min(100%, 1100px);
+  max-height: calc(100vh - 9rem);
+  width: auto;
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre-lg);
+}
+
+.visionneuse__legende {
+  position: relative;
+  font-size: 0.88rem;
+  color: var(--blanc-70);
+  text-align: center;
+}
+
+.visionneuse__bouton {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--blanc-15);
+  color: var(--blanc);
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: background-color var(--t-vite);
+}
+
+.visionneuse__bouton:hover { background-color: var(--accent); }
+
+.visionneuse__fermer    { top: 1rem; right: 1rem; }
+.visionneuse__precedent { left: 1rem;  top: 50%; transform: translateY(-50%); }
+.visionneuse__suivant   { right: 1rem; top: 50%; transform: translateY(-50%); }
+
 
 /* ============================================================
    12. PROJETS — GRILLE DE CARTES
@@ -1027,6 +1140,22 @@ img.image--entiere { object-fit: contain; }
 }
 
 /* Encadré d'information (ex. projet en cours) */
+/* Photo supplémentaire dans une page projet */
+.detail__figure { margin-bottom: var(--esp-sm); }
+
+.detail__figure img {
+  max-height: 560px;
+  width: auto;
+  border-radius: var(--rayon-lg);
+  box-shadow: var(--ombre-sm);
+}
+
+.detail__figure figcaption {
+  font-size: 0.85rem;
+  color: var(--sombre-60);
+  margin-top: 0.6rem;
+}
+
 .encadre {
   background-color: var(--accent-pale);
   border-left: 4px solid var(--accent);
@@ -1300,6 +1429,12 @@ img.image--entiere { object-fit: contain; }
 
   .loisirs { grid-template-columns: repeat(2, 1fr); }
 
+  .loisirs-photos { grid-template-columns: 1fr 1fr; }
+
+  .loisirs-photos .loisir-carte:last-child { grid-column: 1 / -1; }
+
+  .loisirs-photos .loisir-carte:last-child .mosaique { grid-template-rows: 180px 180px; }
+
   .fiche { grid-template-columns: repeat(2, 1fr); }
 
   .fiche__item:nth-child(2) { border-right: none; }
@@ -1404,7 +1539,18 @@ img.image--entiere { object-fit: contain; }
   .frise__carte { padding: var(--esp-sm); }
 
   /* ---- Loisirs ---- */
-  .loisirs { grid-template-columns: 1fr; }
+  .loisirs,
+  .loisirs-photos { grid-template-columns: 1fr; }
+
+  .mosaique,
+  .loisirs-photos .loisir-carte:last-child .mosaique { grid-template-rows: 150px 150px; }
+
+  .visionneuse { padding: var(--esp-md) var(--esp-xs); }
+
+  .visionneuse__precedent,
+  .visionneuse__suivant { top: auto; bottom: 1rem; transform: none; }
+
+  .detail__figure img { max-height: 440px; }
 
   /* ---- Projets ---- */
   .grille-projets { grid-template-columns: 1fr; }

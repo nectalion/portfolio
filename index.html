@@ -178,21 +178,57 @@
     <section class="section section--teinte" aria-labelledby="titre-loisirs">
       <div class="conteneur">
         <h2 class="titre-section" id="titre-loisirs">En dehors des cours</h2>
+        <div class="loisirs-photos">
+          <article class="loisir-carte">
+            <div class="mosaique mosaique--2">
+              <a href="#photo-cuisine-1" class="mosaique__lien" aria-label="Agrandir : Pâtes fraîches maison découpées sur le plan de travail">
+                <img src="images/cuisine1.jpg" alt="Pâtes fraîches maison découpées sur le plan de travail" width="787" height="1400" loading="lazy" />
+              </a>
+              <a href="#photo-cuisine-2" class="mosaique__lien" aria-label="Agrandir : Crème au chocolat en préparation dans une casserole">
+                <img src="images/cuisine2.jpg" alt="Crème au chocolat en préparation dans une casserole" width="787" height="1400" loading="lazy" />
+              </a>
+            </div>
+            <div class="loisir-carte__corps">
+              <p class="loisir__nom">Cuisine et pâtisserie</p>
+              <p class="loisir__detail">Pâtes fraîches, desserts au chocolat…</p>
+            </div>
+          </article>
+          <article class="loisir-carte">
+            <div class="mosaique mosaique--2">
+              <a href="#photo-lego-1" class="mosaique__lien" aria-label="Agrandir : Création Lego : navette spatiale au décollage">
+                <img src="images/lego2.jpg" alt="Création Lego : navette spatiale au décollage" width="820" height="1400" loading="lazy" />
+              </a>
+              <a href="#photo-lego-2" class="mosaique__lien" aria-label="Agrandir : Martin présentant un grand voilier trois-mâts en Lego">
+                <img src="images/lego1.jpg" alt="Martin présentant un grand voilier trois-mâts en Lego" width="1400" height="1091" loading="lazy" />
+              </a>
+            </div>
+            <div class="loisir-carte__corps">
+              <p class="loisir__nom">Lego</p>
+              <p class="loisir__detail">Grandes constructions et créations personnelles</p>
+            </div>
+          </article>
+          <article class="loisir-carte">
+            <div class="mosaique mosaique--3">
+              <a href="#photo-rando-1" class="mosaique__lien" aria-label="Agrandir : Vallée verdoyante vue depuis les crêtes">
+                <img src="images/rando3.jpg" alt="Vallée verdoyante vue depuis les crêtes" width="1050" height="1400" loading="lazy" />
+              </a>
+              <a href="#photo-rando-2" class="mosaique__lien" aria-label="Agrandir : Selfie en randonnée sur les crêtes, entre amis">
+                <img src="images/rando1.jpg" alt="Selfie en randonnée sur les crêtes, entre amis" width="1400" height="1050" loading="lazy" />
+              </a>
+              <a href="#photo-rando-3" class="mosaique__lien" aria-label="Agrandir : Ciel nuageux au-dessus des montagnes">
+                <img src="images/rando2.jpg" alt="Ciel nuageux au-dessus des montagnes" width="1400" height="1050" loading="lazy" />
+              </a>
+            </div>
+            <div class="loisir-carte__corps">
+              <p class="loisir__nom">Randonnée</p>
+              <p class="loisir__detail">En montagne</p>
+            </div>
+          </article>
+        </div>
         <div class="loisirs">
-          <div class="loisir">
-            <p class="loisir__nom">Cuisine et pâtisserie</p>
-          </div>
-          <div class="loisir">
-            <p class="loisir__nom">Lego</p>
-            <p class="loisir__detail">Grandes constructions et créations personnelles</p>
-          </div>
           <div class="loisir">
             <p class="loisir__nom">Vélo</p>
             <p class="loisir__detail">VTT et route : trajets du quotidien et sorties</p>
-          </div>
-          <div class="loisir">
-            <p class="loisir__nom">Randonnée</p>
-            <p class="loisir__detail">En montagne</p>
           </div>
           <div class="loisir">
             <p class="loisir__nom">Informatique</p>
@@ -211,6 +247,68 @@
     </section>
 
   </main>
+
+  <!-- ===================================================
+       VISIONNEUSES PHOTO (CSS pur)
+       Un clic sur une photo ouvre l'URL #photo-xxx : la vue correspondante
+       s'affiche grâce au sélecteur :target. « × » ou un clic sur le fond la ferme.
+       =================================================== -->
+  <div class="visionneuse" id="photo-cuisine-1" role="dialog" aria-label="Cuisine et pâtisserie : photo 1 sur 2">
+    <a href="#fermer" class="visionneuse__fond" aria-label="Fermer"></a>
+    <img src="images/cuisine1.jpg" alt="Pâtes fraîches maison découpées sur le plan de travail" class="visionneuse__image" width="787" height="1400" loading="lazy" />
+    <p class="visionneuse__legende">Cuisine et pâtisserie — 1 / 2</p>
+    <a href="#photo-cuisine-2" class="visionneuse__bouton visionneuse__precedent" aria-label="Photo précédente">‹</a>
+    <a href="#photo-cuisine-2" class="visionneuse__bouton visionneuse__suivant" aria-label="Photo suivante">›</a>
+    <a href="#fermer" class="visionneuse__bouton visionneuse__fermer" aria-label="Fermer">×</a>
+  </div>
+  <div class="visionneuse" id="photo-cuisine-2" role="dialog" aria-label="Cuisine et pâtisserie : photo 2 sur 2">
+    <a href="#fermer" class="visionneuse__fond" aria-label="Fermer"></a>
+    <img src="images/cuisine2.jpg" alt="Crème au chocolat en préparation dans une casserole" class="visionneuse__image" width="787" height="1400" loading="lazy" />
+    <p class="visionneuse__legende">Cuisine et pâtisserie — 2 / 2</p>
+    <a href="#photo-cuisine-1" class="visionneuse__bouton visionneuse__precedent" aria-label="Photo précédente">‹</a>
+    <a href="#photo-cuisine-1" class="visionneuse__bouton visionneuse__suivant" aria-label="Photo suivante">›</a>
+    <a href="#fermer" class="visionneuse__bouton visionneuse__fermer" aria-label="Fermer">×</a>
+  </div>
+  <div class="visionneuse" id="photo-lego-1" role="dialog" aria-label="Lego : photo 1 sur 2">
+    <a href="#fermer" class="visionneuse__fond" aria-label="Fermer"></a>
+    <img src="images/lego2.jpg" alt="Création Lego : navette spatiale au décollage" class="visionneuse__image" width="820" height="1400" loading="lazy" />
+    <p class="visionneuse__legende">Lego — 1 / 2</p>
+    <a href="#photo-lego-2" class="visionneuse__bouton visionneuse__precedent" aria-label="Photo précédente">‹</a>
+    <a href="#photo-lego-2" class="visionneuse__bouton visionneuse__suivant" aria-label="Photo suivante">›</a>
+    <a href="#fermer" class="visionneuse__bouton visionneuse__fermer" aria-label="Fermer">×</a>
+  </div>
+  <div class="visionneuse" id="photo-lego-2" role="dialog" aria-label="Lego : photo 2 sur 2">
+    <a href="#fermer" class="visionneuse__fond" aria-label="Fermer"></a>
+    <img src="images/lego1.jpg" alt="Martin présentant un grand voilier trois-mâts en Lego" class="visionneuse__image" width="1400" height="1091" loading="lazy" />
+    <p class="visionneuse__legende">Lego — 2 / 2</p>
+    <a href="#photo-lego-1" class="visionneuse__bouton visionneuse__precedent" aria-label="Photo précédente">‹</a>
+    <a href="#photo-lego-1" class="visionneuse__bouton visionneuse__suivant" aria-label="Photo suivante">›</a>
+    <a href="#fermer" class="visionneuse__bouton visionneuse__fermer" aria-label="Fermer">×</a>
+  </div>
+  <div class="visionneuse" id="photo-rando-1" role="dialog" aria-label="Randonnée : photo 1 sur 3">
+    <a href="#fermer" class="visionneuse__fond" aria-label="Fermer"></a>
+    <img src="images/rando3.jpg" alt="Vallée verdoyante vue depuis les crêtes" class="visionneuse__image" width="1050" height="1400" loading="lazy" />
+    <p class="visionneuse__legende">Randonnée — 1 / 3</p>
+    <a href="#photo-rando-3" class="visionneuse__bouton visionneuse__precedent" aria-label="Photo précédente">‹</a>
+    <a href="#photo-rando-2" class="visionneuse__bouton visionneuse__suivant" aria-label="Photo suivante">›</a>
+    <a href="#fermer" class="visionneuse__bouton visionneuse__fermer" aria-label="Fermer">×</a>
+  </div>
+  <div class="visionneuse" id="photo-rando-2" role="dialog" aria-label="Randonnée : photo 2 sur 3">
+    <a href="#fermer" class="visionneuse__fond" aria-label="Fermer"></a>
+    <img src="images/rando1.jpg" alt="Selfie en randonnée sur les crêtes, entre amis" class="visionneuse__image" width="1400" height="1050" loading="lazy" />
+    <p class="visionneuse__legende">Randonnée — 2 / 3</p>
+    <a href="#photo-rando-1" class="visionneuse__bouton visionneuse__precedent" aria-label="Photo précédente">‹</a>
+    <a href="#photo-rando-3" class="visionneuse__bouton visionneuse__suivant" aria-label="Photo suivante">›</a>
+    <a href="#fermer" class="visionneuse__bouton visionneuse__fermer" aria-label="Fermer">×</a>
+  </div>
+  <div class="visionneuse" id="photo-rando-3" role="dialog" aria-label="Randonnée : photo 3 sur 3">
+    <a href="#fermer" class="visionneuse__fond" aria-label="Fermer"></a>
+    <img src="images/rando2.jpg" alt="Ciel nuageux au-dessus des montagnes" class="visionneuse__image" width="1400" height="1050" loading="lazy" />
+    <p class="visionneuse__legende">Randonnée — 3 / 3</p>
+    <a href="#photo-rando-2" class="visionneuse__bouton visionneuse__precedent" aria-label="Photo précédente">‹</a>
+    <a href="#photo-rando-1" class="visionneuse__bouton visionneuse__suivant" aria-label="Photo suivante">›</a>
+    <a href="#fermer" class="visionneuse__bouton visionneuse__fermer" aria-label="Fermer">×</a>
+  </div>
 
   <!-- ===================================================
        PIED DE PAGE (identique sur toutes les pages)
