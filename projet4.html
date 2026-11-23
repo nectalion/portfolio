@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robot Sumo — MAURY Martin</title>
+  <meta name="description" content="Projet de 2e année de BUT GEII : conception en équipe de cinq d'un robot sumo autonome. Martin MAURY est en charge de la motorisation." />
+  <meta name="author" content="MAURY Martin" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="corps-page">
+
+  <!-- ===================================================
+       NAVIGATION PRINCIPALE (identique sur toutes les pages)
+       Le lien de la page courante porte la classe "actif".
+       =================================================== -->
+  <nav class="navbar" aria-label="Navigation principale">
+    <!-- Checkbox invisible : ouvre / ferme le menu mobile (CSS pur) -->
+    <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" tabindex="-1" />
+    <div class="nav-conteneur">
+
+      <a href="index.html" class="nav-logo">Portfolio de Martin</a>
+
+      <label for="nav-toggle" class="nav-hamburger" aria-label="Ouvrir ou fermer le menu">
+        <span class="nav-hamburger__trait"></span>
+        <span class="nav-hamburger__trait"></span>
+        <span class="nav-hamburger__trait"></span>
+      </label>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-lien">Accueil</a></li>
+        <li><a href="projects.html" class="nav-lien actif" aria-current="page">Projets</a></li>
+        <li><a href="competences.html" class="nav-lien">Compétences</a></li>
+
+        <!-- Contact : panneau déroulant au survol (desktop) / affiché à plat (mobile) -->
+        <li class="nav-contact">
+          <span class="nav-contact-btn" tabindex="0">Contact</span>
+          <div class="panneau-contact">
+            <p class="panneau-contact__titre">Me contacter</p>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone" aria-hidden="true">✉</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">Email</span>
+                <a href="mailto:martinmaury202@gmail.com" class="contact-ligne__valeur">martinmaury202@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone" aria-hidden="true">☎</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">Téléphone</span>
+                <a href="tel:+33780066496" class="contact-ligne__valeur">07 80 06 64 96</a>
+              </div>
+            </div>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone" aria-hidden="true">in</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">Martin Maury</a>
+              </div>
+            </div>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone" aria-hidden="true">⌨</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">GitHub</span>
+                <a href="https://github.com/nectalion" class="contact-ligne__valeur" target="_blank" rel="noopener">github.com/nectalion</a>
+              </div>
+            </div>
+            <div class="contact-ligne">
+              <div class="contact-ligne__icone" aria-hidden="true">↓</div>
+              <div class="contact-ligne__info">
+                <span class="contact-ligne__label">CV</span>
+                <a href="cv-martin-maury.pdf" class="contact-ligne__valeur" download>Télécharger mon CV (PDF)</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="contenu-principal">
+    <article class="detail-projet">
+      <div class="conteneur">
+
+        <a href="projects.html" class="lien-retour">← Retour aux projets</a>
+
+        <img src="images/projet4.svg" alt="Illustration provisoire d'un robot sumo sur son ring" class="detail__image image--entiere"
+             width="1200" height="700" />
+
+        <div class="detail__entete">
+          <p class="sur-titre">Électronique · Motorisation — BUT GEII 2e année</p>
+          <span class="statut">En cours</span>
+        </div>
+        <h1 class="detail__titre">Robot Sumo</h1>
+
+        <!-- Fiche synthétique -->
+        <div class="fiche">
+          <div class="fiche__item"><span class="fiche__label">Année</span><span class="fiche__valeur">2e année de BUT</span></div>
+          <div class="fiche__item"><span class="fiche__label">Équipe</span><span class="fiche__valeur">Équipe de 5</span></div>
+          <div class="fiche__item"><span class="fiche__label">Mon rôle</span><span class="fiche__valeur">Motorisation</span></div>
+          <div class="fiche__item"><span class="fiche__label">Statut</span><span class="fiche__valeur">En cours</span></div>
+        </div>
+
+        <div class="detail__contenu">
+          <h2 class="detail__h2">Contexte</h2>
+          <p class="detail__texte">
+            Dans le cadre de ma deuxième année de BUT GEII, je participe en équipe de cinq à la conception d'un robot sumo autonome. Le principe : deux robots s'affrontent sur un ring circulaire, et chacun doit pousser l'adversaire hors de l'arène, sans aucune intervention humaine une fois le combat lancé.
+          </p>
+
+          <h2 class="detail__h2">Fonctionnement</h2>
+          <p class="detail__texte">
+            Comme pour nos projets précédents, le robot est découpé en quatre blocs fonctionnels :
+          </p>
+          <div class="blocs">
+            <div class="bloc">
+              <p class="bloc__nom">Alimentation</p>
+              <p class="bloc__texte">Une batterie embarquée alimente l'électronique de commande et les moteurs.</p>
+            </div>
+            <div class="bloc">
+              <p class="bloc__nom">Acquisition</p>
+              <p class="bloc__texte">Des capteurs détectent l'adversaire et le bord du ring pour éviter de sortir.</p>
+            </div>
+            <div class="bloc">
+              <p class="bloc__nom">Traitement</p>
+              <p class="bloc__texte">Un microcontrôleur applique la stratégie : chercher, attaquer ou se replacer.</p>
+            </div>
+            <div class="bloc">
+              <p class="bloc__nom">Action</p>
+              <p class="bloc__texte">Les moteurs propulsent le robot pour pousser l'adversaire — c'est ma partie.</p>
+            </div>
+          </div>
+
+          <h2 class="detail__h2">Mon rôle</h2>
+          <p class="detail__texte">
+            Je suis en charge de la motorisation : choix des moteurs et de leur commande, afin que le robot soit à la fois assez rapide pour attaquer et assez puissant pour pousser son adversaire.
+          </p>
+
+          <!-- À compléter : composants, photos (images/projet4.jpg) et résultats -->
+          <p class="encadre">Projet en cours : cette page sera complétée au fil de l'avancement (composants retenus, choix de conception, photos et résultats).</p>
+        </div>
+
+        <nav class="detail__nav" aria-label="Navigation entre les projets">
+          <a href="projects.html" class="btn btn--outline">← Tous les projets</a>
+          <a href="projet1.html" class="btn btn--accent">Projet suivant : Carte Son et Lumière — Rafale →</a>
+        </nav>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- ===================================================
+       PIED DE PAGE (identique sur toutes les pages)
+       =================================================== -->
+  <footer class="footer">
+    <div class="conteneur">
+      <div class="footer__grille">
+
+        <div>
+          <span class="footer__logo">MAURY Martin</span>
+          <p class="footer__tagline">Étudiant en 2e année de BUT GEII<br>IUT de Bordeaux — site de Gradignan</p>
+        </div>
+
+        <div>
+          <p class="footer__bloc-titre">Navigation</p>
+          <nav class="footer__nav" aria-label="Navigation pied de page">
+            <a href="index.html" class="footer__nav-lien">Accueil</a>
+            <a href="projects.html" class="footer__nav-lien">Projets</a>
+            <a href="competences.html" class="footer__nav-lien">Compétences</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer__bloc-titre">Contact</p>
+          <div class="footer__contact">
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone" aria-hidden="true">✉</span>
+              <a href="mailto:martinmaury202@gmail.com" class="footer__contact-lien">martinmaury202@gmail.com</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone" aria-hidden="true">☎</span>
+              <a href="tel:+33780066496" class="footer__contact-lien">07 80 06 64 96</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone" aria-hidden="true">in</span>
+              <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__contact-lien" target="_blank" rel="noopener">Martin Maury</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone" aria-hidden="true">⌨</span>
+              <a href="https://github.com/nectalion" class="footer__contact-lien" target="_blank" rel="noopener">github.com/nectalion</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone" aria-hidden="true">↓</span>
+              <a href="cv-martin-maury.pdf" class="footer__contact-lien" download>Télécharger mon CV (PDF)</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p class="footer__copyright">© 2026 MAURY Martin — Tous droits réservés</p>
+    </div>
+  </footer>
+
+</body>
+</html>

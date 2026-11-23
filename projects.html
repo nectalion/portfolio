@@ -1,32 +1,25 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- ===================================================
-       Métadonnées de la page Projets
-       =================================================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO -->
   <title>Projets — MAURY Martin</title>
-  <meta name="description"
-        content="Découvrez les projets de Martin MAURY : applications web, interfaces utilisateurs et solutions numériques réalisées en HTML, CSS, JavaScript et Python." />
+  <meta name="description" content="Projets de Martin MAURY en BUT GEII : robot sumo, carte son et lumière Rafale, thermomètre de bain bébé et kart à hélice radiocommandé." />
   <meta name="author" content="MAURY Martin" />
-
-  <!-- Feuille de styles partagée -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="corps-page">
 
   <!-- ===================================================
-       NAVIGATION PRINCIPALE
-       "Projets" porte la classe "actif" sur cette page.
+       NAVIGATION PRINCIPALE (identique sur toutes les pages)
+       Le lien de la page courante porte la classe "actif".
        =================================================== -->
-  <nav class="navbar" role="navigation" aria-label="Navigation principale">
-    <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" />
+  <nav class="navbar" aria-label="Navigation principale">
+    <!-- Checkbox invisible : ouvre / ferme le menu mobile (CSS pur) -->
+    <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" tabindex="-1" />
     <div class="nav-conteneur">
 
-      <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil">Portfolio de Martin</a>
+      <a href="index.html" class="nav-logo">Portfolio de Martin</a>
 
       <label for="nav-toggle" class="nav-hamburger" aria-label="Ouvrir ou fermer le menu">
         <span class="nav-hamburger__trait"></span>
@@ -34,49 +27,39 @@
         <span class="nav-hamburger__trait"></span>
       </label>
 
-      <ul class="nav-menu" role="menubar">
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-lien">Accueil</a></li>
+        <li><a href="projects.html" class="nav-lien actif" aria-current="page">Projets</a></li>
+        <li><a href="competences.html" class="nav-lien">Compétences</a></li>
 
-        <li role="none">
-          <a href="index.html" class="nav-lien" role="menuitem">Accueil</a>
-        </li>
-
-        <!-- Projets — actif sur cette page -->
-        <li role="none">
-          <a href="projects.html" class="nav-lien actif" role="menuitem" aria-current="page">Projets</a>
-        </li>
-
-        <li role="none">
-          <a href="competences.html" class="nav-lien" role="menuitem">Compétences</a>
-        </li>
-
-        <!-- Contact avec panneau déroulant (CSS pur) -->
-        <li class="nav-contact" role="none">
-          <span class="nav-contact-btn" tabindex="0" role="button" aria-haspopup="true">Contact</span>
-          <div class="panneau-contact" role="tooltip">
+        <!-- Contact : panneau déroulant au survol (desktop) / affiché à plat (mobile) -->
+        <li class="nav-contact">
+          <span class="nav-contact-btn" tabindex="0">Contact</span>
+          <div class="panneau-contact">
             <p class="panneau-contact__titre">Me contacter</p>
             <div class="contact-ligne">
-              <div class="contact-ligne__icone">✉</div>
+              <div class="contact-ligne__icone" aria-hidden="true">✉</div>
               <div class="contact-ligne__info">
                 <span class="contact-ligne__label">Email</span>
                 <a href="mailto:martinmaury202@gmail.com" class="contact-ligne__valeur">martinmaury202@gmail.com</a>
               </div>
             </div>
             <div class="contact-ligne">
-              <div class="contact-ligne__icone">☎</div>
+              <div class="contact-ligne__icone" aria-hidden="true">☎</div>
               <div class="contact-ligne__info">
                 <span class="contact-ligne__label">Téléphone</span>
                 <a href="tel:+33780066496" class="contact-ligne__valeur">07 80 06 64 96</a>
               </div>
             </div>
             <div class="contact-ligne">
-              <div class="contact-ligne__icone">in</div>
+              <div class="contact-ligne__icone" aria-hidden="true">in</div>
               <div class="contact-ligne__info">
                 <span class="contact-ligne__label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">linkedin.com/in/martin-maury-9a10003b6</a>
+                <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="contact-ligne__valeur" target="_blank" rel="noopener">Martin Maury</a>
               </div>
             </div>
             <div class="contact-ligne">
-              <div class="contact-ligne__icone">⌨</div>
+              <div class="contact-ligne__icone" aria-hidden="true">⌨</div>
               <div class="contact-ligne__info">
                 <span class="contact-ligne__label">GitHub</span>
                 <a href="https://github.com/nectalion" class="contact-ligne__valeur" target="_blank" rel="noopener">github.com/nectalion</a>
@@ -89,163 +72,110 @@
                 <a href="cv-martin-maury.pdf" class="contact-ligne__valeur" download>Télécharger mon CV (PDF)</a>
               </div>
             </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-          </div><!-- /panneau-contact -->
-        </li><!-- /Contact -->
-
-      </ul><!-- /nav-menu -->
-    </div><!-- /nav-conteneur -->
-  </nav><!-- /navbar -->
-
-
-  <!-- ===================================================
-       CONTENU PRINCIPAL DE LA PAGE PROJETS
-       =================================================== -->
   <main id="contenu-principal">
 
-    <!-- =================================================
-         EN-TÊTE DE PAGE
-         Titre centré + sous-titre descriptif
-         ================================================= -->
     <header class="en-tete-page">
       <div class="conteneur">
         <h1 class="titre-section" id="titre-projets">Mes Projets</h1>
         <p class="en-tete-page__sous-titre">
-          Une sélection de réalisations effectuées dans le cadre de ma formation
-          et de mes initiatives personnelles.
+          Les projets réalisés en équipe dans le cadre de mon BUT GEII,
+          du plus récent au plus ancien.
         </p>
       </div>
     </header>
 
-
-    <!-- =================================================
-         GRILLE DE PROJETS
-         3 cartes disposées en grille responsive.
-         Chaque carte est cliquable et ouvre une page détail dédiée.
-         ================================================= -->
-    <section class="section-projets" aria-labelledby="titre-projets">
+    <section class="section" aria-labelledby="titre-projets">
       <div class="conteneur">
         <div class="grille-projets">
 
-
-          <!-- =============================================
-               CARTE PROJET 1 — Marketplace En Ligne
-               Lien vers : projet1.html
-               ============================================= -->
-          <article class="carte" id="carte-projet-1">
-
-            <!-- Image placeholder du projet -->
+          <!-- ===== Robot Sumo → projet4.html ===== -->
+          <article class="carte">
             <div class="carte__image-zone">
-              <img
-                src="images/projet1.png"
-                alt="Aperçu de la Marketplace En Ligne"
-                class="carte__image"
-                width="600"
-                height="210"
-              />
+              <img src="images/projet4.svg" alt="Illustration provisoire d'un robot sumo sur son ring" class="carte__image image--entiere"
+                   width="1200" height="700" loading="eager" />
+              <span class="statut">En cours</span>
             </div>
-
-            <!-- Corps de la carte -->
             <div class="carte__corps">
-
-              <span class="carte__tag">Électronique</span>
-
+              <div class="carte__entete">
+                <span class="tag">Électronique · Motorisation</span>
+                <span class="carte__meta">2e année · Équipe de 5</span>
+              </div>
+              <h2 class="carte__titre">Robot Sumo</h2>
+              <p class="carte__description">Conception en équipe de cinq d'un robot sumo autonome, capable de détecter son adversaire et de le pousser hors du ring. Je suis en charge de la motorisation.</p>
+              <a href="projet4.html" class="lien-fleche carte__lien">Voir le projet →</a>
+            </div>
+          </article>
+          <!-- ===== Carte Son et Lumière — Rafale → projet1.html ===== -->
+          <article class="carte">
+            <div class="carte__image-zone">
+              <img src="images/projet1.jpg" alt="Carte électronique son et lumière Rafale réalisée en binôme" class="carte__image"
+                   width="1400" height="826" loading="eager" />
+            </div>
+            <div class="carte__corps">
+              <div class="carte__entete">
+                <span class="tag">Électronique</span>
+                <span class="carte__meta">1re année · Binôme</span>
+              </div>
               <h2 class="carte__titre">Carte Son et Lumière — Rafale</h2>
-
-              <p class="carte__description">
-                Conception en binôme d'une carte électronique reproduisant le système
-                d'éclairage d'un avion de chasse Rafale.
-              </p>
-
-              <!-- Lien vers la page de détail du projet -->
-              <a href="projet1.html" class="carte__lien"
-                 aria-label="Voir le détail du projet Marketplace En Ligne">
-                Voir le projet →
-              </a>
-
-            </div><!-- /carte__corps -->
-          </article><!-- /Carte Projet 1 -->
-
-
-          <!-- =============================================
-               CARTE PROJET 2 — Application de Gestion de Tâches
-               Lien vers : projet2.html
-               ============================================= -->
-          <article class="carte" id="carte-projet-2">
-
-            <div class="carte__image-zone">
-              <img
-                src="images/projet2.png"
-                alt="Aperçu de l'Application de Gestion de Tâches"
-                class="carte__image"
-                width="600"
-                height="210"
-              />
+              <p class="carte__description">Conception en binôme d'une carte électronique reproduisant les feux de navigation et le feu anti-collision d'un avion de chasse Rafale, autour d'un timer NE555.</p>
+              <a href="projet1.html" class="lien-fleche carte__lien">Voir le projet →</a>
             </div>
-
+          </article>
+          <!-- ===== Thermomètre de Bain Bébé → projet2.html ===== -->
+          <article class="carte">
+            <div class="carte__image-zone">
+              <img src="images/projet2.jpg" alt="Carte électronique du thermomètre de bain pour bébé" class="carte__image"
+                   width="691" height="452" loading="lazy" />
+            </div>
             <div class="carte__corps">
-              <span class="carte__tag">Électronique</span>
+              <div class="carte__entete">
+                <span class="tag">Électronique</span>
+                <span class="carte__meta">1re année · Équipe de 4</span>
+              </div>
               <h2 class="carte__titre">Thermomètre de Bain Bébé</h2>
-              <p class="carte__description">
-                Conception en groupe d'une carte électronique indiquant la température
-                de l'eau via trois LEDs : bleue si l'eau est trop froide, verte si la
-                température est idéale, rouge si elle est trop chaude.
-              </p>
-              <a href="projet2.html" class="carte__lien"
-                 aria-label="Voir le détail du projet Gestion de Tâches">
-                Voir le projet →
-              </a>
+              <p class="carte__description">Conception en groupe de quatre d'une carte qui indique la température du bain grâce à trois LEDs : bleue si l'eau est trop froide, verte si elle est idéale, rouge si elle est trop chaude.</p>
+              <a href="projet2.html" class="lien-fleche carte__lien">Voir le projet →</a>
             </div>
-
-          </article><!-- /Carte Projet 2 -->
-
-
-          <!-- =============================================
-               CARTE PROJET 3 — Dashboard Analytics
-               Lien vers : projet3.html
-               ============================================= -->
-          <article class="carte" id="carte-projet-3">
-
+          </article>
+          <!-- ===== Kart à Hélice Radiocommandé → projet3.html ===== -->
+          <article class="carte">
             <div class="carte__image-zone">
-              <img
-                src="images/projet3.png"
-                alt="Aperçu du Dashboard Analytics"
-                class="carte__image"
-                width="600"
-                height="210"
-              />
+              <img src="images/projet3.jpg" alt="L'équipe de six étudiants ayant réalisé le kart à hélice" class="carte__image"
+                   width="1021" height="591" loading="lazy" />
             </div>
-
             <div class="carte__corps">
-              <span class="carte__tag">Électronique & Programmation</span>
+              <div class="carte__entete">
+                <span class="tag">Électronique · Programmation</span>
+                <span class="carte__meta">1re année · Équipe de 6</span>
+              </div>
               <h2 class="carte__titre">Kart à Hélice Radiocommandé</h2>
-              <p class="carte__description">
-                Conception en groupe d'un kart à hélice piloté par infrarouge.
-                J'ai travaillé sur la télécommande émettrice, permettant de contrôler
-                la vitesse et la direction du kart via un signal infrarouge.
-              </p>
-              <a href="projet3.html" class="carte__lien"
-                 aria-label="Voir le détail du projet Dashboard Analytics">
-                Voir le projet →
-              </a>
+              <p class="carte__description">Conception en groupe de six d'un kart à hélice piloté par infrarouge. J'ai travaillé sur la télécommande émettrice, construite autour d'un microcontrôleur ATmega.</p>
+              <a href="projet3.html" class="lien-fleche carte__lien">Voir le projet →</a>
             </div>
+          </article>
 
-          </article><!-- /Carte Projet 3 -->
+        </div>
+      </div>
+    </section>
 
+  </main>
 
-        </div><!-- /grille-projets -->
-      </div><!-- /conteneur -->
-    </section><!-- /section-projets -->
-
-  </main><!-- /contenu-principal -->
-
-  <footer class="footer" role="contentinfo">
+  <!-- ===================================================
+       PIED DE PAGE (identique sur toutes les pages)
+       =================================================== -->
+  <footer class="footer">
     <div class="conteneur">
       <div class="footer__grille">
 
         <div>
           <span class="footer__logo">MAURY Martin</span>
-          <p class="footer__tagline">Étudiant en BUT GEII<br>IUT de Gradignan</p>
+          <p class="footer__tagline">Étudiant en 2e année de BUT GEII<br>IUT de Bordeaux — site de Gradignan</p>
         </div>
 
         <div>
@@ -261,29 +191,32 @@
           <p class="footer__bloc-titre">Contact</p>
           <div class="footer__contact">
             <div class="footer__contact-ligne">
-              <span class="footer__contact-icone">✉</span>
+              <span class="footer__contact-icone" aria-hidden="true">✉</span>
               <a href="mailto:martinmaury202@gmail.com" class="footer__contact-lien">martinmaury202@gmail.com</a>
             </div>
             <div class="footer__contact-ligne">
-              <span class="footer__contact-icone">☎</span>
+              <span class="footer__contact-icone" aria-hidden="true">☎</span>
               <a href="tel:+33780066496" class="footer__contact-lien">07 80 06 64 96</a>
             </div>
             <div class="footer__contact-ligne">
-              <span class="footer__contact-icone">in</span>
-              <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__contact-lien" target="_blank" rel="noopener">linkedin.com/in/martin-maury-9a10003b6</a>
+              <span class="footer__contact-icone" aria-hidden="true">in</span>
+              <a href="https://www.linkedin.com/in/martin-maury-9a10003b6/" class="footer__contact-lien" target="_blank" rel="noopener">Martin Maury</a>
             </div>
             <div class="footer__contact-ligne">
-              <span class="footer__contact-icone">⌨</span>
+              <span class="footer__contact-icone" aria-hidden="true">⌨</span>
               <a href="https://github.com/nectalion" class="footer__contact-lien" target="_blank" rel="noopener">github.com/nectalion</a>
+            </div>
+            <div class="footer__contact-ligne">
+              <span class="footer__contact-icone" aria-hidden="true">↓</span>
+              <a href="cv-martin-maury.pdf" class="footer__contact-lien" download>Télécharger mon CV (PDF)</a>
             </div>
           </div>
         </div>
 
       </div>
-      <p class="footer__copyright">© 2025 MAURY Martin — Tous droits réservés</p>
+      <p class="footer__copyright">© 2026 MAURY Martin — Tous droits réservés</p>
     </div>
   </footer>
 
 </body>
 </html>
-
