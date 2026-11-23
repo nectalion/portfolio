@@ -774,7 +774,7 @@ ul, ol { list-style: none; }
    ============================================================ */
 .loisirs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--esp-sm);
 }
 
@@ -842,7 +842,7 @@ ul, ol { list-style: none; }
 .carte:hover .carte__image { transform: scale(1.05); }
 
 /* Illustration (SVG) : affichée en entier, sans recadrage */
-.image--entiere { object-fit: contain; }
+img.image--entiere { object-fit: contain; }
 
 /* Badge de statut posé sur l'image */
 .carte__image-zone .statut {
@@ -1068,6 +1068,9 @@ ul, ol { list-style: none; }
   margin-bottom: var(--esp-md);
 }
 
+/* Second titre dans une même colonne (ex. « Compétences transversales ») */
+.comp-bloc__titre--suite { margin-top: var(--esp-sm); }
+
 /* Légende des niveaux */
 .legende-niveaux {
   display: flex;
@@ -1148,6 +1151,15 @@ ul, ol { list-style: none; }
   font-size: 0.9rem;
   color: var(--sombre-60);
   margin-bottom: var(--esp-sm);
+}
+
+/* Une ligne par niveau : « Intermédiaire » + badges */
+.logiciels__ligne {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 
@@ -1286,6 +1298,8 @@ ul, ol { list-style: none; }
     gap: var(--esp-md);
   }
 
+  .loisirs { grid-template-columns: repeat(2, 1fr); }
+
   .fiche { grid-template-columns: repeat(2, 1fr); }
 
   .fiche__item:nth-child(2) { border-right: none; }
@@ -1389,8 +1403,17 @@ ul, ol { list-style: none; }
   .frise__point { left: -1.5rem; }
   .frise__carte { padding: var(--esp-sm); }
 
+  /* ---- Loisirs ---- */
+  .loisirs { grid-template-columns: 1fr; }
+
   /* ---- Projets ---- */
   .grille-projets { grid-template-columns: 1fr; }
+
+  /* ---- Compétences ---- */
+  .logiciels__ligne {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
 
   .carte__corps { padding: 1.5rem; }
 
